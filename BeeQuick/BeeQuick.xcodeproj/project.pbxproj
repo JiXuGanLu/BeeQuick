@@ -177,11 +177,11 @@
 		6370EE3F1DB7DA0500DC71BB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6370EE541DB7DA0500DC71BB /* ShopCart */,
 				6370EE401DB7DA0500DC71BB /* Booking */,
 				6370EE481DB7DA0500DC71BB /* Home */,
 				6370EE4C1DB7DA0500DC71BB /* Main */,
 				6370EE501DB7DA0500DC71BB /* Mine */,
-				6370EE541DB7DA0500DC71BB /* ShopCart */,
 				6370EE581DB7DA0500DC71BB /* SuperMarket */,
 			);
 			path = Classes;
