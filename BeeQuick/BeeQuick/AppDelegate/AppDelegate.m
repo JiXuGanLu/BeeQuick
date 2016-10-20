@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+static NSString *BQVersionKey = @"BQVersionKey";
+
 @interface AppDelegate ()
 
 @end
@@ -16,8 +18,37 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(switchRootViewController) name:YBZYSwitchRootViewControllerNotification object:nil];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = YBZYCommonBackgroundColor;
+    
+    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
+    NSString *lastLanchVersion = [[NSUserDefaults standardUserDefaults] objectForKey:BQVersionKey];
+    
+    Class newVersionViewController = NSClassFromString(@"YBZYNewVersionController");
+    Class tabBarViewController = NSClassFromString(@"YBZYTabBarController");
+    
+    if ([currentVersion isEqualToString:lastLanchVersion]) {
+        UIViewController *tabBarVC = [[tabBarViewController alloc] init];
+        self.window.rootViewController = tabBarVC;
+    } else {
+        UIViewController *newVersionVC = [[newVersionViewController alloc] init];
+        self.window.rootViewController = newVersionVC;
+        
+        [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:BQVersionKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
+}
+
+- (void)switchRootViewController {
+    Class tabBarViewController = NSClassFromString(@"YBZYTabBarController");
+    self.window.rootViewController = [[tabBarViewController alloc] init];
 }
 
 
