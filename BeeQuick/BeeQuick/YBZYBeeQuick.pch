@@ -19,6 +19,7 @@
 #import "YBZYConvenienceCategory.h"
 
 #define YBZYSwitchRootViewControllerNotification @"YBZYSwitchRootViewControllerNotification"
+#define YBZYIsNewLaunchNotification @"YBZYIsNewLaunchNotification"
 #define YBZYUserId 10086
 #define YBZYScreenWidth [UIScreen mainScreen].bounds.size.width
 #define YBZYScreenHeight [UIScreen mainScreen].bounds.size.height

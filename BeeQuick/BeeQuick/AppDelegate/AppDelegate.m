@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "YBZYNewVersionController.h"
+#import "YBZYTabBarController.h"
 
 static NSString *BQVersionKey = @"BQVersionKey";
 
@@ -27,14 +29,11 @@ static NSString *BQVersionKey = @"BQVersionKey";
     NSString *currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
     NSString *lastLanchVersion = [[NSUserDefaults standardUserDefaults] objectForKey:BQVersionKey];
     
-    Class newVersionViewController = NSClassFromString(@"YBZYNewVersionController");
-    Class tabBarViewController = NSClassFromString(@"YBZYTabBarController");
-    
     if ([currentVersion isEqualToString:lastLanchVersion]) {
-        UIViewController *tabBarVC = [[tabBarViewController alloc] init];
+        YBZYTabBarController *tabBarVC = [[YBZYTabBarController alloc] init];
         self.window.rootViewController = tabBarVC;
     } else {
-        UIViewController *newVersionVC = [[newVersionViewController alloc] init];
+        YBZYNewVersionController *newVersionVC = [[YBZYNewVersionController alloc] init];
         self.window.rootViewController = newVersionVC;
         
         [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:BQVersionKey];
@@ -47,8 +46,11 @@ static NSString *BQVersionKey = @"BQVersionKey";
 }
 
 - (void)switchRootViewController {
-    Class tabBarViewController = NSClassFromString(@"YBZYTabBarController");
-    self.window.rootViewController = [[tabBarViewController alloc] init];
+    YBZYTabBarController *rootVC = [[YBZYTabBarController alloc] init];
+    self.window.rootViewController = rootVC;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:YBZYIsNewLaunchNotification object:nil];
+    });
 }
 
 

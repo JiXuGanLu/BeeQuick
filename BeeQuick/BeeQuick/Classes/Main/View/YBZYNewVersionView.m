@@ -54,7 +54,7 @@
     pageControl.hidesForSinglePage = YES;
     self.pageControl = pageControl;
     [self addSubview:pageControl];
-    CGFloat bottomMargin = -50;
+    CGFloat bottomMargin = -10;
     [pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
         make.bottom.offset(bottomMargin);
