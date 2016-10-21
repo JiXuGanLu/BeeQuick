@@ -43,6 +43,38 @@
 		6370EEAB1DB7FBDD00DC71BB /* YBZYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370EEAA1DB7FBDD00DC71BB /* YBZYNavigationController.m */; };
 		6370EEAE1DB8031300DC71BB /* YBZYNewVersionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370EEAD1DB8031300DC71BB /* YBZYNewVersionController.m */; };
 		6370EEB11DB8AE7C00DC71BB /* YBZYNewVersionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370EEB01DB8AE7C00DC71BB /* YBZYNewVersionView.m */; };
+		63B6D6E61DB8DD64000CA2A9 /* UINavigationBar+YBZY.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6E51DB8DD64000CA2A9 /* UINavigationBar+YBZY.m */; };
+		63B6D6E91DB8E5CB000CA2A9 /* YBZYHomeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6E81DB8E5CB000CA2A9 /* YBZYHomeTableView.m */; };
+		63B6D6EC1DB8F149000CA2A9 /* YBZYHomeCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6EB1DB8F149000CA2A9 /* YBZYHomeCategoryCell.m */; };
+		63B6D6EF1DB932CA000CA2A9 /* YBZYHomeCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6EE1DB932CA000CA2A9 /* YBZYHomeCategoryModel.m */; };
+		63B6D6F21DB94846000CA2A9 /* YBZYHomeCategoryActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6F11DB94846000CA2A9 /* YBZYHomeCategoryActivityModel.m */; };
+		63B6D6F51DB94859000CA2A9 /* YBZYHomeCategoryDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6F41DB94859000CA2A9 /* YBZYHomeCategoryDetailModel.m */; };
+		63B6D6FB1DBA0725000CA2A9 /* YBZYActivityWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6FA1DBA0725000CA2A9 /* YBZYActivityWebViewController.m */; };
+		63B6D6FE1DBA0743000CA2A9 /* YBZYGoodWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6FD1DBA0743000CA2A9 /* YBZYGoodWebViewController.m */; };
+		63B6D7011DBA2744000CA2A9 /* YBZYHomeTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7001DBA2744000CA2A9 /* YBZYHomeTableHeaderView.m */; };
+		63B6D7041DBA35C6000CA2A9 /* YBZYHomeCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7031DBA35C6000CA2A9 /* YBZYHomeCycleView.m */; };
+		63B6D7071DBA35F1000CA2A9 /* YBZYHomeCycleViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7061DBA35F1000CA2A9 /* YBZYHomeCycleViewFlowLayout.m */; };
+		63B6D7101DBA5E06000CA2A9 /* YBZYHomeIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D70F1DBA5E06000CA2A9 /* YBZYHomeIconView.m */; };
+		63B6D7131DBA5E31000CA2A9 /* YBZYHomeIconViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7121DBA5E31000CA2A9 /* YBZYHomeIconViewFlowLayout.m */; };
+		63B6D7251DBA9D3F000CA2A9 /* YBZYHomeHeadLineViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7241DBA9D3F000CA2A9 /* YBZYHomeHeadLineViewFlowLayout.m */; };
+		63B6D72E1DBAA3E8000CA2A9 /* YBZYHomeHeadLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D72D1DBAA3E8000CA2A9 /* YBZYHomeHeadLineModel.m */; };
+		63B6D72F1DBAAF03000CA2A9 /* YBZYHomeCategoryGoodView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6F71DB9D407000CA2A9 /* YBZYHomeCategoryGoodView.m */; };
+		63B6D73D1DBAB46D000CA2A9 /* YBZYHomeHeadLineViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D73C1DBAB46D000CA2A9 /* YBZYHomeHeadLineViewCell.m */; };
+		63B6D73F1DBAB4A8000CA2A9 /* YBZYHomeCycleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D73E1DBAB4A8000CA2A9 /* YBZYHomeCycleViewCell.m */; };
+		63B6D7411DBAB4ED000CA2A9 /* YBZYHomeIconViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7401DBAB4ED000CA2A9 /* YBZYHomeIconViewCell.m */; };
+		63B6D7441DBAB548000CA2A9 /* YBZYHomeHeadLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7431DBAB548000CA2A9 /* YBZYHomeHeadLineView.m */; };
+		63B6D7471DBAC1B3000CA2A9 /* YBZYHomeMainActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7461DBAC1B3000CA2A9 /* YBZYHomeMainActivityView.m */; };
+		63B6D74A1DBAC1D7000CA2A9 /* YBZYHomeMainActivityViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7491DBAC1D7000CA2A9 /* YBZYHomeMainActivityViewFlowLayout.m */; };
+		63B6D74D1DBAC1EE000CA2A9 /* YBZYHomeMainActivityViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D74C1DBAC1EE000CA2A9 /* YBZYHomeMainActivityViewCell.m */; };
+		63B6D7501DBACA56000CA2A9 /* YBZYHomeMinorActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D74F1DBACA56000CA2A9 /* YBZYHomeMinorActivityView.m */; };
+		63B6D7531DBACA75000CA2A9 /* YBZYHomeMinorActivityViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7521DBACA75000CA2A9 /* YBZYHomeMinorActivityViewFlowLayout.m */; };
+		63B6D7561DBACA8C000CA2A9 /* YBZYHomeMinorActivityViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7551DBACA8C000CA2A9 /* YBZYHomeMinorActivityViewCell.m */; };
+		63B6D7591DBAD253000CA2A9 /* YBZYHomeTableFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7581DBAD253000CA2A9 /* YBZYHomeTableFooterView.m */; };
+		63B6D75C1DBAD316000CA2A9 /* YBZYHomeHotTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D75B1DBAD316000CA2A9 /* YBZYHomeHotTitleView.m */; };
+		63B6D75F1DBAD341000CA2A9 /* YBZYHomeHotGoodView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D75E1DBAD341000CA2A9 /* YBZYHomeHotGoodView.m */; };
+		63B6D7621DBAD388000CA2A9 /* YBZYHomeHotGoodViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7611DBAD388000CA2A9 /* YBZYHomeHotGoodViewFlowLayout.m */; };
+		63B6D7651DBAD3D5000CA2A9 /* YBZYHomeHotGoodViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7641DBAD3D5000CA2A9 /* YBZYHomeHotGoodViewCell.m */; };
+		63B6D7681DBAD45B000CA2A9 /* YBZYHomeMoreButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7671DBAD45B000CA2A9 /* YBZYHomeMoreButtonView.m */; };
 		E7E3020F8E93F24BB23F4526 /* libPods-BeeQuickUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D58C004F0B3F1A4EB1EC128 /* libPods-BeeQuickUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +168,70 @@
 		6370EEAD1DB8031300DC71BB /* YBZYNewVersionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYNewVersionController.m; sourceTree = "<group>"; };
 		6370EEAF1DB8AE7C00DC71BB /* YBZYNewVersionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYNewVersionView.h; sourceTree = "<group>"; };
 		6370EEB01DB8AE7C00DC71BB /* YBZYNewVersionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYNewVersionView.m; sourceTree = "<group>"; };
+		63B6D6E41DB8DD64000CA2A9 /* UINavigationBar+YBZY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+YBZY.h"; sourceTree = "<group>"; };
+		63B6D6E51DB8DD64000CA2A9 /* UINavigationBar+YBZY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+YBZY.m"; sourceTree = "<group>"; };
+		63B6D6E71DB8E5CB000CA2A9 /* YBZYHomeTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeTableView.h; sourceTree = "<group>"; };
+		63B6D6E81DB8E5CB000CA2A9 /* YBZYHomeTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeTableView.m; sourceTree = "<group>"; };
+		63B6D6EA1DB8F149000CA2A9 /* YBZYHomeCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeCategoryCell.h; sourceTree = "<group>"; };
+		63B6D6EB1DB8F149000CA2A9 /* YBZYHomeCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeCategoryCell.m; sourceTree = "<group>"; };
+		63B6D6ED1DB932CA000CA2A9 /* YBZYHomeCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeCategoryModel.h; sourceTree = "<group>"; };
+		63B6D6EE1DB932CA000CA2A9 /* YBZYHomeCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeCategoryModel.m; sourceTree = "<group>"; };
+		63B6D6F01DB94846000CA2A9 /* YBZYHomeCategoryActivityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeCategoryActivityModel.h; sourceTree = "<group>"; };
+		63B6D6F11DB94846000CA2A9 /* YBZYHomeCategoryActivityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeCategoryActivityModel.m; sourceTree = "<group>"; };
+		63B6D6F31DB94859000CA2A9 /* YBZYHomeCategoryDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeCategoryDetailModel.h; sourceTree = "<group>"; };
+		63B6D6F41DB94859000CA2A9 /* YBZYHomeCategoryDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeCategoryDetailModel.m; sourceTree = "<group>"; };
+		63B6D6F61DB9D407000CA2A9 /* YBZYHomeCategoryGoodView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeCategoryGoodView.h; sourceTree = "<group>"; };
+		63B6D6F71DB9D407000CA2A9 /* YBZYHomeCategoryGoodView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeCategoryGoodView.m; sourceTree = "<group>"; };
+		63B6D6F91DBA0725000CA2A9 /* YBZYActivityWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYActivityWebViewController.h; sourceTree = "<group>"; };
+		63B6D6FA1DBA0725000CA2A9 /* YBZYActivityWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYActivityWebViewController.m; sourceTree = "<group>"; };
+		63B6D6FC1DBA0743000CA2A9 /* YBZYGoodWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYGoodWebViewController.h; sourceTree = "<group>"; };
+		63B6D6FD1DBA0743000CA2A9 /* YBZYGoodWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYGoodWebViewController.m; sourceTree = "<group>"; };
+		63B6D6FF1DBA2744000CA2A9 /* YBZYHomeTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeTableHeaderView.h; sourceTree = "<group>"; };
+		63B6D7001DBA2744000CA2A9 /* YBZYHomeTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeTableHeaderView.m; sourceTree = "<group>"; };
+		63B6D7021DBA35C6000CA2A9 /* YBZYHomeCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeCycleView.h; sourceTree = "<group>"; };
+		63B6D7031DBA35C6000CA2A9 /* YBZYHomeCycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeCycleView.m; sourceTree = "<group>"; };
+		63B6D7051DBA35F1000CA2A9 /* YBZYHomeCycleViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeCycleViewFlowLayout.h; sourceTree = "<group>"; };
+		63B6D7061DBA35F1000CA2A9 /* YBZYHomeCycleViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeCycleViewFlowLayout.m; sourceTree = "<group>"; };
+		63B6D7081DBA360F000CA2A9 /* YBZYHomeCycleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeCycleViewCell.h; sourceTree = "<group>"; };
+		63B6D70E1DBA5E06000CA2A9 /* YBZYHomeIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeIconView.h; sourceTree = "<group>"; };
+		63B6D70F1DBA5E06000CA2A9 /* YBZYHomeIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeIconView.m; sourceTree = "<group>"; };
+		63B6D7111DBA5E31000CA2A9 /* YBZYHomeIconViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeIconViewFlowLayout.h; sourceTree = "<group>"; };
+		63B6D7121DBA5E31000CA2A9 /* YBZYHomeIconViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeIconViewFlowLayout.m; sourceTree = "<group>"; };
+		63B6D7141DBA5E49000CA2A9 /* YBZYHomeIconViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeIconViewCell.h; sourceTree = "<group>"; };
+		63B6D7231DBA9D3F000CA2A9 /* YBZYHomeHeadLineViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeHeadLineViewFlowLayout.h; sourceTree = "<group>"; };
+		63B6D7241DBA9D3F000CA2A9 /* YBZYHomeHeadLineViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeHeadLineViewFlowLayout.m; sourceTree = "<group>"; };
+		63B6D72C1DBAA3E8000CA2A9 /* YBZYHomeHeadLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeHeadLineModel.h; sourceTree = "<group>"; };
+		63B6D72D1DBAA3E8000CA2A9 /* YBZYHomeHeadLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeHeadLineModel.m; sourceTree = "<group>"; };
+		63B6D7371DBAB2AB000CA2A9 /* YBZYHomeHeadLineViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeHeadLineViewCell.h; sourceTree = "<group>"; };
+		63B6D73C1DBAB46D000CA2A9 /* YBZYHomeHeadLineViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeHeadLineViewCell.m; sourceTree = "<group>"; };
+		63B6D73E1DBAB4A8000CA2A9 /* YBZYHomeCycleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeCycleViewCell.m; sourceTree = "<group>"; };
+		63B6D7401DBAB4ED000CA2A9 /* YBZYHomeIconViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeIconViewCell.m; sourceTree = "<group>"; };
+		63B6D7421DBAB548000CA2A9 /* YBZYHomeHeadLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeHeadLineView.h; sourceTree = "<group>"; };
+		63B6D7431DBAB548000CA2A9 /* YBZYHomeHeadLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeHeadLineView.m; sourceTree = "<group>"; };
+		63B6D7451DBAC1B3000CA2A9 /* YBZYHomeMainActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeMainActivityView.h; sourceTree = "<group>"; };
+		63B6D7461DBAC1B3000CA2A9 /* YBZYHomeMainActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeMainActivityView.m; sourceTree = "<group>"; };
+		63B6D7481DBAC1D7000CA2A9 /* YBZYHomeMainActivityViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeMainActivityViewFlowLayout.h; sourceTree = "<group>"; };
+		63B6D7491DBAC1D7000CA2A9 /* YBZYHomeMainActivityViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeMainActivityViewFlowLayout.m; sourceTree = "<group>"; };
+		63B6D74B1DBAC1EE000CA2A9 /* YBZYHomeMainActivityViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeMainActivityViewCell.h; sourceTree = "<group>"; };
+		63B6D74C1DBAC1EE000CA2A9 /* YBZYHomeMainActivityViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeMainActivityViewCell.m; sourceTree = "<group>"; };
+		63B6D74E1DBACA56000CA2A9 /* YBZYHomeMinorActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeMinorActivityView.h; sourceTree = "<group>"; };
+		63B6D74F1DBACA56000CA2A9 /* YBZYHomeMinorActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeMinorActivityView.m; sourceTree = "<group>"; };
+		63B6D7511DBACA75000CA2A9 /* YBZYHomeMinorActivityViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeMinorActivityViewFlowLayout.h; sourceTree = "<group>"; };
+		63B6D7521DBACA75000CA2A9 /* YBZYHomeMinorActivityViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeMinorActivityViewFlowLayout.m; sourceTree = "<group>"; };
+		63B6D7541DBACA8C000CA2A9 /* YBZYHomeMinorActivityViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeMinorActivityViewCell.h; sourceTree = "<group>"; };
+		63B6D7551DBACA8C000CA2A9 /* YBZYHomeMinorActivityViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeMinorActivityViewCell.m; sourceTree = "<group>"; };
+		63B6D7571DBAD253000CA2A9 /* YBZYHomeTableFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeTableFooterView.h; sourceTree = "<group>"; };
+		63B6D7581DBAD253000CA2A9 /* YBZYHomeTableFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeTableFooterView.m; sourceTree = "<group>"; };
+		63B6D75A1DBAD316000CA2A9 /* YBZYHomeHotTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeHotTitleView.h; sourceTree = "<group>"; };
+		63B6D75B1DBAD316000CA2A9 /* YBZYHomeHotTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeHotTitleView.m; sourceTree = "<group>"; };
+		63B6D75D1DBAD341000CA2A9 /* YBZYHomeHotGoodView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeHotGoodView.h; sourceTree = "<group>"; };
+		63B6D75E1DBAD341000CA2A9 /* YBZYHomeHotGoodView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeHotGoodView.m; sourceTree = "<group>"; };
+		63B6D7601DBAD388000CA2A9 /* YBZYHomeHotGoodViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeHotGoodViewFlowLayout.h; sourceTree = "<group>"; };
+		63B6D7611DBAD388000CA2A9 /* YBZYHomeHotGoodViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeHotGoodViewFlowLayout.m; sourceTree = "<group>"; };
+		63B6D7631DBAD3D5000CA2A9 /* YBZYHomeHotGoodViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeHotGoodViewCell.h; sourceTree = "<group>"; };
+		63B6D7641DBAD3D5000CA2A9 /* YBZYHomeHotGoodViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeHotGoodViewCell.m; sourceTree = "<group>"; };
+		63B6D7661DBAD45B000CA2A9 /* YBZYHomeMoreButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeMoreButtonView.h; sourceTree = "<group>"; };
+		63B6D7671DBAD45B000CA2A9 /* YBZYHomeMoreButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeMoreButtonView.m; sourceTree = "<group>"; };
 		6A2E29E6B706D768374AFBFB /* Pods-BeeQuickUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeQuickUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeeQuickUITests/Pods-BeeQuickUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FA91F35E624AE6E9C8CBDB0 /* libPods-BeeQuickTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeQuickTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA577D0048CA114DF03141A /* libPods-BeeQuick.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeQuick.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -298,6 +394,8 @@
 		6370EE4A1DB7DA0500DC71BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				63B6D72C1DBAA3E8000CA2A9 /* YBZYHomeHeadLineModel.h */,
+				63B6D72D1DBAA3E8000CA2A9 /* YBZYHomeHeadLineModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -305,6 +403,56 @@
 		6370EE4B1DB7DA0500DC71BB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				63B6D6E71DB8E5CB000CA2A9 /* YBZYHomeTableView.h */,
+				63B6D6E81DB8E5CB000CA2A9 /* YBZYHomeTableView.m */,
+				63B6D6EA1DB8F149000CA2A9 /* YBZYHomeCategoryCell.h */,
+				63B6D6EB1DB8F149000CA2A9 /* YBZYHomeCategoryCell.m */,
+				63B6D6F61DB9D407000CA2A9 /* YBZYHomeCategoryGoodView.h */,
+				63B6D6F71DB9D407000CA2A9 /* YBZYHomeCategoryGoodView.m */,
+				63B6D6FF1DBA2744000CA2A9 /* YBZYHomeTableHeaderView.h */,
+				63B6D7001DBA2744000CA2A9 /* YBZYHomeTableHeaderView.m */,
+				63B6D7021DBA35C6000CA2A9 /* YBZYHomeCycleView.h */,
+				63B6D7031DBA35C6000CA2A9 /* YBZYHomeCycleView.m */,
+				63B6D7051DBA35F1000CA2A9 /* YBZYHomeCycleViewFlowLayout.h */,
+				63B6D7061DBA35F1000CA2A9 /* YBZYHomeCycleViewFlowLayout.m */,
+				63B6D7081DBA360F000CA2A9 /* YBZYHomeCycleViewCell.h */,
+				63B6D73E1DBAB4A8000CA2A9 /* YBZYHomeCycleViewCell.m */,
+				63B6D70E1DBA5E06000CA2A9 /* YBZYHomeIconView.h */,
+				63B6D70F1DBA5E06000CA2A9 /* YBZYHomeIconView.m */,
+				63B6D7111DBA5E31000CA2A9 /* YBZYHomeIconViewFlowLayout.h */,
+				63B6D7121DBA5E31000CA2A9 /* YBZYHomeIconViewFlowLayout.m */,
+				63B6D7141DBA5E49000CA2A9 /* YBZYHomeIconViewCell.h */,
+				63B6D7401DBAB4ED000CA2A9 /* YBZYHomeIconViewCell.m */,
+				63B6D7421DBAB548000CA2A9 /* YBZYHomeHeadLineView.h */,
+				63B6D7431DBAB548000CA2A9 /* YBZYHomeHeadLineView.m */,
+				63B6D7231DBA9D3F000CA2A9 /* YBZYHomeHeadLineViewFlowLayout.h */,
+				63B6D7241DBA9D3F000CA2A9 /* YBZYHomeHeadLineViewFlowLayout.m */,
+				63B6D7371DBAB2AB000CA2A9 /* YBZYHomeHeadLineViewCell.h */,
+				63B6D73C1DBAB46D000CA2A9 /* YBZYHomeHeadLineViewCell.m */,
+				63B6D7451DBAC1B3000CA2A9 /* YBZYHomeMainActivityView.h */,
+				63B6D7461DBAC1B3000CA2A9 /* YBZYHomeMainActivityView.m */,
+				63B6D7481DBAC1D7000CA2A9 /* YBZYHomeMainActivityViewFlowLayout.h */,
+				63B6D7491DBAC1D7000CA2A9 /* YBZYHomeMainActivityViewFlowLayout.m */,
+				63B6D74B1DBAC1EE000CA2A9 /* YBZYHomeMainActivityViewCell.h */,
+				63B6D74C1DBAC1EE000CA2A9 /* YBZYHomeMainActivityViewCell.m */,
+				63B6D74E1DBACA56000CA2A9 /* YBZYHomeMinorActivityView.h */,
+				63B6D74F1DBACA56000CA2A9 /* YBZYHomeMinorActivityView.m */,
+				63B6D7511DBACA75000CA2A9 /* YBZYHomeMinorActivityViewFlowLayout.h */,
+				63B6D7521DBACA75000CA2A9 /* YBZYHomeMinorActivityViewFlowLayout.m */,
+				63B6D7541DBACA8C000CA2A9 /* YBZYHomeMinorActivityViewCell.h */,
+				63B6D7551DBACA8C000CA2A9 /* YBZYHomeMinorActivityViewCell.m */,
+				63B6D7571DBAD253000CA2A9 /* YBZYHomeTableFooterView.h */,
+				63B6D7581DBAD253000CA2A9 /* YBZYHomeTableFooterView.m */,
+				63B6D75A1DBAD316000CA2A9 /* YBZYHomeHotTitleView.h */,
+				63B6D75B1DBAD316000CA2A9 /* YBZYHomeHotTitleView.m */,
+				63B6D75D1DBAD341000CA2A9 /* YBZYHomeHotGoodView.h */,
+				63B6D75E1DBAD341000CA2A9 /* YBZYHomeHotGoodView.m */,
+				63B6D7601DBAD388000CA2A9 /* YBZYHomeHotGoodViewFlowLayout.h */,
+				63B6D7611DBAD388000CA2A9 /* YBZYHomeHotGoodViewFlowLayout.m */,
+				63B6D7631DBAD3D5000CA2A9 /* YBZYHomeHotGoodViewCell.h */,
+				63B6D7641DBAD3D5000CA2A9 /* YBZYHomeHotGoodViewCell.m */,
+				63B6D7661DBAD45B000CA2A9 /* YBZYHomeMoreButtonView.h */,
+				63B6D7671DBAD45B000CA2A9 /* YBZYHomeMoreButtonView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,6 +476,10 @@
 				6370EEAA1DB7FBDD00DC71BB /* YBZYNavigationController.m */,
 				6370EEAC1DB8031300DC71BB /* YBZYNewVersionController.h */,
 				6370EEAD1DB8031300DC71BB /* YBZYNewVersionController.m */,
+				63B6D6F91DBA0725000CA2A9 /* YBZYActivityWebViewController.h */,
+				63B6D6FA1DBA0725000CA2A9 /* YBZYActivityWebViewController.m */,
+				63B6D6FC1DBA0743000CA2A9 /* YBZYGoodWebViewController.h */,
+				63B6D6FD1DBA0743000CA2A9 /* YBZYGoodWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -341,6 +493,12 @@
 				6370EE891DB7F69A00DC71BB /* YBZYAddressModel.m */,
 				6370EE8B1DB7F6B100DC71BB /* YBZYPickUpModel.h */,
 				6370EE8C1DB7F6B100DC71BB /* YBZYPickUpModel.m */,
+				63B6D6ED1DB932CA000CA2A9 /* YBZYHomeCategoryModel.h */,
+				63B6D6EE1DB932CA000CA2A9 /* YBZYHomeCategoryModel.m */,
+				63B6D6F01DB94846000CA2A9 /* YBZYHomeCategoryActivityModel.h */,
+				63B6D6F11DB94846000CA2A9 /* YBZYHomeCategoryActivityModel.m */,
+				63B6D6F31DB94859000CA2A9 /* YBZYHomeCategoryDetailModel.h */,
+				63B6D6F41DB94859000CA2A9 /* YBZYHomeCategoryDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -498,6 +656,8 @@
 			children = (
 				6370EE731DB7EFAD00DC71BB /* UIImage+ImageEffects.h */,
 				6370EE741DB7EFAD00DC71BB /* UIImage+ImageEffects.m */,
+				63B6D6E41DB8DD64000CA2A9 /* UINavigationBar+YBZY.h */,
+				63B6D6E51DB8DD64000CA2A9 /* UINavigationBar+YBZY.m */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -819,31 +979,63 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B6D72F1DBAAF03000CA2A9 /* YBZYHomeCategoryGoodView.m in Sources */,
 				6370EEB11DB8AE7C00DC71BB /* YBZYNewVersionView.m in Sources */,
+				63B6D7591DBAD253000CA2A9 /* YBZYHomeTableFooterView.m in Sources */,
+				63B6D75F1DBAD341000CA2A9 /* YBZYHomeHotGoodView.m in Sources */,
+				63B6D6E61DB8DD64000CA2A9 /* UINavigationBar+YBZY.m in Sources */,
+				63B6D74D1DBAC1EE000CA2A9 /* YBZYHomeMainActivityViewCell.m in Sources */,
+				63B6D6FB1DBA0725000CA2A9 /* YBZYActivityWebViewController.m in Sources */,
+				63B6D73F1DBAB4A8000CA2A9 /* YBZYHomeCycleViewCell.m in Sources */,
+				63B6D7441DBAB548000CA2A9 /* YBZYHomeHeadLineView.m in Sources */,
 				6370EE7C1DB7EFAE00DC71BB /* UILabel+Convenience.m in Sources */,
 				6370EE8D1DB7F6B100DC71BB /* YBZYPickUpModel.m in Sources */,
+				63B6D73D1DBAB46D000CA2A9 /* YBZYHomeHeadLineViewCell.m in Sources */,
+				63B6D6EF1DB932CA000CA2A9 /* YBZYHomeCategoryModel.m in Sources */,
+				63B6D7071DBA35F1000CA2A9 /* YBZYHomeCycleViewFlowLayout.m in Sources */,
 				6370EE981DB7F9BC00DC71BB /* YBZYHomeController.m in Sources */,
 				6370EE7D1DB7EFAE00DC71BB /* UIView+Convenience.m in Sources */,
 				6370EE8A1DB7F69A00DC71BB /* YBZYAddressModel.m in Sources */,
+				63B6D7131DBA5E31000CA2A9 /* YBZYHomeIconViewFlowLayout.m in Sources */,
 				6370EE9E1DB7FA2200DC71BB /* YBZYShopCartController.m in Sources */,
 				6370EE841DB7F50800DC71BB /* YBZYHTTPSessionManager.m in Sources */,
+				63B6D6F21DB94846000CA2A9 /* YBZYHomeCategoryActivityModel.m in Sources */,
 				6370EE3C1DB7D9DC00DC71BB /* AppDelegate.m in Sources */,
 				6370EE9B1DB7F9D600DC71BB /* YBZYSuperMarketController.m in Sources */,
+				63B6D7651DBAD3D5000CA2A9 /* YBZYHomeHotGoodViewCell.m in Sources */,
+				63B6D7101DBA5E06000CA2A9 /* YBZYHomeIconView.m in Sources */,
 				6370EEAE1DB8031300DC71BB /* YBZYNewVersionController.m in Sources */,
+				63B6D6FE1DBA0743000CA2A9 /* YBZYGoodWebViewController.m in Sources */,
+				63B6D6E91DB8E5CB000CA2A9 /* YBZYHomeTableView.m in Sources */,
+				63B6D7041DBA35C6000CA2A9 /* YBZYHomeCycleView.m in Sources */,
+				63B6D74A1DBAC1D7000CA2A9 /* YBZYHomeMainActivityViewFlowLayout.m in Sources */,
+				63B6D72E1DBAA3E8000CA2A9 /* YBZYHomeHeadLineModel.m in Sources */,
+				63B6D7411DBAB4ED000CA2A9 /* YBZYHomeIconViewCell.m in Sources */,
 				6370EE761DB7EFAE00DC71BB /* NSObject+Convenience.m in Sources */,
 				6370EEA11DB7FAAB00DC71BB /* YBZYMineController.m in Sources */,
+				63B6D6F51DB94859000CA2A9 /* YBZYHomeCategoryDetailModel.m in Sources */,
 				6370EEA81DB7FB6900DC71BB /* YBZYTabBar.m in Sources */,
 				6370EEA51DB7FAFE00DC71BB /* YBZYTabBarController.m in Sources */,
+				63B6D7561DBACA8C000CA2A9 /* YBZYHomeMinorActivityViewCell.m in Sources */,
 				6370EE771DB7EFAE00DC71BB /* NSString+ConvenienceHash.m in Sources */,
+				63B6D6EC1DB8F149000CA2A9 /* YBZYHomeCategoryCell.m in Sources */,
 				6370EE081DB7CDBE00DC71BB /* main.m in Sources */,
 				6370EE811DB7F46E00DC71BB /* YBZYGoodModel.m in Sources */,
+				63B6D7251DBA9D3F000CA2A9 /* YBZYHomeHeadLineViewFlowLayout.m in Sources */,
+				63B6D7011DBA2744000CA2A9 /* YBZYHomeTableHeaderView.m in Sources */,
+				63B6D7501DBACA56000CA2A9 /* YBZYHomeMinorActivityView.m in Sources */,
 				6370EE871DB7F5B700DC71BB /* YBZYSQLiteManager.m in Sources */,
+				63B6D75C1DBAD316000CA2A9 /* YBZYHomeHotTitleView.m in Sources */,
+				63B6D7621DBAD388000CA2A9 /* YBZYHomeHotGoodViewFlowLayout.m in Sources */,
 				6370EE781DB7EFAE00DC71BB /* NSString+ConveniencePath.m in Sources */,
 				6370EE7B1DB7EFAE00DC71BB /* UIImage+Convenience.m in Sources */,
 				6370EE7E1DB7EFAE00DC71BB /* UIImage+ImageEffects.m in Sources */,
 				6370EE7A1DB7EFAE00DC71BB /* UIColor+Convenience.m in Sources */,
+				63B6D7681DBAD45B000CA2A9 /* YBZYHomeMoreButtonView.m in Sources */,
 				6370EE791DB7EFAE00DC71BB /* UIBarButtonItem+Convenience.m in Sources */,
 				6370EE751DB7EFAE00DC71BB /* NSAttributedString+Convenience.m in Sources */,
+				63B6D7531DBACA75000CA2A9 /* YBZYHomeMinorActivityViewFlowLayout.m in Sources */,
+				63B6D7471DBAC1B3000CA2A9 /* YBZYHomeMainActivityView.m in Sources */,
 				6370EEAB1DB7FBDD00DC71BB /* YBZYNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -909,12 +1101,14 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -957,12 +1151,14 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

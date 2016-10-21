@@ -44,4 +44,19 @@
     return image;
 }
 
+- (UIImage *)ybzy_cornerImageWithSize:(CGSize)size fillColor:(UIColor *)fillColor {
+    UIGraphicsBeginImageContextWithOptions(size, false, 0);
+    CGFloat radius = MIN(size.width, size.height) * 0.5;
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    [fillColor setFill];
+    UIRectFill(rect);
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius];
+    [path addClip];
+    [self drawInRect:rect];
+    UIImage *cornerImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return cornerImage;
+}
+
 @end

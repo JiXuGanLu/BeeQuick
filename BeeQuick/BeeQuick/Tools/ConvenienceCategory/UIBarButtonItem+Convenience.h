@@ -4,6 +4,6 @@
 
 @interface UIBarButtonItem (Convenience)
 
-+ (instancetype)ybzy_barButtonItemWithTarget:(id)target action:(SEL)action icon:(NSString *)icon highlighticon:(NSString *)highlighticon;
++ (instancetype)ybzy_barButtonItemWithTarget:(id)target action:(SEL)action icon:(NSString *)icon highlighticon:(NSString *)highlighticon backgroundImage:(UIImage *)backgroundImage;
 
 @end

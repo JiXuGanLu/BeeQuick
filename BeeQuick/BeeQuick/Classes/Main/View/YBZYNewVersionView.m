@@ -89,7 +89,6 @@
         [self.scrollView addSubview:imageView];
         if (i == imageNames.count - 1) {
             imageView.userInteractionEnabled = true;
-            
             UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sendSwitchRootViewControllerNotification)];
             [imageView addGestureRecognizer:tapGes];
         }

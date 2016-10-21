@@ -8,8 +8,11 @@
 
 #if __OBJC__
 
+#import "YYImage.h"
 #import "YYModel.h"
 #import "Masonry.h"
+#import "MJRefresh.h"
+#import "YYWebImage.h"
 #import "YBZYGoodModel.h"
 #import "SVProgressHUD.h"
 #import "YBZYPickUpModel.h"
@@ -17,9 +20,9 @@
 #import "YBZYSQLiteManager.h"
 #import "YBZYHTTPSessionManager.h"
 #import "YBZYConvenienceCategory.h"
+#import "YBZYGoodWebViewController.h"
+#import "YBZYActivityWebViewController.h"
 
-#define YBZYSwitchRootViewControllerNotification @"YBZYSwitchRootViewControllerNotification"
-#define YBZYIsNewLaunchNotification @"YBZYIsNewLaunchNotification"
 #define YBZYUserId 10086
 #define YBZYScreenWidth [UIScreen mainScreen].bounds.size.width
 #define YBZYScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -31,7 +34,11 @@
 #define YBZYCommonDarkTextColor [UIColor darkTextColor]
 #define YBZYCommonMidTextColor [UIColor darkGrayColor]
 #define YBZYCommonLightTextColor [UIColor lightGrayColor]
-
+#define YBZYSwitchRootViewControllerNotification @"YBZYSwitchRootViewControllerNotification"
+#define YBZYIsNewLaunchNotification @"YBZYIsNewLaunchNotification"
+#define YBZYPushSuperMarketNotification @"YBZYPushSuperMarketNotification"
+#define YBZYCategoryKey @"YBZYCategoryKey"
+#define YBZYAddGoodNotification @"YBZYAddGoodNotification"
 
 //自定义log
 #ifdef DEBUG

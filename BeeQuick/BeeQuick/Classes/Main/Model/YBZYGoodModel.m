@@ -10,4 +10,8 @@
 
 @implementation YBZYGoodModel
 
+- (NSString *)urlString {
+    return [NSString stringWithFormat:@"http://m.beequick.cn/show/productDetail?id=%zd&shopId=%ld", self.id, self.dealer_id];
+}
+
 @end

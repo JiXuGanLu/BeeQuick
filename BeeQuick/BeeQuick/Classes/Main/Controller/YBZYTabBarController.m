@@ -35,6 +35,7 @@
     [self addChildViewControllers];
 }
 
+#pragma mark - 添加四个页面控制器
 - (void)addChildViewControllers {
     UIViewController *childVC1 = [self loadTabBarItemAndNavigationControllerWithRootViewController:@"YBZYHomeController" andTitle:@"首页" andImageName:@"v2_home"];
     UIViewController *childVC2 = [self loadTabBarItemAndNavigationControllerWithRootViewController:@"YBZYSuperMarketController" andTitle:@"闪送超市" andImageName:@"v2_order"];
@@ -53,6 +54,7 @@
     return navC;
 }
 
+#pragma mark - 加载指导视图
 - (void)loadGuideView {
     UIView *guideView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     guideView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];

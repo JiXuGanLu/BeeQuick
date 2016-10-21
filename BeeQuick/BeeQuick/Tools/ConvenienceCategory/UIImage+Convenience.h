@@ -10,4 +10,6 @@
 
 + (UIImage *)ybzy_imageWithColor:(UIColor *)color size:(CGSize)size;
 
+- (UIImage *)ybzy_cornerImageWithSize:(CGSize)size fillColor:(UIColor *)fillColor;
+
 @end

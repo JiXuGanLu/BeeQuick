@@ -18,7 +18,6 @@ static NSString *BQVersionKey = @"BQVersionKey";
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(switchRootViewController) name:YBZYSwitchRootViewControllerNotification object:nil];
