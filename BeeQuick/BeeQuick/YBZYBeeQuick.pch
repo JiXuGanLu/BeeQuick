@@ -38,7 +38,8 @@
 #define YBZYIsNewLaunchNotification @"YBZYIsNewLaunchNotification"
 #define YBZYPushSuperMarketNotification @"YBZYPushSuperMarketNotification"
 #define YBZYCategoryKey @"YBZYCategoryKey"
-#define YBZYAddGoodNotification @"YBZYAddGoodNotification"
+#define YBZYAddOrReduceGoodNotification @"YBZYAddOrReduceGoodNotification"
+#define YBZYHomeTableFooterViewUpdateNotification @"YBZYHomeTableFooterViewUpdateNotification"
 
 //自定义log
 #ifdef DEBUG

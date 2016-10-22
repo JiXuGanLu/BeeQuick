@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class YBZYHomeMoreButtonView;
+
+@protocol YBZYHomeMoreButtonViewDelegate <NSObject>
+
+- (void)didClickMoreButtonView:(YBZYHomeMoreButtonView *)moreButtonView;
+
+@end
+
 @interface YBZYHomeMoreButtonView : UIView
+
+@property (nonatomic, weak) id<YBZYHomeMoreButtonViewDelegate> delegate;
 
 @end

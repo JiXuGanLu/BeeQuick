@@ -10,14 +10,19 @@
 #import "YBZYHomeCategoryCell.h"
 #import "YBZYHomeCategoryModel.h"
 #import "YBZYHomeTableHeaderView.h"
+#import "YBZYHomeTableFooterView.h"
 
-const CGFloat rowHeight = 340;
+static CGFloat rowHeight = 340;
 static NSString *categoryCellId = @"categoryCellId";
 static NSString *addGoodAnimKey = @"addGoodAnimKey";
 
 @interface YBZYHomeTableView () <UITableViewDelegate, UITableViewDataSource, YBZYHomeCategoryCellDelegate, YBZYHomeCategoryGoodViewDelegate, CAAnimationDelegate>
 
 @property (nonatomic, strong) NSArray *homeCategoryModels;
+
+@property (nonatomic, weak) YBZYHomeTableHeaderView *headerView;
+
+@property (nonatomic, weak) YBZYHomeTableFooterView *footerView;
 
 @end
 
@@ -42,23 +47,36 @@ static NSString *addGoodAnimKey = @"addGoodAnimKey";
     [self loadTableFooterView];
     [self loadRefreshView];
     [self loadHomeCategoryData];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.headerView.superViewController = self.superViewController;
+        self.footerView.superViewController = self.superViewController;
+    });
 }
 
 - (void)loadTableHeaderView {
     YBZYHomeTableHeaderView *headerView = [[YBZYHomeTableHeaderView alloc] initWithFrame:CGRectMake(0, 0, YBZYScreenWidth, 660)];
     self.tableHeaderView = headerView;
+    self.headerView = headerView;
     [self.tableHeaderView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.offset(0); // 大坑留念， 这里设置top约束，会让tableHeaderView无法接收用户交互
+     // make.top.offset(0); // 大坑留念， 这里设置top约束，会让tableHeaderView无法接收用户交互
         make.height.offset(660);
     }];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        headerView.superViewController = self.superViewController;
-    });
 }
 
 - (void)loadTableFooterView {
+    YBZYHomeTableFooterView *footView = [[YBZYHomeTableFooterView alloc] initWithFrame:CGRectMake(0, 0, YBZYScreenWidth, 75)];
+    self.tableFooterView = footView;
+    self.footerView = footView;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTableFooterViewHeight:) name:YBZYHomeTableFooterViewUpdateNotification object:nil];
+}
+
+- (void)updateTableFooterViewHeight:(NSNotification *)notification {
+    CGFloat height = [notification.userInfo[@"height"] floatValue] + self.footerView.headerHeight + self.footerView.footerHeight;
+    self.footerView.height = height;
+    self.tableFooterView = self.footerView;//需要重新赋值！！！！否则滑不上去！！！因为tableFooterView的可滑动范围是在赋值的时候确定的，无法后期更改
+    [self layoutIfNeeded];
 }
 
 - (void)loadRefreshView {
@@ -151,16 +169,16 @@ static NSString *addGoodAnimKey = @"addGoodAnimKey";
     [[YBZYSQLiteManager sharedManager] addGood:homeCategoryGoodView.goodModel withId:homeCategoryGoodView.goodModel.id userId:YBZYUserId goodsType:homeCategoryGoodView.goodModel.goods_type];
     homeCategoryGoodView.goodCount = [[[YBZYSQLiteManager sharedManager] getGoodInShopCartWithGoodId:homeCategoryGoodView.goodModel.id userId:YBZYUserId].firstObject[@"count"] integerValue];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:YBZYAddGoodNotification object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:YBZYAddOrReduceGoodNotification object:nil];
     
-    CGPoint start = [homeCategoryGoodView convertPoint:homeCategoryGoodView.imageView.center toView:self.window];
-    CGPoint end = [self.window convertPoint:CGPointMake(YBZYScreenWidth / 10 * 7, YBZYScreenHeight - 40) toView:self.window];
+    CGPoint startPonit = [homeCategoryGoodView convertPoint:homeCategoryGoodView.imageView.center toView:self.window];
+    CGPoint endPoint = [self.window convertPoint:CGPointMake(YBZYScreenWidth / 10 * 7, YBZYScreenHeight - 40) toView:self.window];
     CAKeyframeAnimation *anim = [[CAKeyframeAnimation alloc] init];
     anim.keyPath = @"position";
     anim.duration = .9;
     UIBezierPath *path = [UIBezierPath bezierPath];
-    [path moveToPoint:start];
-    [path addQuadCurveToPoint:end controlPoint:CGPointMake(start.x + 40, start.y - 40)];
+    [path moveToPoint:startPonit];
+    [path addQuadCurveToPoint:endPoint controlPoint:CGPointMake(startPonit.x + 40, startPonit.y - 40)];
     anim.path = path.CGPath;
     anim.delegate = self;
     
@@ -183,6 +201,11 @@ static NSString *addGoodAnimKey = @"addGoodAnimKey";
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
     UIView *view = [anim valueForKey:addGoodAnimKey];
     [view removeFromSuperview];
+}
+
+- (void)removeFromSuperview {
+    [super removeFromSuperview];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

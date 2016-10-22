@@ -30,11 +30,10 @@
 }
 
 - (void)setupUI {    
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.bounds];
-    imageView.image = [UIImage imageNamed:@"v2_placeholder_highlight"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"v2_placeholder_highlight"]];
     [self.contentView addSubview:imageView];
     self.imageView = imageView;
-    
+    imageView.frame = self.bounds;
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.clipsToBounds = YES;
 }

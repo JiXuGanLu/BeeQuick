@@ -10,4 +10,10 @@
 
 @interface YBZYHomeTableFooterView : UIView
 
+@property (nonatomic, weak) UIViewController *superViewController;
+
+@property (nonatomic, assign, readonly) CGFloat headerHeight;
+
+@property (nonatomic, assign, readonly) CGFloat footerHeight;
+
 @end

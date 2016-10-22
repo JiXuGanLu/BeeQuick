@@ -10,4 +10,6 @@
 
 @interface YBZYHomeHotGoodView : UIView
 
+@property (nonatomic, weak) UIViewController *superViewController;
+
 @end

@@ -27,7 +27,7 @@
 }
 
 - (void)setupUI {
-    UIImageView* iconView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 70, 50)];
+    UIImageView* iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_icons_holder"]];
     [self.contentView addSubview:iconView];
     self.iconView = iconView;
     

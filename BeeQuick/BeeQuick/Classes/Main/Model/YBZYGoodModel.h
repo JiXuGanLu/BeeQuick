@@ -37,4 +37,11 @@
 // 订购数量
 @property (nonatomic, assign) NSInteger orderCount;
 
+//经过处理的价格字符串
+@property (nonatomic, copy) NSString *priceString;
+
+@property (nonatomic, copy) NSString *market_priceString;
+
+@property (nonatomic, copy) NSAttributedString *market_priceAttr;
+
 @end

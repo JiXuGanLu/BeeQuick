@@ -188,39 +188,12 @@ static CGFloat margin = 3;
     }
     
     self.goodCount = [[[YBZYSQLiteManager sharedManager] getGoodInShopCartWithGoodId:goodModel.id userId:YBZYUserId].lastObject[@"count"] integerValue];
-    
     [self.imageView yy_setImageWithURL:[NSURL URLWithString:goodModel.img] placeholder:[UIImage imageNamed:@"v2_placeholder_square"]];
-    
     self.nameLabel.text = goodModel.name;
-    
     self.pm_descLabel.text = goodModel.pm_desc;
     self.specificsLabel.text = goodModel.specifics;
-    if (fmodf(goodModel.price, 1) == 0) {
-        self.priceLabel.text = [NSString stringWithFormat:@"¥%.0lf", goodModel.price];
-    }
-    else if (fmodf(goodModel.price * 10, 1) == 0) {
-        self.priceLabel.text = [NSString stringWithFormat:@"¥%.1lf", goodModel.price];
-    }
-    else {
-        self.priceLabel.text = [NSString stringWithFormat:@"¥%.2lf", goodModel.price];
-    }
-    
-    if (fmodf(goodModel.market_price, 1) == 0) {
-        self.market_priceLabel.text = [NSString stringWithFormat:@"¥%.0lf", goodModel.market_price];
-    }
-    else if (fmodf(goodModel.market_price * 10, 1) == 0) {
-        self.market_priceLabel.text = [NSString stringWithFormat:@"¥%.1lf", goodModel.market_price];
-    }
-    else {
-        self.market_priceLabel.text = [NSString stringWithFormat:@"¥%.2lf", goodModel.market_price];
-    }
-    NSAttributedString *attrStr =
-    [[NSAttributedString alloc]initWithString:self.market_priceLabel.text
-                                   attributes:
-     @{NSForegroundColorAttributeName:[UIColor lightGrayColor],
-       NSStrikethroughStyleAttributeName:@(NSUnderlineStyleSingle|NSUnderlinePatternSolid),
-       NSStrikethroughColorAttributeName:[UIColor lightGrayColor]}];
-    self.market_priceLabel.attributedText = attrStr;
+    self.priceLabel.text = goodModel.priceString;
+    self.market_priceLabel.attributedText = goodModel.market_priceAttr;
 }
 
 - (void)setGoodCount:(NSInteger)goodCount {

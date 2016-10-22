@@ -7,7 +7,28 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YBZYGoodModel.h"
+
+@class YBZYHomeHotGoodViewCell;
+
+@protocol YBZYHomeHotGoodViewCellDelegate <NSObject>
+
+- (void)didClickAddButtonInHomeHotGoodViewCell:(YBZYHomeHotGoodViewCell *)homeHotGoodViewCell;
+
+- (void)didClickReduceButtonInHomeHotGoodViewCell:(YBZYHomeHotGoodViewCell *)homeHotGoodViewCell;
+
+- (void)didClickPictureInHomeHotGoodViewCell:(YBZYHomeHotGoodViewCell *)homeHotGoodViewCell;
+
+@end
 
 @interface YBZYHomeHotGoodViewCell : UICollectionViewCell
+
+@property (nonatomic, strong) YBZYGoodModel *goodModel;
+
+@property (nonatomic, assign) NSInteger goodCount;
+
+@property (nonatomic, weak) id<YBZYHomeHotGoodViewCellDelegate> delegate;
+
+@property (nonatomic, weak) UIImageView *pictureView;
 
 @end
