@@ -18,6 +18,8 @@
 
 @property (nonatomic, strong) UIImage *itemBackgroundImage;
 
+@property (nonatomic, assign) CGFloat scrollOffsetY;
+
 @end
 
 @implementation YBZYHomeController
@@ -36,16 +38,15 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self setupNavigationBar];
+    [self changeNavigationBarStyleWhenScroll:self.scrollOffsetY];
 }
 
 #pragma mark - 导航栏设置
 - (void)setupNavigationBar {
     [self.navigationController.navigationBar ybzy_setBackgroundColor:[UIColor clearColor]];
-    
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem ybzy_barButtonItemWithTarget:self action:@selector(scanButtonClick) icon:@"icon_white_scancode" highlighticon:nil backgroundImage:self.itemBackgroundImage];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ybzy_barButtonItemWithTarget:self action:@selector(searchButtonClick) icon:@"icon_search_white" highlighticon:nil backgroundImage:self.itemBackgroundImage];
     
-    //配送地址
     UIButton *addressButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 200, 30)];
     [addressButton setTitle:@"配送至: 新龙城居委会" forState:UIControlStateNormal];
     [addressButton.titleLabel setFont:YBZYCommonBigFont];
@@ -77,26 +78,31 @@
     __weak typeof(self) weakSelf = self;
     tableView.scrollBlock = ^(CGFloat offsetY) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        CGFloat alpha = offsetY / 100.0;
-        [strongSelf.navigationController.navigationBar ybzy_setBackgroundColor:[YBZYCommonYellowColor colorWithAlphaComponent:alpha >= 0 ? alpha : 0]];
-        if (alpha >= 1) {
-            strongSelf.addressButton.alpha = 1;
-            strongSelf.navigationItem.leftBarButtonItem = [UIBarButtonItem ybzy_barButtonItemWithTarget:strongSelf action:@selector(scanButtonClick) icon:@"icon_black_scancode" highlighticon:nil backgroundImage:[UIImage ybzy_imageWithColor:[UIColor clearColor] size:CGSizeMake(30, 30)]];
-            strongSelf.navigationItem.rightBarButtonItem = [UIBarButtonItem ybzy_barButtonItemWithTarget:strongSelf action:@selector(searchButtonClick) icon:@"icon_search" highlighticon:nil backgroundImage:[UIImage ybzy_imageWithColor:[UIColor clearColor] size:CGSizeMake(30, 30)]];
-            [strongSelf.addressButton setTitleColor:YBZYCommonDarkTextColor forState:UIControlStateNormal];
-            [strongSelf.addressButton setBackgroundImage:nil forState:UIControlStateNormal];
-        } else if (alpha >= 0) {
-            strongSelf.addressButton.alpha = 1;
-            strongSelf.navigationItem.leftBarButtonItem = [UIBarButtonItem ybzy_barButtonItemWithTarget:strongSelf action:@selector(scanButtonClick) icon:@"icon_white_scancode" highlighticon:nil backgroundImage:strongSelf.itemBackgroundImage];
-            strongSelf.navigationItem.rightBarButtonItem = [UIBarButtonItem ybzy_barButtonItemWithTarget:strongSelf action:@selector(searchButtonClick) icon:@"icon_search_white" highlighticon:nil backgroundImage:strongSelf.itemBackgroundImage];
-            [strongSelf.addressButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            [strongSelf.addressButton setBackgroundImage:[[UIImage ybzy_imageWithColor:[UIColor colorWithWhite:0 alpha:0.3] size:CGSizeMake(200, 30)] ybzy_cornerImageWithSize:CGSizeMake(200, 30) fillColor:[UIColor clearColor]] forState:UIControlStateNormal];
-        } else {
-            strongSelf.navigationItem.leftBarButtonItem = nil;
-            strongSelf.navigationItem.rightBarButtonItem = nil;
-            strongSelf.addressButton.alpha = 0;
-        }
+        strongSelf.scrollOffsetY = offsetY;
+        [strongSelf changeNavigationBarStyleWhenScroll:offsetY];
     };
+}
+
+- (void)changeNavigationBarStyleWhenScroll:(CGFloat)offsetY {
+    CGFloat alpha = offsetY / 100.0;
+    [self.navigationController.navigationBar ybzy_setBackgroundColor:[YBZYCommonYellowColor colorWithAlphaComponent:alpha >= 0 ? alpha : 0]];
+    if (alpha >= 1) {
+        self.addressButton.alpha = 1;
+        self.navigationItem.leftBarButtonItem = [UIBarButtonItem ybzy_barButtonItemWithTarget:self action:@selector(scanButtonClick) icon:@"icon_black_scancode" highlighticon:nil backgroundImage:[UIImage ybzy_imageWithColor:[UIColor clearColor] size:CGSizeMake(30, 30)]];
+        self.navigationItem.rightBarButtonItem = [UIBarButtonItem ybzy_barButtonItemWithTarget:self action:@selector(searchButtonClick) icon:@"icon_search" highlighticon:nil backgroundImage:[UIImage ybzy_imageWithColor:[UIColor clearColor] size:CGSizeMake(30, 30)]];
+        [self.addressButton setTitleColor:YBZYCommonDarkTextColor forState:UIControlStateNormal];
+        [self.addressButton setBackgroundImage:nil forState:UIControlStateNormal];
+    } else if (alpha >= 0) {
+        self.addressButton.alpha = 1;
+        self.navigationItem.leftBarButtonItem = [UIBarButtonItem ybzy_barButtonItemWithTarget:self action:@selector(scanButtonClick) icon:@"icon_white_scancode" highlighticon:nil backgroundImage:self.itemBackgroundImage];
+        self.navigationItem.rightBarButtonItem = [UIBarButtonItem ybzy_barButtonItemWithTarget:self action:@selector(searchButtonClick) icon:@"icon_search_white" highlighticon:nil backgroundImage:self.itemBackgroundImage];
+        [self.addressButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.addressButton setBackgroundImage:[[UIImage ybzy_imageWithColor:[UIColor colorWithWhite:0 alpha:0.3] size:CGSizeMake(200, 30)] ybzy_cornerImageWithSize:CGSizeMake(200, 30) fillColor:[UIColor clearColor]] forState:UIControlStateNormal];
+    } else {
+        self.navigationItem.leftBarButtonItem = nil;
+        self.navigationItem.rightBarButtonItem = nil;
+        self.addressButton.alpha = 0;
+    }
 }
 
 - (UIImage *)itemBackgroundImage {
