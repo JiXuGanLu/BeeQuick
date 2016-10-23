@@ -57,6 +57,11 @@ static NSString *animPictureViewKey = @"animPictureViewKey";
     [self loadSuperMarketData];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.translucent = false;
+}
+
 - (void)setupUI {
     [self setupNavigationBar];
     [self setupLeftView];
@@ -74,7 +79,6 @@ static NSString *animPictureViewKey = @"animPictureViewKey";
 }
 
 - (void)setupNavigationBar {
-    self.navigationController.navigationBar.translucent = false;
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem ybzy_barButtonItemWithTarget:self action:@selector(scanButtonClick) icon:@"icon_black_scancode" highlighticon:nil backgroundImage:[UIImage ybzy_imageWithColor:[UIColor clearColor] size:CGSizeMake(30, 30)]];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem ybzy_barButtonItemWithTarget:self action:@selector(searchButtonClick) icon:@"icon_search" highlighticon:nil backgroundImage:[UIImage ybzy_imageWithColor:[UIColor clearColor] size:CGSizeMake(30, 30)]];
     
