@@ -360,6 +360,14 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         YBZYSuperMarketSortHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:sortHeaderId forIndexPath:indexPath];
+        headerView.changeSortBlock = ^(){
+            NSInteger rowCount = self.selectedCategoryModel.cids.count > 1 ? (self.selectedCategoryModel.cids.count + 2) / 3 : 0;
+            [UIView animateWithDuration:0.2 animations:^{
+                self.goodView.frame = CGRectMake(0, 44.5 + 44 * rowCount, YBZYScreenWidth - 80, YBZYScreenHeight - 44.5 - 44 * rowCount);
+            } completion:^(BOOL finished) {
+                self.sortHeaderView.isScrollToTop = false;
+            }];
+        };
         self.sortHeaderView = headerView;
         return headerView;
     } else if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
