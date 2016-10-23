@@ -171,19 +171,21 @@ static CGFloat margin = 3;
     
     NSUInteger length = goodModel.pm_desc.length;
     CGFloat labelW = self.pm_descLabel.font.lineHeight * (CGFloat)length;
-    [self.pm_descLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.qualityLabel.mas_right).offset(margin);
-        make.top.equalTo(self.nameLabel.mas_bottom).offset(margin);
-        make.height.equalTo(self.qualityLabel);
-        make.width.offset(labelW);
-    }];
-    
     if (![goodModel.tag_ids isEqualToString:@"5"]) {
         self.qualityLabel.hidden = true;
         [self.pm_descLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.nameLabel);
             make.top.equalTo(self.nameLabel.mas_bottom).offset(margin);
-            make.height.equalTo(self.qualityLabel);
+            make.height.offset(16);
+            make.width.offset(labelW);
+        }];
+    } else {
+        self.qualityLabel.hidden = false;
+        [self.pm_descLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.qualityLabel.mas_right).offset(margin);
+            make.top.equalTo(self.nameLabel.mas_bottom).offset(margin);
+            make.height.offset(16);
+            make.width.offset(labelW);
         }];
     }
     

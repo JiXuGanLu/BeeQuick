@@ -106,7 +106,7 @@ static NSString *animPictureViewKey = @"animPictureViewKey";
     CGPoint endPoint = [self.window convertPoint:CGPointMake(YBZYScreenWidth / 10 * 7, YBZYScreenHeight - 40) toView:self.window];
     CAKeyframeAnimation *anim = [[CAKeyframeAnimation alloc] init];
     anim.keyPath = @"position";
-    anim.duration = .9;
+    anim.duration = 1;
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path moveToPoint:startPoint];
     [path addQuadCurveToPoint:endPoint controlPoint:CGPointMake(startPoint.x + 40, startPoint.y - 40)];
@@ -115,16 +115,16 @@ static NSString *animPictureViewKey = @"animPictureViewKey";
     
     UIImageView *animPictureView = [[UIImageView alloc] initWithImage:homeHotGoodViewCell.pictureView.image];
     animPictureView.frame = homeHotGoodViewCell.pictureView.frame;
-    CGAffineTransform tran = homeHotGoodViewCell.pictureView.transform;
-    animPictureView.transform = tran;
+    CGAffineTransform transform = homeHotGoodViewCell.pictureView.transform;
+    animPictureView.transform = transform;
     [self.window addSubview:animPictureView];
     [anim setValue:animPictureView forKey:animPictureViewKey];
     [animPictureView.layer addAnimation:anim forKey:nil];
-    tran = CGAffineTransformMakeScale(.1, .1);
-    tran = CGAffineTransformRotate(tran, M_PI_4 + M_PI_4 / 2);
+    transform = CGAffineTransformMakeScale(.1, .1);
+    transform = CGAffineTransformRotate(transform, M_PI_4 + M_PI_4 / 2);
     [UIView animateWithDuration:anim.duration animations:^{
         animPictureView.alpha = .5;
-        animPictureView.transform = tran;
+        animPictureView.transform = transform;
     }];
 }
 

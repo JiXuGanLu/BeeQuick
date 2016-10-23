@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		289A172AE3A25EA29AFE510D /* libPods-BeeQuick.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA577D0048CA114DF03141A /* libPods-BeeQuick.a */; };
 		2FA96E0CD5D16456FA11C8CF /* libPods-BeeQuickTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA91F35E624AE6E9C8CBDB0 /* libPods-BeeQuickTests.a */; };
+		634448131DBBFAAA00723255 /* YBZYHomeCategoryActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6344480E1DBBFAAA00723255 /* YBZYHomeCategoryActivityModel.m */; };
+		634448141DBBFAAA00723255 /* YBZYHomeCategoryDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 634448101DBBFAAA00723255 /* YBZYHomeCategoryDetailModel.m */; };
+		634448151DBBFAAA00723255 /* YBZYHomeCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 634448121DBBFAAA00723255 /* YBZYHomeCategoryModel.m */; };
+		634448181DBC03FF00723255 /* YBZYSuperMarketCidModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 634448171DBC03FF00723255 /* YBZYSuperMarketCidModel.m */; };
+		6344481B1DBC048A00723255 /* YBZYSuperMarketCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6344481A1DBC048A00723255 /* YBZYSuperMarketCategoryModel.m */; };
+		6344481E1DBC069C00723255 /* YBZYSuperMarketProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6344481D1DBC069C00723255 /* YBZYSuperMarketProductModel.m */; };
+		634448221DBC444900723255 /* YBZYSuperMarketSortFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 634448201DBC444900723255 /* YBZYSuperMarketSortFooterView.m */; };
+		634448231DBC444900723255 /* YBZYSuperMarketSortFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634448211DBC444900723255 /* YBZYSuperMarketSortFooterView.xib */; };
 		6370EE081DB7CDBE00DC71BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370EE071DB7CDBE00DC71BB /* main.m */; };
 		6370EE131DB7CDBF00DC71BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6370EE121DB7CDBF00DC71BB /* Assets.xcassets */; };
 		6370EE161DB7CDBF00DC71BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6370EE141DB7CDBF00DC71BB /* LaunchScreen.storyboard */; };
@@ -46,9 +54,6 @@
 		63B6D6E61DB8DD64000CA2A9 /* UINavigationBar+YBZY.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6E51DB8DD64000CA2A9 /* UINavigationBar+YBZY.m */; };
 		63B6D6E91DB8E5CB000CA2A9 /* YBZYHomeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6E81DB8E5CB000CA2A9 /* YBZYHomeTableView.m */; };
 		63B6D6EC1DB8F149000CA2A9 /* YBZYHomeCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6EB1DB8F149000CA2A9 /* YBZYHomeCategoryCell.m */; };
-		63B6D6EF1DB932CA000CA2A9 /* YBZYHomeCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6EE1DB932CA000CA2A9 /* YBZYHomeCategoryModel.m */; };
-		63B6D6F21DB94846000CA2A9 /* YBZYHomeCategoryActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6F11DB94846000CA2A9 /* YBZYHomeCategoryActivityModel.m */; };
-		63B6D6F51DB94859000CA2A9 /* YBZYHomeCategoryDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6F41DB94859000CA2A9 /* YBZYHomeCategoryDetailModel.m */; };
 		63B6D6FB1DBA0725000CA2A9 /* YBZYActivityWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6FA1DBA0725000CA2A9 /* YBZYActivityWebViewController.m */; };
 		63B6D6FE1DBA0743000CA2A9 /* YBZYGoodWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6FD1DBA0743000CA2A9 /* YBZYGoodWebViewController.m */; };
 		63B6D7011DBA2744000CA2A9 /* YBZYHomeTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7001DBA2744000CA2A9 /* YBZYHomeTableHeaderView.m */; };
@@ -75,6 +80,12 @@
 		63B6D7621DBAD388000CA2A9 /* YBZYHomeHotGoodViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7611DBAD388000CA2A9 /* YBZYHomeHotGoodViewFlowLayout.m */; };
 		63B6D7651DBAD3D5000CA2A9 /* YBZYHomeHotGoodViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7641DBAD3D5000CA2A9 /* YBZYHomeHotGoodViewCell.m */; };
 		63B6D7681DBAD45B000CA2A9 /* YBZYHomeMoreButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7671DBAD45B000CA2A9 /* YBZYHomeMoreButtonView.m */; };
+		63B6D76B1DBBA7B5000CA2A9 /* YBZYSuperMarketCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D76A1DBBA7B5000CA2A9 /* YBZYSuperMarketCategoryCell.m */; };
+		63B6D76E1DBBA7C6000CA2A9 /* YBZYSuperMarketGoodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D76D1DBBA7C6000CA2A9 /* YBZYSuperMarketGoodCell.m */; };
+		63B6D7711DBBC6A0000CA2A9 /* YBZYSuperMarketSortViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7701DBBC6A0000CA2A9 /* YBZYSuperMarketSortViewFlowLayout.m */; };
+		63B6D7741DBBC6BE000CA2A9 /* YBZYSuperMarketSortViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7731DBBC6BD000CA2A9 /* YBZYSuperMarketSortViewCell.m */; };
+		63B6D77A1DBBCB71000CA2A9 /* YBZYSuperMarketSortHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7791DBBCB71000CA2A9 /* YBZYSuperMarketSortHeaderView.m */; };
+		63B6D77F1DBBD223000CA2A9 /* YBZYSuperMarketSortHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B6D77D1DBBD223000CA2A9 /* YBZYSuperMarketSortHeaderView.xib */; };
 		E7E3020F8E93F24BB23F4526 /* libPods-BeeQuickUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D58C004F0B3F1A4EB1EC128 /* libPods-BeeQuickUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +112,21 @@
 		1774C4CF5A058E0337F58D62 /* Pods-BeeQuickUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeQuickUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeeQuickUITests/Pods-BeeQuickUITests.release.xcconfig"; sourceTree = "<group>"; };
 		183E54A3977B96846FAE1B89 /* Pods-BeeQuick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeQuick.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeeQuick/Pods-BeeQuick.release.xcconfig"; sourceTree = "<group>"; };
 		49AB7F3849C1570DDB3881F3 /* Pods-BeeQuickTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeQuickTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeeQuickTests/Pods-BeeQuickTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6344480D1DBBFAAA00723255 /* YBZYHomeCategoryActivityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeCategoryActivityModel.h; sourceTree = "<group>"; };
+		6344480E1DBBFAAA00723255 /* YBZYHomeCategoryActivityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeCategoryActivityModel.m; sourceTree = "<group>"; };
+		6344480F1DBBFAAA00723255 /* YBZYHomeCategoryDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeCategoryDetailModel.h; sourceTree = "<group>"; };
+		634448101DBBFAAA00723255 /* YBZYHomeCategoryDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeCategoryDetailModel.m; sourceTree = "<group>"; };
+		634448111DBBFAAA00723255 /* YBZYHomeCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeCategoryModel.h; sourceTree = "<group>"; };
+		634448121DBBFAAA00723255 /* YBZYHomeCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeCategoryModel.m; sourceTree = "<group>"; };
+		634448161DBC03FF00723255 /* YBZYSuperMarketCidModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYSuperMarketCidModel.h; sourceTree = "<group>"; };
+		634448171DBC03FF00723255 /* YBZYSuperMarketCidModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYSuperMarketCidModel.m; sourceTree = "<group>"; };
+		634448191DBC048A00723255 /* YBZYSuperMarketCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYSuperMarketCategoryModel.h; sourceTree = "<group>"; };
+		6344481A1DBC048A00723255 /* YBZYSuperMarketCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYSuperMarketCategoryModel.m; sourceTree = "<group>"; };
+		6344481C1DBC069C00723255 /* YBZYSuperMarketProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYSuperMarketProductModel.h; sourceTree = "<group>"; };
+		6344481D1DBC069C00723255 /* YBZYSuperMarketProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYSuperMarketProductModel.m; sourceTree = "<group>"; };
+		6344481F1DBC444900723255 /* YBZYSuperMarketSortFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYSuperMarketSortFooterView.h; sourceTree = "<group>"; };
+		634448201DBC444900723255 /* YBZYSuperMarketSortFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYSuperMarketSortFooterView.m; sourceTree = "<group>"; };
+		634448211DBC444900723255 /* YBZYSuperMarketSortFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYSuperMarketSortFooterView.xib; sourceTree = "<group>"; };
 		6370EE031DB7CDBE00DC71BB /* BeeQuick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeeQuick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6370EE071DB7CDBE00DC71BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6370EE121DB7CDBF00DC71BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -174,12 +200,6 @@
 		63B6D6E81DB8E5CB000CA2A9 /* YBZYHomeTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeTableView.m; sourceTree = "<group>"; };
 		63B6D6EA1DB8F149000CA2A9 /* YBZYHomeCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeCategoryCell.h; sourceTree = "<group>"; };
 		63B6D6EB1DB8F149000CA2A9 /* YBZYHomeCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeCategoryCell.m; sourceTree = "<group>"; };
-		63B6D6ED1DB932CA000CA2A9 /* YBZYHomeCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeCategoryModel.h; sourceTree = "<group>"; };
-		63B6D6EE1DB932CA000CA2A9 /* YBZYHomeCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeCategoryModel.m; sourceTree = "<group>"; };
-		63B6D6F01DB94846000CA2A9 /* YBZYHomeCategoryActivityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeCategoryActivityModel.h; sourceTree = "<group>"; };
-		63B6D6F11DB94846000CA2A9 /* YBZYHomeCategoryActivityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeCategoryActivityModel.m; sourceTree = "<group>"; };
-		63B6D6F31DB94859000CA2A9 /* YBZYHomeCategoryDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeCategoryDetailModel.h; sourceTree = "<group>"; };
-		63B6D6F41DB94859000CA2A9 /* YBZYHomeCategoryDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeCategoryDetailModel.m; sourceTree = "<group>"; };
 		63B6D6F61DB9D407000CA2A9 /* YBZYHomeCategoryGoodView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeCategoryGoodView.h; sourceTree = "<group>"; };
 		63B6D6F71DB9D407000CA2A9 /* YBZYHomeCategoryGoodView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeCategoryGoodView.m; sourceTree = "<group>"; };
 		63B6D6F91DBA0725000CA2A9 /* YBZYActivityWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYActivityWebViewController.h; sourceTree = "<group>"; };
@@ -232,6 +252,17 @@
 		63B6D7641DBAD3D5000CA2A9 /* YBZYHomeHotGoodViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeHotGoodViewCell.m; sourceTree = "<group>"; };
 		63B6D7661DBAD45B000CA2A9 /* YBZYHomeMoreButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeMoreButtonView.h; sourceTree = "<group>"; };
 		63B6D7671DBAD45B000CA2A9 /* YBZYHomeMoreButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYHomeMoreButtonView.m; sourceTree = "<group>"; };
+		63B6D7691DBBA7B5000CA2A9 /* YBZYSuperMarketCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYSuperMarketCategoryCell.h; sourceTree = "<group>"; };
+		63B6D76A1DBBA7B5000CA2A9 /* YBZYSuperMarketCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYSuperMarketCategoryCell.m; sourceTree = "<group>"; };
+		63B6D76C1DBBA7C6000CA2A9 /* YBZYSuperMarketGoodCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYSuperMarketGoodCell.h; sourceTree = "<group>"; };
+		63B6D76D1DBBA7C6000CA2A9 /* YBZYSuperMarketGoodCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYSuperMarketGoodCell.m; sourceTree = "<group>"; };
+		63B6D76F1DBBC6A0000CA2A9 /* YBZYSuperMarketSortViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYSuperMarketSortViewFlowLayout.h; sourceTree = "<group>"; };
+		63B6D7701DBBC6A0000CA2A9 /* YBZYSuperMarketSortViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYSuperMarketSortViewFlowLayout.m; sourceTree = "<group>"; };
+		63B6D7721DBBC6BD000CA2A9 /* YBZYSuperMarketSortViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYSuperMarketSortViewCell.h; sourceTree = "<group>"; };
+		63B6D7731DBBC6BD000CA2A9 /* YBZYSuperMarketSortViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYSuperMarketSortViewCell.m; sourceTree = "<group>"; };
+		63B6D7781DBBCB71000CA2A9 /* YBZYSuperMarketSortHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYSuperMarketSortHeaderView.h; sourceTree = "<group>"; };
+		63B6D7791DBBCB71000CA2A9 /* YBZYSuperMarketSortHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYSuperMarketSortHeaderView.m; sourceTree = "<group>"; };
+		63B6D77D1DBBD223000CA2A9 /* YBZYSuperMarketSortHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYSuperMarketSortHeaderView.xib; sourceTree = "<group>"; };
 		6A2E29E6B706D768374AFBFB /* Pods-BeeQuickUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeQuickUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeeQuickUITests/Pods-BeeQuickUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FA91F35E624AE6E9C8CBDB0 /* libPods-BeeQuickTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeQuickTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA577D0048CA114DF03141A /* libPods-BeeQuick.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeQuick.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -394,6 +425,12 @@
 		6370EE4A1DB7DA0500DC71BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6344480D1DBBFAAA00723255 /* YBZYHomeCategoryActivityModel.h */,
+				6344480E1DBBFAAA00723255 /* YBZYHomeCategoryActivityModel.m */,
+				6344480F1DBBFAAA00723255 /* YBZYHomeCategoryDetailModel.h */,
+				634448101DBBFAAA00723255 /* YBZYHomeCategoryDetailModel.m */,
+				634448111DBBFAAA00723255 /* YBZYHomeCategoryModel.h */,
+				634448121DBBFAAA00723255 /* YBZYHomeCategoryModel.m */,
 				63B6D72C1DBAA3E8000CA2A9 /* YBZYHomeHeadLineModel.h */,
 				63B6D72D1DBAA3E8000CA2A9 /* YBZYHomeHeadLineModel.m */,
 			);
@@ -493,12 +530,6 @@
 				6370EE891DB7F69A00DC71BB /* YBZYAddressModel.m */,
 				6370EE8B1DB7F6B100DC71BB /* YBZYPickUpModel.h */,
 				6370EE8C1DB7F6B100DC71BB /* YBZYPickUpModel.m */,
-				63B6D6ED1DB932CA000CA2A9 /* YBZYHomeCategoryModel.h */,
-				63B6D6EE1DB932CA000CA2A9 /* YBZYHomeCategoryModel.m */,
-				63B6D6F01DB94846000CA2A9 /* YBZYHomeCategoryActivityModel.h */,
-				63B6D6F11DB94846000CA2A9 /* YBZYHomeCategoryActivityModel.m */,
-				63B6D6F31DB94859000CA2A9 /* YBZYHomeCategoryDetailModel.h */,
-				63B6D6F41DB94859000CA2A9 /* YBZYHomeCategoryDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -603,6 +634,12 @@
 		6370EE5A1DB7DA0500DC71BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				634448161DBC03FF00723255 /* YBZYSuperMarketCidModel.h */,
+				634448171DBC03FF00723255 /* YBZYSuperMarketCidModel.m */,
+				634448191DBC048A00723255 /* YBZYSuperMarketCategoryModel.h */,
+				6344481A1DBC048A00723255 /* YBZYSuperMarketCategoryModel.m */,
+				6344481C1DBC069C00723255 /* YBZYSuperMarketProductModel.h */,
+				6344481D1DBC069C00723255 /* YBZYSuperMarketProductModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -610,6 +647,20 @@
 		6370EE5B1DB7DA0500DC71BB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				63B6D7691DBBA7B5000CA2A9 /* YBZYSuperMarketCategoryCell.h */,
+				63B6D76A1DBBA7B5000CA2A9 /* YBZYSuperMarketCategoryCell.m */,
+				63B6D76C1DBBA7C6000CA2A9 /* YBZYSuperMarketGoodCell.h */,
+				63B6D76D1DBBA7C6000CA2A9 /* YBZYSuperMarketGoodCell.m */,
+				63B6D76F1DBBC6A0000CA2A9 /* YBZYSuperMarketSortViewFlowLayout.h */,
+				63B6D7701DBBC6A0000CA2A9 /* YBZYSuperMarketSortViewFlowLayout.m */,
+				63B6D7721DBBC6BD000CA2A9 /* YBZYSuperMarketSortViewCell.h */,
+				63B6D7731DBBC6BD000CA2A9 /* YBZYSuperMarketSortViewCell.m */,
+				63B6D7781DBBCB71000CA2A9 /* YBZYSuperMarketSortHeaderView.h */,
+				63B6D7791DBBCB71000CA2A9 /* YBZYSuperMarketSortHeaderView.m */,
+				63B6D77D1DBBD223000CA2A9 /* YBZYSuperMarketSortHeaderView.xib */,
+				6344481F1DBC444900723255 /* YBZYSuperMarketSortFooterView.h */,
+				634448201DBC444900723255 /* YBZYSuperMarketSortFooterView.m */,
+				634448211DBC444900723255 /* YBZYSuperMarketSortFooterView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -812,11 +863,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6370EE951DB7F7D900DC71BB /* userAddress.sql in Resources */,
+				63B6D77F1DBBD223000CA2A9 /* YBZYSuperMarketSortHeaderView.xib in Resources */,
 				6370EE941DB7F7D900DC71BB /* shopCart.sql in Resources */,
 				6370EE931DB7F7D900DC71BB /* pickUp.sql in Resources */,
 				6370EE161DB7CDBF00DC71BB /* LaunchScreen.storyboard in Resources */,
 				6370EE921DB7F7D900DC71BB /* collectionGoods.sql in Resources */,
 				6370EE131DB7CDBF00DC71BB /* Assets.xcassets in Resources */,
+				634448231DBC444900723255 /* YBZYSuperMarketSortFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,17 +1042,20 @@
 				63B6D73F1DBAB4A8000CA2A9 /* YBZYHomeCycleViewCell.m in Sources */,
 				63B6D7441DBAB548000CA2A9 /* YBZYHomeHeadLineView.m in Sources */,
 				6370EE7C1DB7EFAE00DC71BB /* UILabel+Convenience.m in Sources */,
+				6344481B1DBC048A00723255 /* YBZYSuperMarketCategoryModel.m in Sources */,
+				63B6D76E1DBBA7C6000CA2A9 /* YBZYSuperMarketGoodCell.m in Sources */,
 				6370EE8D1DB7F6B100DC71BB /* YBZYPickUpModel.m in Sources */,
 				63B6D73D1DBAB46D000CA2A9 /* YBZYHomeHeadLineViewCell.m in Sources */,
-				63B6D6EF1DB932CA000CA2A9 /* YBZYHomeCategoryModel.m in Sources */,
 				63B6D7071DBA35F1000CA2A9 /* YBZYHomeCycleViewFlowLayout.m in Sources */,
 				6370EE981DB7F9BC00DC71BB /* YBZYHomeController.m in Sources */,
 				6370EE7D1DB7EFAE00DC71BB /* UIView+Convenience.m in Sources */,
 				6370EE8A1DB7F69A00DC71BB /* YBZYAddressModel.m in Sources */,
+				634448131DBBFAAA00723255 /* YBZYHomeCategoryActivityModel.m in Sources */,
+				6344481E1DBC069C00723255 /* YBZYSuperMarketProductModel.m in Sources */,
 				63B6D7131DBA5E31000CA2A9 /* YBZYHomeIconViewFlowLayout.m in Sources */,
 				6370EE9E1DB7FA2200DC71BB /* YBZYShopCartController.m in Sources */,
+				63B6D77A1DBBCB71000CA2A9 /* YBZYSuperMarketSortHeaderView.m in Sources */,
 				6370EE841DB7F50800DC71BB /* YBZYHTTPSessionManager.m in Sources */,
-				63B6D6F21DB94846000CA2A9 /* YBZYHomeCategoryActivityModel.m in Sources */,
 				6370EE3C1DB7D9DC00DC71BB /* AppDelegate.m in Sources */,
 				6370EE9B1DB7F9D600DC71BB /* YBZYSuperMarketController.m in Sources */,
 				63B6D7651DBAD3D5000CA2A9 /* YBZYHomeHotGoodViewCell.m in Sources */,
@@ -1009,30 +1065,36 @@
 				63B6D6E91DB8E5CB000CA2A9 /* YBZYHomeTableView.m in Sources */,
 				63B6D7041DBA35C6000CA2A9 /* YBZYHomeCycleView.m in Sources */,
 				63B6D74A1DBAC1D7000CA2A9 /* YBZYHomeMainActivityViewFlowLayout.m in Sources */,
+				63B6D76B1DBBA7B5000CA2A9 /* YBZYSuperMarketCategoryCell.m in Sources */,
+				63B6D7711DBBC6A0000CA2A9 /* YBZYSuperMarketSortViewFlowLayout.m in Sources */,
 				63B6D72E1DBAA3E8000CA2A9 /* YBZYHomeHeadLineModel.m in Sources */,
 				63B6D7411DBAB4ED000CA2A9 /* YBZYHomeIconViewCell.m in Sources */,
 				6370EE761DB7EFAE00DC71BB /* NSObject+Convenience.m in Sources */,
 				6370EEA11DB7FAAB00DC71BB /* YBZYMineController.m in Sources */,
-				63B6D6F51DB94859000CA2A9 /* YBZYHomeCategoryDetailModel.m in Sources */,
 				6370EEA81DB7FB6900DC71BB /* YBZYTabBar.m in Sources */,
 				6370EEA51DB7FAFE00DC71BB /* YBZYTabBarController.m in Sources */,
 				63B6D7561DBACA8C000CA2A9 /* YBZYHomeMinorActivityViewCell.m in Sources */,
 				6370EE771DB7EFAE00DC71BB /* NSString+ConvenienceHash.m in Sources */,
 				63B6D6EC1DB8F149000CA2A9 /* YBZYHomeCategoryCell.m in Sources */,
 				6370EE081DB7CDBE00DC71BB /* main.m in Sources */,
+				634448151DBBFAAA00723255 /* YBZYHomeCategoryModel.m in Sources */,
 				6370EE811DB7F46E00DC71BB /* YBZYGoodModel.m in Sources */,
 				63B6D7251DBA9D3F000CA2A9 /* YBZYHomeHeadLineViewFlowLayout.m in Sources */,
 				63B6D7011DBA2744000CA2A9 /* YBZYHomeTableHeaderView.m in Sources */,
 				63B6D7501DBACA56000CA2A9 /* YBZYHomeMinorActivityView.m in Sources */,
 				6370EE871DB7F5B700DC71BB /* YBZYSQLiteManager.m in Sources */,
 				63B6D75C1DBAD316000CA2A9 /* YBZYHomeHotTitleView.m in Sources */,
+				634448141DBBFAAA00723255 /* YBZYHomeCategoryDetailModel.m in Sources */,
+				63B6D7741DBBC6BE000CA2A9 /* YBZYSuperMarketSortViewCell.m in Sources */,
 				63B6D7621DBAD388000CA2A9 /* YBZYHomeHotGoodViewFlowLayout.m in Sources */,
 				6370EE781DB7EFAE00DC71BB /* NSString+ConveniencePath.m in Sources */,
+				634448181DBC03FF00723255 /* YBZYSuperMarketCidModel.m in Sources */,
 				6370EE7B1DB7EFAE00DC71BB /* UIImage+Convenience.m in Sources */,
 				6370EE7E1DB7EFAE00DC71BB /* UIImage+ImageEffects.m in Sources */,
 				6370EE7A1DB7EFAE00DC71BB /* UIColor+Convenience.m in Sources */,
 				63B6D7681DBAD45B000CA2A9 /* YBZYHomeMoreButtonView.m in Sources */,
 				6370EE791DB7EFAE00DC71BB /* UIBarButtonItem+Convenience.m in Sources */,
+				634448221DBC444900723255 /* YBZYSuperMarketSortFooterView.m in Sources */,
 				6370EE751DB7EFAE00DC71BB /* NSAttributedString+Convenience.m in Sources */,
 				63B6D7531DBACA75000CA2A9 /* YBZYHomeMinorActivityViewFlowLayout.m in Sources */,
 				63B6D7471DBAC1B3000CA2A9 /* YBZYHomeMainActivityView.m in Sources */,

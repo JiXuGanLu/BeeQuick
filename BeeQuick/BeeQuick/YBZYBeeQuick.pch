@@ -27,6 +27,7 @@
 #define YBZYScreenWidth [UIScreen mainScreen].bounds.size.width
 #define YBZYScreenHeight [UIScreen mainScreen].bounds.size.height
 #define YBZYCommonBackgroundColor [UIColor ybzy_colorWithRed:245 green:245 blue:245]
+#define YBZYDarkBackgroundColor [UIColor colorWithWhite:0.93 alpha:1]
 #define YBZYCommonYellowColor [UIColor ybzy_colorWithRed:254 green:207 blue:31]
 #define YBZYCommonBigFont [UIFont systemFontOfSize:16]
 #define YBZYCommonMidFont [UIFont systemFontOfSize:14]

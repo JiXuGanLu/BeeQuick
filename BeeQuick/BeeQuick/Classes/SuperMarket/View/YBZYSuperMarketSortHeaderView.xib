@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="YBZYSuperMarketSortHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="L51-ER-jFO">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vT-ox-b5Q">
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="综合排序">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <state key="selected" title="综合排序">
+                                <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="normalSortButtonClick:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="sfP-Bb-7DA"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVF-oe-7nE">
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="按价格" image="control-up">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <state key="selected" title="按价格" image="control-up-red">
+                                <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <state key="focused">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <connections>
+                                <action selector="priceSortButtonClick:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="DCY-82-yf6"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dmy-Kb-LUm">
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="按销量">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <state key="selected" title="按销量">
+                                <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="saleSortButtonClick:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="VDb-06-D2s"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xB4-dt-WnV">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jd-Ax-q9A">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="RL8-yS-xJW"/>
+                                <constraint firstAttribute="height" constant="20" id="mb8-hp-iou"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <inset key="imageEdgeInsets" minX="160" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="综合排序·全部分类" image="classify">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <connections>
+                                <action selector="coverViewButtonClick:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="QJd-9i-mpL"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="6Jd-Ax-q9A" firstAttribute="centerY" secondItem="xB4-dt-WnV" secondAttribute="centerY" id="dnl-n8-ofg"/>
+                        <constraint firstItem="6Jd-Ax-q9A" firstAttribute="centerX" secondItem="xB4-dt-WnV" secondAttribute="centerX" id="qEA-3S-vLf"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pV4-HY-mbc">
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="gP2-KH-q59"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="xB4-dt-WnV" secondAttribute="trailing" id="54I-HZ-iWC"/>
+                <constraint firstItem="pV4-HY-mbc" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="8" id="AOj-Nc-mdG"/>
+                <constraint firstAttribute="bottom" secondItem="L51-ER-jFO" secondAttribute="bottom" id="CIJ-N4-8xC"/>
+                <constraint firstAttribute="trailing" secondItem="pV4-HY-mbc" secondAttribute="trailing" id="NL4-Z9-Khq"/>
+                <constraint firstItem="L51-ER-jFO" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="TSu-Gf-8FV"/>
+                <constraint firstAttribute="trailing" secondItem="L51-ER-jFO" secondAttribute="trailing" id="apV-v2-U5n"/>
+                <constraint firstItem="L51-ER-jFO" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="fSV-kk-aFc"/>
+                <constraint firstItem="xB4-dt-WnV" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="jra-he-hrG"/>
+                <constraint firstAttribute="bottom" secondItem="pV4-HY-mbc" secondAttribute="bottom" id="vlH-pS-MvJ"/>
+                <constraint firstItem="xB4-dt-WnV" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="vlK-mi-Auo"/>
+                <constraint firstAttribute="bottom" secondItem="xB4-dt-WnV" secondAttribute="bottom" id="y7X-6B-rhD"/>
+            </constraints>
+            <connections>
+                <outlet property="coverView" destination="xB4-dt-WnV" id="R09-p6-bc5"/>
+                <outlet property="coverViewButton" destination="6Jd-Ax-q9A" id="RNt-OA-aBT"/>
+                <outlet property="normalSortButton" destination="2vT-ox-b5Q" id="Txn-Mt-6eC"/>
+                <outlet property="priceSortButton" destination="YVF-oe-7nE" id="VEY-XL-Sjk"/>
+                <outlet property="saleSortButton" destination="Dmy-Kb-LUm" id="bAE-QF-CT7"/>
+            </connections>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="classify" width="8" height="4"/>
+        <image name="control-up" width="7" height="4"/>
+        <image name="control-up-red" width="7" height="4"/>
+    </resources>
+</document>

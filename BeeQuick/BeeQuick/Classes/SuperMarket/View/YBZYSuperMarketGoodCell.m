@@ -1,16 +1,16 @@
 //
-//  YBZYHomeHotGoodViewCell.m
+//  YBZYSuperMarketGoodCell.m
 //  BeeQuick
 //
 //  Created by 黄叶青 on 2016/10/22.
 //  Copyright © 2016年 YBZY. All rights reserved.
 //
 
-#import "YBZYHomeHotGoodViewCell.h"
+#import "YBZYSuperMarketGoodCell.h"
 
 static CGFloat margin = 5;
 
-@interface YBZYHomeHotGoodViewCell ()
+@interface YBZYSuperMarketGoodCell ()
 
 // 商品名
 @property (nonatomic, weak) UILabel *nameLabel;
@@ -33,11 +33,10 @@ static CGFloat margin = 5;
 
 @end
 
-@implementation YBZYHomeHotGoodViewCell
+@implementation YBZYSuperMarketGoodCell
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self setupUI];
     }
     return self;
@@ -45,8 +44,8 @@ static CGFloat margin = 5;
 
 - (void)setupUI {
     self.backgroundColor = [UIColor whiteColor];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    CGFloat pictureH = self.bounds.size.height / 3 * 2 + margin;
     UIImageView *pictureView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"v2_placeholder_square"]];
     pictureView.userInteractionEnabled = true;
     UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pictrueViewDidClick:)];
@@ -54,19 +53,9 @@ static CGFloat margin = 5;
     [self.contentView addSubview:pictureView];
     self.pictureView = pictureView;
     [pictureView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.offset(margin);
-        make.right.offset(-margin);
-        make.height.offset(pictureH);
-    }];
-    
-    UILabel *nameLabel = [[UILabel alloc] init];
-    nameLabel.font = YBZYCommonMidFont;
-    [self.contentView addSubview:nameLabel];
-    self.nameLabel = nameLabel;
-    [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(pictureView.mas_bottom);
-        make.right.equalTo(pictureView);
-        make.left.offset(margin);
+        make.top.offset(margin);
+        make.left.offset(2 * margin);
+        make.width.height.offset(80);
     }];
     
     UILabel *qualityLabel = [[UILabel alloc] init];
@@ -81,10 +70,20 @@ static CGFloat margin = 5;
     [self.contentView addSubview:qualityLabel];
     self.qualityLabel = qualityLabel;
     [qualityLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(nameLabel.mas_bottom).offset(margin);
-        make.left.equalTo(nameLabel);
-        make.width.offset(35);
+        make.top.equalTo(pictureView);
+        make.left.equalTo(pictureView.mas_right).offset(margin);
+        make.width.offset(32);
         make.height.offset(16);
+    }];
+    
+    UILabel *nameLabel = [[UILabel alloc] init];
+    nameLabel.font = YBZYCommonMidFont;
+    [self.contentView addSubview:nameLabel];
+    self.nameLabel = nameLabel;
+    [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(pictureView);
+        make.right.equalTo(self.contentView);
+        make.left.equalTo(qualityLabel.mas_right).offset(margin);
     }];
     
     UILabel *pm_descLabel = [[UILabel alloc] init];
@@ -98,18 +97,18 @@ static CGFloat margin = 5;
     self.pm_descLabel = pm_descLabel;
     [pm_descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(nameLabel.mas_bottom).offset(margin);
-        make.left.equalTo(qualityLabel.mas_right).offset(margin);
-        make.height.equalTo(qualityLabel);
+        make.left.equalTo(pictureView.mas_right).offset(margin);
+        make.height.offset(16);
     }];
     
     UILabel *specificsLabel = [[UILabel alloc] init];
-    specificsLabel.font = YBZYCommonSmallFont;
-    specificsLabel.textColor = YBZYCommonLightTextColor;
+    specificsLabel.font = YBZYCommonMidFont;
+    specificsLabel.textColor = YBZYCommonMidTextColor;
     [self.contentView addSubview:specificsLabel];
     self.specificsLabel = specificsLabel;
     [specificsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(pm_descLabel.mas_bottom).offset(margin);
-        make.left.equalTo(nameLabel);
+        make.left.equalTo(pictureView.mas_right).offset(margin);
     }];
     
     UILabel *priceLabel = [[UILabel alloc] init];
@@ -118,8 +117,8 @@ static CGFloat margin = 5;
     [self.contentView addSubview:priceLabel];
     self.priceLabel = priceLabel;
     [priceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(specificsLabel.mas_bottom).offset(0);
-        make.left.equalTo(nameLabel);
+        make.top.equalTo(specificsLabel.mas_bottom).offset(margin);
+        make.left.equalTo(pictureView.mas_right).offset(margin);
     }];
     
     UILabel *market_priceLabel = [[UILabel alloc] init];
@@ -141,7 +140,8 @@ static CGFloat margin = 5;
     self.addButton = addButton;
     [addButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.offset(34);
-        make.right.bottom.offset(-margin);
+        make.bottom.offset(-margin);
+        make.right.offset(-2 * margin);
     }];
     
     UILabel *countLabel = [[UILabel alloc] init];
@@ -172,21 +172,21 @@ static CGFloat margin = 5;
 
 #pragma mark - 图片点击
 - (void)pictrueViewDidClick:(UIImageView *)sender {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didClickPictureInHomeHotGoodViewCell:)]) {
-        [self.delegate didClickPictureInHomeHotGoodViewCell:self];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didClickPictureInSuperMarketGoodCell:)]) {
+        [self.delegate didClickPictureInSuperMarketGoodCell:self];
     }
 }
 
 #pragma mark - 按钮点击事件
 - (void)addButtonDidClick:(UIButton *)sender {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didClickAddButtonInHomeHotGoodViewCell:)]) {
-        [self.delegate didClickAddButtonInHomeHotGoodViewCell:self];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didClickAddButtonInSuperMarketGoodCell:)]) {
+        [self.delegate didClickAddButtonInSuperMarketGoodCell:self];
     }
 }
 
 - (void)reduceButtonDidClick:(UIButton *)sender {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didClickReduceButtonInHomeHotGoodViewCell:)]) {
-        [self.delegate didClickReduceButtonInHomeHotGoodViewCell:self];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didClickReduceButtonInSuperMarketGoodCell:)]) {
+        [self.delegate didClickReduceButtonInSuperMarketGoodCell:self];
     }
 }
 
@@ -222,21 +222,26 @@ static CGFloat margin = 5;
     
     NSUInteger length = goodModel.pm_desc.length;
     CGFloat labelW = self.pm_descLabel.font.lineHeight * (CGFloat)length;
+    [self.pm_descLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.pictureView.mas_right).offset(margin);
+        make.top.equalTo(self.nameLabel.mas_bottom).offset(margin);
+        make.height.offset(16);
+        make.width.offset(labelW);
+    }];
+    
     if (![goodModel.tag_ids isEqualToString:@"5"]) {
         self.qualityLabel.hidden = true;
-        [self.pm_descLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.nameLabel);
-            make.top.equalTo(self.nameLabel.mas_bottom).offset(margin);
-            make.height.offset(16);
-            make.width.offset(labelW);
+        [self.nameLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.pictureView);
+            make.right.equalTo(self.contentView);
+            make.left.equalTo(self.pictureView.mas_right).offset(margin);
         }];
     } else {
         self.qualityLabel.hidden = false;
-        [self.pm_descLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        [self.nameLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.pictureView);
+            make.right.equalTo(self.contentView);
             make.left.equalTo(self.qualityLabel.mas_right).offset(margin);
-            make.top.equalTo(self.nameLabel.mas_bottom).offset(margin);
-            make.height.offset(16);
-            make.width.offset(labelW);
         }];
     }
     
