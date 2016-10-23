@@ -51,6 +51,7 @@
 		6370EEAB1DB7FBDD00DC71BB /* YBZYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370EEAA1DB7FBDD00DC71BB /* YBZYNavigationController.m */; };
 		6370EEAE1DB8031300DC71BB /* YBZYNewVersionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370EEAD1DB8031300DC71BB /* YBZYNewVersionController.m */; };
 		6370EEB11DB8AE7C00DC71BB /* YBZYNewVersionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370EEB01DB8AE7C00DC71BB /* YBZYNewVersionView.m */; };
+		6377E22E1DBD41E500471490 /* superMarketGoods.sql in Resources */ = {isa = PBXBuildFile; fileRef = 6377E22D1DBD41E500471490 /* superMarketGoods.sql */; };
 		63B6D6E61DB8DD64000CA2A9 /* UINavigationBar+YBZY.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6E51DB8DD64000CA2A9 /* UINavigationBar+YBZY.m */; };
 		63B6D6E91DB8E5CB000CA2A9 /* YBZYHomeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6E81DB8E5CB000CA2A9 /* YBZYHomeTableView.m */; };
 		63B6D6EC1DB8F149000CA2A9 /* YBZYHomeCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6EB1DB8F149000CA2A9 /* YBZYHomeCategoryCell.m */; };
@@ -194,6 +195,7 @@
 		6370EEAD1DB8031300DC71BB /* YBZYNewVersionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYNewVersionController.m; sourceTree = "<group>"; };
 		6370EEAF1DB8AE7C00DC71BB /* YBZYNewVersionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYNewVersionView.h; sourceTree = "<group>"; };
 		6370EEB01DB8AE7C00DC71BB /* YBZYNewVersionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYNewVersionView.m; sourceTree = "<group>"; };
+		6377E22D1DBD41E500471490 /* superMarketGoods.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = superMarketGoods.sql; sourceTree = "<group>"; };
 		63B6D6E41DB8DD64000CA2A9 /* UINavigationBar+YBZY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+YBZY.h"; sourceTree = "<group>"; };
 		63B6D6E51DB8DD64000CA2A9 /* UINavigationBar+YBZY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+YBZY.m"; sourceTree = "<group>"; };
 		63B6D6E71DB8E5CB000CA2A9 /* YBZYHomeTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeTableView.h; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 		6370EE3D1DB7D9F600DC71BB /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				6377E22D1DBD41E500471490 /* superMarketGoods.sql */,
 				6370EE8E1DB7F7D900DC71BB /* collectionGoods.sql */,
 				6370EE8F1DB7F7D900DC71BB /* pickUp.sql */,
 				6370EE901DB7F7D900DC71BB /* shopCart.sql */,
@@ -870,6 +873,7 @@
 				6370EE921DB7F7D900DC71BB /* collectionGoods.sql in Resources */,
 				6370EE131DB7CDBF00DC71BB /* Assets.xcassets in Resources */,
 				634448231DBC444900723255 /* YBZYSuperMarketSortFooterView.xib in Resources */,
+				6377E22E1DBD41E500471490 /* superMarketGoods.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

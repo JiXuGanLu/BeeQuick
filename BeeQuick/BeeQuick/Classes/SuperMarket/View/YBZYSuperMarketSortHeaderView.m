@@ -70,6 +70,9 @@
     [self.priceSortButton setHighlighted:false];
     [self.saleSortButton setSelected:false];
     self.sortStyle = @"综合排序";
+    if (self.changeSortBlock) {
+        self.changeSortBlock(self.sortStyle);
+    }
 }
 
 - (IBAction)priceSortButtonClick:(UIButton *)sender {
@@ -88,6 +91,9 @@
         [sender setImage:[UIImage imageNamed:@"control-up-red"] forState:UIControlStateSelected];
         self.sortStyle = @"价格最低";
     }
+    if (self.changeSortBlock) {
+        self.changeSortBlock(self.sortStyle);
+    }
 }
 
 - (IBAction)saleSortButtonClick:(UIButton *)sender {
@@ -99,12 +105,15 @@
     [self.priceSortButton setHighlighted:false];
     [self.normalSortButton setSelected:false];
     self.sortStyle = @"按销量";
+    if (self.changeSortBlock) {
+        self.changeSortBlock(self.sortStyle);
+    }
 }
 
 
 - (IBAction)coverViewButtonClick:(UIButton *)sender {
-    if (self.changeSortBlock) {
-        self.changeSortBlock();
+    if (self.coverViewBlock) {
+        self.coverViewBlock();
     }
 }
 

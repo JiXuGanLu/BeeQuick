@@ -14,6 +14,7 @@
 #import "YBZYSuperMarketSortHeaderView.h"
 #import "YBZYSuperMarketProductModel.h"
 #import "YBZYSuperMarketSortFooterView.h"
+#import <objc/runtime.h>
 
 static NSString *goodCellId = @"goodCellId";
 static NSString *categoryCellId = @"categoryCellId";
@@ -38,6 +39,8 @@ static NSString *animPictureViewKey = @"animPictureViewKey";
 
 @property (nonatomic, strong) YBZYSuperMarketCategoryModel *selectedCategoryModel;
 
+@property (nonatomic, assign) NSInteger selectedCid;
+
 @property (nonatomic, strong) NSArray<YBZYGoodModel *> *selectedGoods;
 
 @property (nonatomic, weak) YBZYSuperMarketSortHeaderView *sortHeaderView;
@@ -46,14 +49,21 @@ static NSString *animPictureViewKey = @"animPictureViewKey";
 
 @property (nonatomic, assign) BOOL justSelectedCategory;
 
+@property (nonatomic, assign) YBZYSQLOrderType selectedOrderType;
+
+@property (nonatomic, assign) BOOL isCacheComplete;
+
 @end
 
 @implementation YBZYSuperMarketController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[YBZYSQLiteManager sharedManager] clearCachedSuperMarketGood];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jumpToSelectedCategory:) name:YBZYPushSuperMarketNotification object:nil];
     self.view.backgroundColor = YBZYCommonBackgroundColor;
     [self setupUI];
+    [SVProgressHUD showWithStatus:@"正在加载"];
     [self loadSuperMarketData];
 }
 
@@ -136,7 +146,7 @@ static NSString *animPictureViewKey = @"animPictureViewKey";
     bottomImageView.height = 150;
     goodView.tableFooterView = bottomImageView;
     goodView.tableFooterView.backgroundColor = YBZYDarkBackgroundColor;
-    [goodView setContentInset:UIEdgeInsetsMake(0, 0, 50, 0)];
+    [goodView setContentInset:UIEdgeInsetsMake(0, 0, 100, 0)];
 }
 
 - (void)setupRefreshView {
@@ -165,9 +175,14 @@ static NSString *animPictureViewKey = @"animPictureViewKey";
 }
 
 - (void)didPullDownToRefresh {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.goodView.mj_header endRefreshing];
-    });
+    if (self.categoryModels.count) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.goodView.mj_header endRefreshing];
+        });
+        return;
+    }
+    
+    [self loadSuperMarketData];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -215,6 +230,19 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
         } completion:^(BOOL finished) {
             self.sortHeaderView.isScrollToTop = false;
         }];
+    }
+}
+
+- (void)jumpToSelectedCategory:(NSNotification *)notification {
+    NSInteger categoryId = [notification.userInfo[YBZYCategoryKey] integerValue];
+    
+    for ( int i = 0; i < self.categoryModels.count; i++) {
+        YBZYSuperMarketCategoryModel *model = self.categoryModels[i];
+        if (model.id == categoryId) {
+            [self.categoryView selectRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0] animated:false scrollPosition:UITableViewScrollPositionTop];
+            self.selectedCategoryModel = model;
+            return;
+        }
     }
 }
 
@@ -292,13 +320,15 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
     
     _selectedCategoryModel = selectedCategoryModel;
     self.justSelectedCategory = true;
+    self.selectedCid = 0;
     [self.sortView reloadData];
     [self.goodView reloadData];
+    
     if (selectedCategoryModel.cids.count > 1) {
         [self.sortView selectItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] animated:false scrollPosition:UICollectionViewScrollPositionTop];
     }
-    self.selectedCidName = @"全部分类";
     [self.goodView scrollToRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:true];
+    self.selectedCidName = @"全部分类";
     self.sortHeaderView.isScrollToTop = false;
 }
 
@@ -360,14 +390,29 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         YBZYSuperMarketSortHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:sortHeaderId forIndexPath:indexPath];
-        headerView.changeSortBlock = ^(){
-            NSInteger rowCount = self.selectedCategoryModel.cids.count > 1 ? (self.selectedCategoryModel.cids.count + 2) / 3 : 0;
+        
+        __weak typeof(self) weakSelf = self;
+        headerView.coverViewBlock = ^(){
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            NSInteger rowCount = strongSelf.selectedCategoryModel.cids.count > 1 ? (strongSelf.selectedCategoryModel.cids.count + 2) / 3 : 0;
             [UIView animateWithDuration:0.2 animations:^{
-                self.goodView.frame = CGRectMake(0, 44.5 + 44 * rowCount, YBZYScreenWidth - 80, YBZYScreenHeight - 44.5 - 44 * rowCount);
+                strongSelf.goodView.frame = CGRectMake(0, 44.5 + 44 * rowCount, YBZYScreenWidth - 80, YBZYScreenHeight - 44.5 - 44 * rowCount);
             } completion:^(BOOL finished) {
-                self.sortHeaderView.isScrollToTop = false;
+                strongSelf.sortHeaderView.isScrollToTop = false;
             }];
         };
+        headerView.changeSortBlock = ^(NSString *sortType){
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            if ([sortType isEqualToString:@"综合排序"] || [sortType isEqualToString:@"按销量"]) {
+                strongSelf.selectedOrderType = YBZYSQLOrderTypeNormal;
+            } else if ([sortType isEqualToString:@"价格最低"]) {
+                strongSelf.selectedOrderType = YBZYSQLOrderTypePriceAscending;
+            } else {
+                strongSelf.selectedOrderType = YBZYSQLOrderTypePriceDescending;
+            }
+            [strongSelf.goodView reloadData];
+        };
+        
         self.sortHeaderView = headerView;
         return headerView;
     } else if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
@@ -398,6 +443,8 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     self.selectedCidName = self.selectedCategoryModel.cids[indexPath.row].name;
+    self.selectedCid = self.selectedCategoryModel.cids[indexPath.row].id;
+    [self.goodView reloadData];
 }
 
 #pragma mark - 网络请求
@@ -408,29 +455,74 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
     [[YBZYHTTPSessionManager sharedSessionManager] requestMethod:YBZYHTTPMethodGet URLString:urlString parameters:nil completion:^(id response, NSError *error) {
         if (error) {
             NSLog(@"%@",error);
+            [SVProgressHUD showErrorWithStatus:@"网络错误,请下拉刷新"];
+            [self.goodView.mj_header endRefreshing];
             return;
         }
+        
+        [self.goodView.mj_header endRefreshing];
         
         NSDictionary *data = response[@"data"];
         self.categoryModels = [NSArray yy_modelArrayWithClass:[YBZYSuperMarketCategoryModel class] json:data[@"categories"]];
         self.productModel = [YBZYSuperMarketProductModel yy_modelWithDictionary:data[@"products"]];
         
+        NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
+            [self cacheSuperMarketProductData:[YBZYSuperMarketProductModel yy_modelWithDictionary:data[@"products"]]];
+        }];
+        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+        [queue addOperation:operation];
+        
         [self.categoryView reloadData];
         [self.categoryView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:false scrollPosition:UITableViewScrollPositionTop];
+        self.selectedOrderType = YBZYSQLOrderTypeNormal;
         self.selectedCategoryModel = [self.categoryModels firstObject];
-        self.selectedCidName = @"全部分类";
+        [SVProgressHUD dismiss];
     }];
+}
+
+- (void)cacheSuperMarketProductData:(YBZYSuperMarketProductModel *)productModel {
+    unsigned int count = 0;
+    objc_property_t *propertyList = class_copyPropertyList([YBZYSuperMarketProductModel class], &count);
+    
+    for ( int i = 0; i < count; i++) {
+        objc_property_t property = propertyList[i];
+        const char *cPropertyName = property_getName(property);
+        NSString *propertyName = [NSString stringWithCString:cPropertyName encoding:NSUTF8StringEncoding];
+        NSArray<YBZYGoodModel *> *goodList = [productModel valueForKey:propertyName];
+        
+        for (YBZYGoodModel *goodModel in goodList) {
+            [[YBZYSQLiteManager sharedManager] cacheSuperMarketGood:goodModel];
+        }
+    }
+    self.isCacheComplete = true;
 }
 
 #pragma mark - 选中分类的商品
 
 - (NSArray<YBZYGoodModel *> *)selectedGoods {
     if (self.selectedCategoryModel) {
-        NSString *key = self.selectedCategoryModel.nameKey;
-        NSArray *selectedGoods = [self.productModel valueForKey:key];
-        return selectedGoods;
+        if (self.isCacheComplete) {
+            NSInteger categoryId = self.selectedCategoryModel.id;
+            NSArray<NSDictionary *> *loadResult = [[YBZYSQLiteManager sharedManager] loadSuperMarketGoodWithCategoryId:categoryId childCid:self.selectedCid orderBy:self.selectedOrderType];
+            
+            NSMutableArray *selectedGoods = [NSMutableArray array];
+            for (NSDictionary *dict in loadResult) {
+                YBZYGoodModel *goodModel = dict[@"goodModel"];
+                [selectedGoods addObject:goodModel];
+            }
+            return selectedGoods.copy;
+        } else {
+            NSString *key = self.selectedCategoryModel.nameKey;
+            NSArray *selectedGoods = [self.productModel valueForKey:key];
+            return selectedGoods;
+        }
     }
     return nil;
+}
+
+- (void)dealloc {
+    [[YBZYSQLiteManager sharedManager] clearCachedSuperMarketGood];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

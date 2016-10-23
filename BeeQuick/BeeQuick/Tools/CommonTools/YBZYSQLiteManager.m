@@ -42,17 +42,20 @@ static NSString *dbFileName = @"ybzyBeeQuickDatabase.db";
     NSString *pickUpPath = [[NSBundle mainBundle] pathForResource:@"pickUp.sql" ofType:nil];
     NSString *userAddressPath = [[NSBundle mainBundle] pathForResource:@"userAddress.sql" ofType:nil];
     NSString *collectionGoodsPath = [[NSBundle mainBundle] pathForResource:@"collectionGoods.sql" ofType:nil];
+    NSString *superMarketGoodsPath = [[NSBundle mainBundle] pathForResource:@"superMarketGoods.sql" ofType:nil];
     
     NSString *shopCartsql = [NSString stringWithContentsOfFile:shopCartPath encoding:NSUTF8StringEncoding error:nil];
     NSString *pickUpSql = [NSString stringWithContentsOfFile:pickUpPath encoding:NSUTF8StringEncoding error:nil];
     NSString *userAddressSql = [NSString stringWithContentsOfFile:userAddressPath encoding:NSUTF8StringEncoding error:nil];
     NSString *collectionGoodsSql = [NSString stringWithContentsOfFile:collectionGoodsPath encoding:NSUTF8StringEncoding error:nil];
+    NSString *superMarketGoodsSql = [NSString stringWithContentsOfFile:superMarketGoodsPath encoding:NSUTF8StringEncoding error:nil];
     
     [self.databaseQueue inDatabase:^(FMDatabase *db) {
         [db executeStatements:shopCartsql];
         [db executeStatements:pickUpSql];
         [db executeStatements:userAddressSql];
         [db executeStatements:collectionGoodsSql];
+        [db executeStatements:superMarketGoodsSql];
     }];
 }
 
@@ -92,6 +95,40 @@ static NSString *dbFileName = @"ybzyBeeQuickDatabase.db";
             [SVProgressHUD showErrorWithStatus:@"出错了,请重新操作"];
         }
     }];
+}
+
+#pragma mark - 超市商品数据库方法
+
+- (void)cacheSuperMarketGood:(YBZYGoodModel *)goodModel {
+    NSData *goodData = [NSKeyedArchiver archivedDataWithRootObject:goodModel];
+    NSString *insertSql = @"INSERT INTO T_SuperMarketGoods (id, category_id, child_cid, goodModel, price) VALUES (?, ?, ?, ?, ?);";
+    [self executeUpdate:insertSql withArgumentArray:@[@(goodModel.id), @(goodModel.category_id), @(goodModel.child_cid), goodData, @(goodModel.price)]];
+}
+
+- (NSArray<NSDictionary *> *)loadSuperMarketGoodWithCategoryId:(NSInteger)categoryId childCid:(NSInteger)childCid orderBy:(YBZYSQLOrderType)orderType {
+    NSString *loadSql;
+    if (orderType == YBZYSQLOrderTypeNormal) {
+        loadSql = [NSString stringWithFormat:@"SELECT * FROM T_SuperMarketGoods WHERE category_id = %zd and child_cid = %zd;", categoryId, childCid];
+        if (childCid == 0) {
+            loadSql = [NSString stringWithFormat:@"SELECT * FROM T_SuperMarketGoods WHERE category_id = %zd;", categoryId];
+        }
+    } else if (orderType == YBZYSQLOrderTypePriceDescending) {
+        loadSql = [NSString stringWithFormat:@"SELECT * FROM T_SuperMarketGoods WHERE category_id = %zd and child_cid = %zd ORDER BY price DESC;", categoryId, childCid];
+        if (childCid == 0) {
+            loadSql = [NSString stringWithFormat:@"SELECT * FROM T_SuperMarketGoods WHERE category_id = %zd ORDER BY price DESC;", categoryId];
+        }
+    } else {
+        loadSql = [NSString stringWithFormat:@"SELECT * FROM T_SuperMarketGoods WHERE category_id = %zd and child_cid = %zd ORDER BY price ASC;", categoryId, childCid];
+        if (childCid == 0) {
+            loadSql = [NSString stringWithFormat:@"SELECT * FROM T_SuperMarketGoods WHERE category_id = %zd ORDER BY price ASC;", categoryId];
+        }
+    }
+    return [self getGoodsWithSQL:loadSql];
+}
+
+- (void)clearCachedSuperMarketGood {
+    NSString *deleteSql = @"DELETE FROM T_SuperMarketGoods";
+    [self executeUpdate:deleteSql withArgumentArray:nil];
 }
 
 #pragma mark - 购物车商品增删改查
@@ -177,7 +214,7 @@ static NSString *dbFileName = @"ybzyBeeQuickDatabase.db";
         dict[@"goodModel"] = goodModel;
         
         [goods addObject:dict.copy];
-        NSLog(@"^--^%@",dict);
+//        NSLog(@"^--^%@",dict);
     }
     return goods.copy;
 }
@@ -264,7 +301,7 @@ static NSString *dbFileName = @"ybzyBeeQuickDatabase.db";
         dict[@"userAddressModel"] = userAddressModel;
         
         [userAddress addObject:dict.copy];
-        NSLog(@"^^%@",dict);
+//        NSLog(@"^^%@",dict);
     }
     return userAddress.copy;
 }
@@ -292,7 +329,7 @@ static NSString *dbFileName = @"ybzyBeeQuickDatabase.db";
         dict[@"pickUpModel"] = pickUpModel;
         
         [pickUp addObject:dict.copy];
-        NSLog(@"^^%@",dict);
+//        NSLog(@"^^%@",dict);
     }
     return pickUp.copy;
 }

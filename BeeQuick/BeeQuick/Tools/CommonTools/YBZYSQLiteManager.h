@@ -8,11 +8,42 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, YBZYSQLOrderType) {
+    YBZYSQLOrderTypeNormal = 0,
+    YBZYSQLOrderTypePriceAscending,
+    YBZYSQLOrderTypePriceDescending
+};
+
 @interface YBZYSQLiteManager : NSObject
 
 #pragma mark - 单例方法
 
 + (instancetype)sharedManager;
+
+#pragma mark - 超市商品数据库接口
+
+/**
+ 缓存超市商品数据
+
+ @param goodModel 传入要缓存的商品模型
+ */
+- (void)cacheSuperMarketGood:(YBZYGoodModel *)goodModel;
+
+/**
+ 加载超市商品数据
+
+ @param categoryId 分类id
+ @param childCid    子分类id
+ @param orderType  排序规则
+
+ @return 数据库查询结果, 结果为包含字典的数组, 数组里的每一个字典对应一种商品的相关信息字典(包含模型/id/categoryId/childId/价格)
+ */
+- (NSArray<NSDictionary *> *)loadSuperMarketGoodWithCategoryId:(NSInteger)categoryId childCid:(NSInteger)childCid orderBy:(YBZYSQLOrderType)orderType;
+
+/**
+ 清除超市商品数据
+ */
+- (void)clearCachedSuperMarketGood;
 
 #pragma mark - 购物车数据库接口
 

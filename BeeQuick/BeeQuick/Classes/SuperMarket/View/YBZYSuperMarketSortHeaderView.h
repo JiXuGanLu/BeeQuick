@@ -12,10 +12,12 @@
 
 @property (nonatomic, copy) NSString *sortStyle;
 
-@property (nonatomic, copy) void(^changeSortBlock)();
+@property (nonatomic, copy) void(^coverViewBlock)();
 
 @property (nonatomic, assign) BOOL isScrollToTop;
 
 @property (nonatomic, copy) NSString *selectedCidName;
+
+@property (nonatomic, copy) void(^changeSortBlock)(NSString *sortStyle);
 
 @end

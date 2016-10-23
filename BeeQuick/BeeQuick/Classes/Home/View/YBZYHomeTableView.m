@@ -155,7 +155,16 @@ static NSString *addGoodAnimKey = @"addGoodAnimKey";
 
 - (void)didClickMoreButtonInHomeCategoryCell:(YBZYHomeCategoryCell *)cell {
     [self.superViewController.navigationController.tabBarController setSelectedIndex:1];
-    [[NSNotificationCenter defaultCenter] postNotificationName:YBZYPushSuperMarketNotification object:nil userInfo:@{YBZYCategoryKey :cell.categoryModel.category_detail.category_id}];
+    
+    static NSUInteger firstPushFLag = 1;
+    if (firstPushFLag) {
+        firstPushFLag = 0;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [[NSNotificationCenter defaultCenter] postNotificationName:YBZYPushSuperMarketNotification object:nil userInfo:@{YBZYCategoryKey :cell.categoryModel.category_detail.category_id}];
+        });
+    } else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:YBZYPushSuperMarketNotification object:nil userInfo:@{YBZYCategoryKey :cell.categoryModel.category_detail.category_id}];
+    }
 }
 
 - (void)didClickGoodImageInHomeCategoryGoodView:(YBZYHomeCategoryGoodView *)homeCategoryGoodView {
