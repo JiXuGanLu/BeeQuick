@@ -100,7 +100,9 @@ static NSString *animPictureViewKey = @"animPictureViewKey";
     
     homeHotGoodViewCell.goodCount = [[[YBZYSQLiteManager sharedManager] getGoodInShopCartWithGoodId:homeHotGoodViewCell.goodModel.id userId:YBZYUserId].firstObject[@"count"] integerValue];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:YBZYAddOrReduceGoodNotification object:nil];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:YBZYAddOrReduceGoodNotification object:nil];
+    });
     
     CGPoint startPoint = [homeHotGoodViewCell convertPoint:homeHotGoodViewCell.pictureView.center toView:self.window];
     CGPoint endPoint = [self.window convertPoint:CGPointMake(YBZYScreenWidth / 10 * 7, YBZYScreenHeight - 40) toView:self.window];

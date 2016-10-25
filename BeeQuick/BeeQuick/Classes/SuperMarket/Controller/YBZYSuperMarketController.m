@@ -70,6 +70,7 @@ static NSString *animPictureViewKey = @"animPictureViewKey";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.translucent = false;
+    [self.goodView reloadData];
 }
 
 - (void)setupUI {
@@ -345,7 +346,9 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
     
     superMarketGoodCell.goodCount = [[[YBZYSQLiteManager sharedManager] getGoodInShopCartWithGoodId:superMarketGoodCell.goodModel.id userId:YBZYUserId].firstObject[@"count"] integerValue];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:YBZYAddOrReduceGoodNotification object:nil];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:YBZYAddOrReduceGoodNotification object:nil];
+    });
     
     CGPoint startPoint = [superMarketGoodCell convertPoint:superMarketGoodCell.pictureView.center toView:self.view.window];
     CGPoint endPoint = [self.view.window convertPoint:CGPointMake(YBZYScreenWidth / 10 * 7, YBZYScreenHeight - 40) toView:self.view.window];

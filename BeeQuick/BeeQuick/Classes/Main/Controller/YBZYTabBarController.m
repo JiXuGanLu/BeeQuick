@@ -14,6 +14,14 @@
 
 @property (nonatomic, weak) UIView *guideView;
 
+@property (nonatomic, weak) UIViewController *homePage;
+
+@property (nonatomic, weak) UIViewController *superMarketPage;
+
+@property (nonatomic, weak) UIViewController *shopCartPage;
+
+@property (nonatomic, weak) UIViewController *minePage;
+
 @end
 
 @implementation YBZYTabBarController
@@ -23,6 +31,7 @@
     self = [super init];
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadGuideView) name:YBZYIsNewLaunchNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeShopCartTag) name:YBZYAddOrReduceGoodNotification object:nil];
     }
     return self;
 }
@@ -33,16 +42,20 @@
     YBZYTabBar *tabBar = [[YBZYTabBar alloc] init];
     [self setValue:tabBar forKey:@"tabBar"];
     [self addChildViewControllers];
+    [self changeShopCartTag];
 }
 
 #pragma mark - 添加四个页面控制器
 - (void)addChildViewControllers {
-    UIViewController *childVC1 = [self loadTabBarItemAndNavigationControllerWithRootViewController:@"YBZYHomeController" andTitle:@"首页" andImageName:@"v2_home"];
-    UIViewController *childVC2 = [self loadTabBarItemAndNavigationControllerWithRootViewController:@"YBZYSuperMarketController" andTitle:@"闪送超市" andImageName:@"v2_order"];
-    UIViewController *childVC3 = [self loadTabBarItemAndNavigationControllerWithRootViewController:@"YBZYShopCartController" andTitle:@"购物车" andImageName:@"shopCart"];
-    UIViewController *childVC4 = [self loadTabBarItemAndNavigationControllerWithRootViewController:@"YBZYMineController" andTitle:@"我的" andImageName:@"v2_my"];
-    
-    self.viewControllers = @[childVC1,childVC2,childVC3,childVC4];
+    UIViewController *homePage = [self loadTabBarItemAndNavigationControllerWithRootViewController:@"YBZYHomeController" andTitle:@"首页" andImageName:@"v2_home"];
+    UIViewController *superMarketPage = [self loadTabBarItemAndNavigationControllerWithRootViewController:@"YBZYSuperMarketController" andTitle:@"闪送超市" andImageName:@"v2_order"];
+    UIViewController *shopCartPage = [self loadTabBarItemAndNavigationControllerWithRootViewController:@"YBZYShopCartController" andTitle:@"购物车" andImageName:@"shopCart"];
+    UIViewController *minePage = [self loadTabBarItemAndNavigationControllerWithRootViewController:@"YBZYMineController" andTitle:@"我的" andImageName:@"v2_my"];
+    self.homePage = homePage;
+    self.superMarketPage = superMarketPage;
+    self.shopCartPage = shopCartPage;
+    self.minePage = minePage;
+    self.viewControllers = @[homePage,superMarketPage,shopCartPage,minePage];
 }
 
 - (UIViewController *)loadTabBarItemAndNavigationControllerWithRootViewController:(NSString *)className andTitle:(NSString *)title andImageName:(NSString *)imageName {
@@ -81,6 +94,24 @@
 
 - (void)removeGuideView {
     [self.guideView removeFromSuperview];
+}
+
+#pragma mark - 购物车标记变更
+
+- (void)changeShopCartTag {
+    NSArray *shopCartGoods = [[YBZYSQLiteManager sharedManager] getAllGoodsInShopCartWithUserId:YBZYUserId];
+    
+    NSInteger totalCount = 0;
+    
+    for (NSDictionary *dict in shopCartGoods) {
+        totalCount += [dict[@"count"] integerValue];
+    }
+    
+    if (totalCount) {
+        self.shopCartPage.tabBarItem.badgeValue = @(totalCount).description;
+    } else {
+        self.shopCartPage.tabBarItem.badgeValue = nil;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

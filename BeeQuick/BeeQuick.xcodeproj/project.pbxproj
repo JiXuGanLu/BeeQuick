@@ -52,6 +52,40 @@
 		6370EEAE1DB8031300DC71BB /* YBZYNewVersionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370EEAD1DB8031300DC71BB /* YBZYNewVersionController.m */; };
 		6370EEB11DB8AE7C00DC71BB /* YBZYNewVersionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370EEB01DB8AE7C00DC71BB /* YBZYNewVersionView.m */; };
 		6377E22E1DBD41E500471490 /* superMarketGoods.sql in Resources */ = {isa = PBXBuildFile; fileRef = 6377E22D1DBD41E500471490 /* superMarketGoods.sql */; };
+		6377E2311DBD86D600471490 /* YBZYShopCartEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377E2301DBD86D600471490 /* YBZYShopCartEmptyView.m */; };
+		6377E2341DBD88A600471490 /* YBZYShopCartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377E2331DBD88A600471490 /* YBZYShopCartView.m */; };
+		6377E2371DBD894400471490 /* YBZYShopCartAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377E2361DBD894400471490 /* YBZYShopCartAddressCell.m */; };
+		6377E2391DBD897500471490 /* YBZYShopCartNoAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6377E2381DBD897500471490 /* YBZYShopCartNoAddressCell.xib */; };
+		6377E23B1DBD8A8900471490 /* YBZYShopCartSelectPickUpCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6377E23A1DBD8A8900471490 /* YBZYShopCartSelectPickUpCell.xib */; };
+		6377E23D1DBD8AFC00471490 /* YBZYShopCartSelectAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6377E23C1DBD8AFC00471490 /* YBZYShopCartSelectAddressCell.xib */; };
+		6377E2441DBD951100471490 /* YBZYShopCartGoodsListHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377E2421DBD951100471490 /* YBZYShopCartGoodsListHeaderCell.m */; };
+		6377E2481DBD98B800471490 /* YBZYShopCartDeliverTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377E2471DBD98B800471490 /* YBZYShopCartDeliverTimeCell.m */; };
+		6377E24A1DBD98E900471490 /* YBZYShopCartDeliverTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6377E2491DBD98E900471490 /* YBZYShopCartDeliverTimeCell.xib */; };
+		6377E24D1DBDC82700471490 /* YBZYShopCartGoodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377E24C1DBDC82700471490 /* YBZYShopCartGoodCell.m */; };
+		6377E24F1DBDC8D800471490 /* YBZYShopCartSpecialGoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6377E24E1DBDC8D800471490 /* YBZYShopCartSpecialGoodCell.xib */; };
+		6377E2511DBDC8E800471490 /* YBZYShopCartNormalGoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6377E2501DBDC8E800471490 /* YBZYShopCartNormalGoodCell.xib */; };
+		6377E2541DBDD38300471490 /* YBZYShopCartTipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377E2531DBDD38300471490 /* YBZYShopCartTipCell.m */; };
+		6377E2561DBDD63900471490 /* YBZYShopCartTipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6377E2551DBDD63900471490 /* YBZYShopCartTipCell.xib */; };
+		6377E25A1DBDD85D00471490 /* YBZYShopCartCheckCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377E2581DBDD85D00471490 /* YBZYShopCartCheckCell.m */; };
+		63A5CF341DBF3E1C00F7A69F /* YBZYCheckOutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A5CF331DBF3E1C00F7A69F /* YBZYCheckOutController.m */; };
+		63A5CF371DBF3E7400F7A69F /* YBZYCheckOutBillView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A5CF361DBF3E7400F7A69F /* YBZYCheckOutBillView.m */; };
+		63A5CF3A1DBF3F1800F7A69F /* YBZYCheckOutConfirmView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A5CF391DBF3F1800F7A69F /* YBZYCheckOutConfirmView.m */; };
+		63A5CF3E1DBF440600F7A69F /* YBZYCheckOutSubtitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A5CF3C1DBF440600F7A69F /* YBZYCheckOutSubtitleCell.m */; };
+		63A5CF431DBF44FD00F7A69F /* YBZYCheckOutPayMethodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A5CF411DBF44FD00F7A69F /* YBZYCheckOutPayMethodCell.m */; };
+		63A5CF461DBF485300F7A69F /* YBZYCheckOutPayMethodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A5CF451DBF485300F7A69F /* YBZYCheckOutPayMethodCell.xib */; };
+		63A5CF6D1DBF560700F7A69F /* YBZYCheckOutPromotionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A5CF6B1DBF560700F7A69F /* YBZYCheckOutPromotionCell.m */; };
+		63A5CF721DBF57DB00F7A69F /* YBZYCheckOutBalanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A5CF701DBF57DB00F7A69F /* YBZYCheckOutBalanceCell.m */; };
+		63A5CF751DBF592600F7A69F /* YBZYCheckOutBalanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A5CF741DBF592600F7A69F /* YBZYCheckOutBalanceCell.xib */; };
+		63A5CF771DBF59F500F7A69F /* YBZYCheckOutPromotionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A5CF761DBF59F500F7A69F /* YBZYCheckOutPromotionCell.xib */; };
+		63A5CF7B1DBF5A8C00F7A69F /* YBZYCheckOutGoodListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A5CF791DBF5A8C00F7A69F /* YBZYCheckOutGoodListCell.m */; };
+		63A5CF7E1DBF5D4100F7A69F /* YBZYCheckOutGoodListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A5CF7D1DBF5D4100F7A69F /* YBZYCheckOutGoodListCell.xib */; };
+		63A5CF821DBF63FF00F7A69F /* YBZYCheckOutCostAmountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A5CF801DBF63FF00F7A69F /* YBZYCheckOutCostAmountCell.m */; };
+		63A5CF871DBF66A800F7A69F /* YBZYCheckOutPayPriceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A5CF851DBF66A800F7A69F /* YBZYCheckOutPayPriceCell.m */; };
+		63A5CF8A1DBF700200F7A69F /* YBZYCheckOutCostAmountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A5CF891DBF700200F7A69F /* YBZYCheckOutCostAmountCell.xib */; };
+		63A5CF8C1DBF701000F7A69F /* YBZYCheckOutPayPriceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A5CF8B1DBF701000F7A69F /* YBZYCheckOutPayPriceCell.xib */; };
+		63A5CF8E1DBF701C00F7A69F /* YBZYCheckOutSubtitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A5CF8D1DBF701C00F7A69F /* YBZYCheckOutSubtitleCell.xib */; };
+		63A5CF901DBF702900F7A69F /* YBZYShopCartCheckCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A5CF8F1DBF702900F7A69F /* YBZYShopCartCheckCell.xib */; };
+		63A5CF921DBF703500F7A69F /* YBZYShopCartGoodsListHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A5CF911DBF703500F7A69F /* YBZYShopCartGoodsListHeaderCell.xib */; };
 		63B6D6E61DB8DD64000CA2A9 /* UINavigationBar+YBZY.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6E51DB8DD64000CA2A9 /* UINavigationBar+YBZY.m */; };
 		63B6D6E91DB8E5CB000CA2A9 /* YBZYHomeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6E81DB8E5CB000CA2A9 /* YBZYHomeTableView.m */; };
 		63B6D6EC1DB8F149000CA2A9 /* YBZYHomeCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6EB1DB8F149000CA2A9 /* YBZYHomeCategoryCell.m */; };
@@ -196,6 +230,58 @@
 		6370EEAF1DB8AE7C00DC71BB /* YBZYNewVersionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYNewVersionView.h; sourceTree = "<group>"; };
 		6370EEB01DB8AE7C00DC71BB /* YBZYNewVersionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYNewVersionView.m; sourceTree = "<group>"; };
 		6377E22D1DBD41E500471490 /* superMarketGoods.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = superMarketGoods.sql; sourceTree = "<group>"; };
+		6377E22F1DBD86D600471490 /* YBZYShopCartEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYShopCartEmptyView.h; sourceTree = "<group>"; };
+		6377E2301DBD86D600471490 /* YBZYShopCartEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYShopCartEmptyView.m; sourceTree = "<group>"; };
+		6377E2321DBD88A600471490 /* YBZYShopCartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYShopCartView.h; sourceTree = "<group>"; };
+		6377E2331DBD88A600471490 /* YBZYShopCartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYShopCartView.m; sourceTree = "<group>"; };
+		6377E2351DBD894400471490 /* YBZYShopCartAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYShopCartAddressCell.h; sourceTree = "<group>"; };
+		6377E2361DBD894400471490 /* YBZYShopCartAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYShopCartAddressCell.m; sourceTree = "<group>"; };
+		6377E2381DBD897500471490 /* YBZYShopCartNoAddressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYShopCartNoAddressCell.xib; sourceTree = "<group>"; };
+		6377E23A1DBD8A8900471490 /* YBZYShopCartSelectPickUpCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYShopCartSelectPickUpCell.xib; sourceTree = "<group>"; };
+		6377E23C1DBD8AFC00471490 /* YBZYShopCartSelectAddressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYShopCartSelectAddressCell.xib; sourceTree = "<group>"; };
+		6377E2411DBD951100471490 /* YBZYShopCartGoodsListHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYShopCartGoodsListHeaderCell.h; sourceTree = "<group>"; };
+		6377E2421DBD951100471490 /* YBZYShopCartGoodsListHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYShopCartGoodsListHeaderCell.m; sourceTree = "<group>"; };
+		6377E2461DBD98B800471490 /* YBZYShopCartDeliverTimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYShopCartDeliverTimeCell.h; sourceTree = "<group>"; };
+		6377E2471DBD98B800471490 /* YBZYShopCartDeliverTimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYShopCartDeliverTimeCell.m; sourceTree = "<group>"; };
+		6377E2491DBD98E900471490 /* YBZYShopCartDeliverTimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYShopCartDeliverTimeCell.xib; sourceTree = "<group>"; };
+		6377E24B1DBDC82700471490 /* YBZYShopCartGoodCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYShopCartGoodCell.h; sourceTree = "<group>"; };
+		6377E24C1DBDC82700471490 /* YBZYShopCartGoodCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYShopCartGoodCell.m; sourceTree = "<group>"; };
+		6377E24E1DBDC8D800471490 /* YBZYShopCartSpecialGoodCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYShopCartSpecialGoodCell.xib; sourceTree = "<group>"; };
+		6377E2501DBDC8E800471490 /* YBZYShopCartNormalGoodCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYShopCartNormalGoodCell.xib; sourceTree = "<group>"; };
+		6377E2521DBDD38300471490 /* YBZYShopCartTipCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYShopCartTipCell.h; sourceTree = "<group>"; };
+		6377E2531DBDD38300471490 /* YBZYShopCartTipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYShopCartTipCell.m; sourceTree = "<group>"; };
+		6377E2551DBDD63900471490 /* YBZYShopCartTipCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYShopCartTipCell.xib; sourceTree = "<group>"; };
+		6377E2571DBDD85D00471490 /* YBZYShopCartCheckCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYShopCartCheckCell.h; sourceTree = "<group>"; };
+		6377E2581DBDD85D00471490 /* YBZYShopCartCheckCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYShopCartCheckCell.m; sourceTree = "<group>"; };
+		63A5CF321DBF3E1C00F7A69F /* YBZYCheckOutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYCheckOutController.h; sourceTree = "<group>"; };
+		63A5CF331DBF3E1C00F7A69F /* YBZYCheckOutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYCheckOutController.m; sourceTree = "<group>"; };
+		63A5CF351DBF3E7400F7A69F /* YBZYCheckOutBillView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYCheckOutBillView.h; sourceTree = "<group>"; };
+		63A5CF361DBF3E7400F7A69F /* YBZYCheckOutBillView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYCheckOutBillView.m; sourceTree = "<group>"; };
+		63A5CF381DBF3F1800F7A69F /* YBZYCheckOutConfirmView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYCheckOutConfirmView.h; sourceTree = "<group>"; };
+		63A5CF391DBF3F1800F7A69F /* YBZYCheckOutConfirmView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYCheckOutConfirmView.m; sourceTree = "<group>"; };
+		63A5CF3B1DBF440600F7A69F /* YBZYCheckOutSubtitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYCheckOutSubtitleCell.h; sourceTree = "<group>"; };
+		63A5CF3C1DBF440600F7A69F /* YBZYCheckOutSubtitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYCheckOutSubtitleCell.m; sourceTree = "<group>"; };
+		63A5CF401DBF44FD00F7A69F /* YBZYCheckOutPayMethodCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYCheckOutPayMethodCell.h; sourceTree = "<group>"; };
+		63A5CF411DBF44FD00F7A69F /* YBZYCheckOutPayMethodCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYCheckOutPayMethodCell.m; sourceTree = "<group>"; };
+		63A5CF451DBF485300F7A69F /* YBZYCheckOutPayMethodCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYCheckOutPayMethodCell.xib; sourceTree = "<group>"; };
+		63A5CF6A1DBF560700F7A69F /* YBZYCheckOutPromotionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYCheckOutPromotionCell.h; sourceTree = "<group>"; };
+		63A5CF6B1DBF560700F7A69F /* YBZYCheckOutPromotionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYCheckOutPromotionCell.m; sourceTree = "<group>"; };
+		63A5CF6F1DBF57DB00F7A69F /* YBZYCheckOutBalanceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYCheckOutBalanceCell.h; sourceTree = "<group>"; };
+		63A5CF701DBF57DB00F7A69F /* YBZYCheckOutBalanceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYCheckOutBalanceCell.m; sourceTree = "<group>"; };
+		63A5CF741DBF592600F7A69F /* YBZYCheckOutBalanceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYCheckOutBalanceCell.xib; sourceTree = "<group>"; };
+		63A5CF761DBF59F500F7A69F /* YBZYCheckOutPromotionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYCheckOutPromotionCell.xib; sourceTree = "<group>"; };
+		63A5CF781DBF5A8C00F7A69F /* YBZYCheckOutGoodListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYCheckOutGoodListCell.h; sourceTree = "<group>"; };
+		63A5CF791DBF5A8C00F7A69F /* YBZYCheckOutGoodListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYCheckOutGoodListCell.m; sourceTree = "<group>"; };
+		63A5CF7D1DBF5D4100F7A69F /* YBZYCheckOutGoodListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYCheckOutGoodListCell.xib; sourceTree = "<group>"; };
+		63A5CF7F1DBF63FF00F7A69F /* YBZYCheckOutCostAmountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYCheckOutCostAmountCell.h; sourceTree = "<group>"; };
+		63A5CF801DBF63FF00F7A69F /* YBZYCheckOutCostAmountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYCheckOutCostAmountCell.m; sourceTree = "<group>"; };
+		63A5CF841DBF66A800F7A69F /* YBZYCheckOutPayPriceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYCheckOutPayPriceCell.h; sourceTree = "<group>"; };
+		63A5CF851DBF66A800F7A69F /* YBZYCheckOutPayPriceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYCheckOutPayPriceCell.m; sourceTree = "<group>"; };
+		63A5CF891DBF700200F7A69F /* YBZYCheckOutCostAmountCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYCheckOutCostAmountCell.xib; sourceTree = "<group>"; };
+		63A5CF8B1DBF701000F7A69F /* YBZYCheckOutPayPriceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYCheckOutPayPriceCell.xib; sourceTree = "<group>"; };
+		63A5CF8D1DBF701C00F7A69F /* YBZYCheckOutSubtitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYCheckOutSubtitleCell.xib; sourceTree = "<group>"; };
+		63A5CF8F1DBF702900F7A69F /* YBZYShopCartCheckCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYShopCartCheckCell.xib; sourceTree = "<group>"; };
+		63A5CF911DBF703500F7A69F /* YBZYShopCartGoodsListHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYShopCartGoodsListHeaderCell.xib; sourceTree = "<group>"; };
 		63B6D6E41DB8DD64000CA2A9 /* UINavigationBar+YBZY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+YBZY.h"; sourceTree = "<group>"; };
 		63B6D6E51DB8DD64000CA2A9 /* UINavigationBar+YBZY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+YBZY.m"; sourceTree = "<group>"; };
 		63B6D6E71DB8E5CB000CA2A9 /* YBZYHomeTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeTableView.h; sourceTree = "<group>"; };
@@ -597,6 +683,8 @@
 			children = (
 				6370EE9C1DB7FA2200DC71BB /* YBZYShopCartController.h */,
 				6370EE9D1DB7FA2200DC71BB /* YBZYShopCartController.m */,
+				63A5CF321DBF3E1C00F7A69F /* YBZYCheckOutController.h */,
+				63A5CF331DBF3E1C00F7A69F /* YBZYCheckOutController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -611,6 +699,56 @@
 		6370EE571DB7DA0500DC71BB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6377E22F1DBD86D600471490 /* YBZYShopCartEmptyView.h */,
+				6377E2301DBD86D600471490 /* YBZYShopCartEmptyView.m */,
+				6377E2321DBD88A600471490 /* YBZYShopCartView.h */,
+				6377E2331DBD88A600471490 /* YBZYShopCartView.m */,
+				6377E2351DBD894400471490 /* YBZYShopCartAddressCell.h */,
+				6377E2361DBD894400471490 /* YBZYShopCartAddressCell.m */,
+				6377E2381DBD897500471490 /* YBZYShopCartNoAddressCell.xib */,
+				6377E23A1DBD8A8900471490 /* YBZYShopCartSelectPickUpCell.xib */,
+				6377E23C1DBD8AFC00471490 /* YBZYShopCartSelectAddressCell.xib */,
+				6377E2411DBD951100471490 /* YBZYShopCartGoodsListHeaderCell.h */,
+				6377E2421DBD951100471490 /* YBZYShopCartGoodsListHeaderCell.m */,
+				63A5CF911DBF703500F7A69F /* YBZYShopCartGoodsListHeaderCell.xib */,
+				6377E2461DBD98B800471490 /* YBZYShopCartDeliverTimeCell.h */,
+				6377E2471DBD98B800471490 /* YBZYShopCartDeliverTimeCell.m */,
+				6377E2491DBD98E900471490 /* YBZYShopCartDeliverTimeCell.xib */,
+				6377E24B1DBDC82700471490 /* YBZYShopCartGoodCell.h */,
+				6377E24C1DBDC82700471490 /* YBZYShopCartGoodCell.m */,
+				6377E24E1DBDC8D800471490 /* YBZYShopCartSpecialGoodCell.xib */,
+				6377E2501DBDC8E800471490 /* YBZYShopCartNormalGoodCell.xib */,
+				6377E2521DBDD38300471490 /* YBZYShopCartTipCell.h */,
+				6377E2531DBDD38300471490 /* YBZYShopCartTipCell.m */,
+				6377E2551DBDD63900471490 /* YBZYShopCartTipCell.xib */,
+				6377E2571DBDD85D00471490 /* YBZYShopCartCheckCell.h */,
+				6377E2581DBDD85D00471490 /* YBZYShopCartCheckCell.m */,
+				63A5CF8F1DBF702900F7A69F /* YBZYShopCartCheckCell.xib */,
+				63A5CF351DBF3E7400F7A69F /* YBZYCheckOutBillView.h */,
+				63A5CF361DBF3E7400F7A69F /* YBZYCheckOutBillView.m */,
+				63A5CF3B1DBF440600F7A69F /* YBZYCheckOutSubtitleCell.h */,
+				63A5CF3C1DBF440600F7A69F /* YBZYCheckOutSubtitleCell.m */,
+				63A5CF8D1DBF701C00F7A69F /* YBZYCheckOutSubtitleCell.xib */,
+				63A5CF401DBF44FD00F7A69F /* YBZYCheckOutPayMethodCell.h */,
+				63A5CF411DBF44FD00F7A69F /* YBZYCheckOutPayMethodCell.m */,
+				63A5CF451DBF485300F7A69F /* YBZYCheckOutPayMethodCell.xib */,
+				63A5CF6A1DBF560700F7A69F /* YBZYCheckOutPromotionCell.h */,
+				63A5CF6B1DBF560700F7A69F /* YBZYCheckOutPromotionCell.m */,
+				63A5CF761DBF59F500F7A69F /* YBZYCheckOutPromotionCell.xib */,
+				63A5CF6F1DBF57DB00F7A69F /* YBZYCheckOutBalanceCell.h */,
+				63A5CF701DBF57DB00F7A69F /* YBZYCheckOutBalanceCell.m */,
+				63A5CF741DBF592600F7A69F /* YBZYCheckOutBalanceCell.xib */,
+				63A5CF781DBF5A8C00F7A69F /* YBZYCheckOutGoodListCell.h */,
+				63A5CF791DBF5A8C00F7A69F /* YBZYCheckOutGoodListCell.m */,
+				63A5CF7D1DBF5D4100F7A69F /* YBZYCheckOutGoodListCell.xib */,
+				63A5CF7F1DBF63FF00F7A69F /* YBZYCheckOutCostAmountCell.h */,
+				63A5CF801DBF63FF00F7A69F /* YBZYCheckOutCostAmountCell.m */,
+				63A5CF891DBF700200F7A69F /* YBZYCheckOutCostAmountCell.xib */,
+				63A5CF841DBF66A800F7A69F /* YBZYCheckOutPayPriceCell.h */,
+				63A5CF851DBF66A800F7A69F /* YBZYCheckOutPayPriceCell.m */,
+				63A5CF8B1DBF701000F7A69F /* YBZYCheckOutPayPriceCell.xib */,
+				63A5CF381DBF3F1800F7A69F /* YBZYCheckOutConfirmView.h */,
+				63A5CF391DBF3F1800F7A69F /* YBZYCheckOutConfirmView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -865,15 +1003,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63A5CF751DBF592600F7A69F /* YBZYCheckOutBalanceCell.xib in Resources */,
+				6377E23B1DBD8A8900471490 /* YBZYShopCartSelectPickUpCell.xib in Resources */,
+				63A5CF8C1DBF701000F7A69F /* YBZYCheckOutPayPriceCell.xib in Resources */,
 				6370EE951DB7F7D900DC71BB /* userAddress.sql in Resources */,
+				6377E2511DBDC8E800471490 /* YBZYShopCartNormalGoodCell.xib in Resources */,
+				6377E24F1DBDC8D800471490 /* YBZYShopCartSpecialGoodCell.xib in Resources */,
 				63B6D77F1DBBD223000CA2A9 /* YBZYSuperMarketSortHeaderView.xib in Resources */,
+				6377E2561DBDD63900471490 /* YBZYShopCartTipCell.xib in Resources */,
+				6377E24A1DBD98E900471490 /* YBZYShopCartDeliverTimeCell.xib in Resources */,
+				6377E23D1DBD8AFC00471490 /* YBZYShopCartSelectAddressCell.xib in Resources */,
 				6370EE941DB7F7D900DC71BB /* shopCart.sql in Resources */,
 				6370EE931DB7F7D900DC71BB /* pickUp.sql in Resources */,
+				63A5CF8E1DBF701C00F7A69F /* YBZYCheckOutSubtitleCell.xib in Resources */,
+				63A5CF461DBF485300F7A69F /* YBZYCheckOutPayMethodCell.xib in Resources */,
+				6377E2391DBD897500471490 /* YBZYShopCartNoAddressCell.xib in Resources */,
 				6370EE161DB7CDBF00DC71BB /* LaunchScreen.storyboard in Resources */,
 				6370EE921DB7F7D900DC71BB /* collectionGoods.sql in Resources */,
 				6370EE131DB7CDBF00DC71BB /* Assets.xcassets in Resources */,
+				63A5CF901DBF702900F7A69F /* YBZYShopCartCheckCell.xib in Resources */,
+				63A5CF8A1DBF700200F7A69F /* YBZYCheckOutCostAmountCell.xib in Resources */,
 				634448231DBC444900723255 /* YBZYSuperMarketSortFooterView.xib in Resources */,
+				63A5CF921DBF703500F7A69F /* YBZYShopCartGoodsListHeaderCell.xib in Resources */,
 				6377E22E1DBD41E500471490 /* superMarketGoods.sql in Resources */,
+				63A5CF7E1DBF5D4100F7A69F /* YBZYCheckOutGoodListCell.xib in Resources */,
+				63A5CF771DBF59F500F7A69F /* YBZYCheckOutPromotionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1037,12 +1191,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				63B6D72F1DBAAF03000CA2A9 /* YBZYHomeCategoryGoodView.m in Sources */,
+				6377E2441DBD951100471490 /* YBZYShopCartGoodsListHeaderCell.m in Sources */,
 				6370EEB11DB8AE7C00DC71BB /* YBZYNewVersionView.m in Sources */,
+				6377E2371DBD894400471490 /* YBZYShopCartAddressCell.m in Sources */,
+				63A5CF821DBF63FF00F7A69F /* YBZYCheckOutCostAmountCell.m in Sources */,
 				63B6D7591DBAD253000CA2A9 /* YBZYHomeTableFooterView.m in Sources */,
+				63A5CF431DBF44FD00F7A69F /* YBZYCheckOutPayMethodCell.m in Sources */,
 				63B6D75F1DBAD341000CA2A9 /* YBZYHomeHotGoodView.m in Sources */,
 				63B6D6E61DB8DD64000CA2A9 /* UINavigationBar+YBZY.m in Sources */,
 				63B6D74D1DBAC1EE000CA2A9 /* YBZYHomeMainActivityViewCell.m in Sources */,
 				63B6D6FB1DBA0725000CA2A9 /* YBZYActivityWebViewController.m in Sources */,
+				63A5CF721DBF57DB00F7A69F /* YBZYCheckOutBalanceCell.m in Sources */,
+				63A5CF3E1DBF440600F7A69F /* YBZYCheckOutSubtitleCell.m in Sources */,
 				63B6D73F1DBAB4A8000CA2A9 /* YBZYHomeCycleViewCell.m in Sources */,
 				63B6D7441DBAB548000CA2A9 /* YBZYHomeHeadLineView.m in Sources */,
 				6370EE7C1DB7EFAE00DC71BB /* UILabel+Convenience.m in Sources */,
@@ -1050,11 +1210,13 @@
 				63B6D76E1DBBA7C6000CA2A9 /* YBZYSuperMarketGoodCell.m in Sources */,
 				6370EE8D1DB7F6B100DC71BB /* YBZYPickUpModel.m in Sources */,
 				63B6D73D1DBAB46D000CA2A9 /* YBZYHomeHeadLineViewCell.m in Sources */,
+				6377E2311DBD86D600471490 /* YBZYShopCartEmptyView.m in Sources */,
 				63B6D7071DBA35F1000CA2A9 /* YBZYHomeCycleViewFlowLayout.m in Sources */,
 				6370EE981DB7F9BC00DC71BB /* YBZYHomeController.m in Sources */,
 				6370EE7D1DB7EFAE00DC71BB /* UIView+Convenience.m in Sources */,
 				6370EE8A1DB7F69A00DC71BB /* YBZYAddressModel.m in Sources */,
 				634448131DBBFAAA00723255 /* YBZYHomeCategoryActivityModel.m in Sources */,
+				63A5CF6D1DBF560700F7A69F /* YBZYCheckOutPromotionCell.m in Sources */,
 				6344481E1DBC069C00723255 /* YBZYSuperMarketProductModel.m in Sources */,
 				63B6D7131DBA5E31000CA2A9 /* YBZYHomeIconViewFlowLayout.m in Sources */,
 				6370EE9E1DB7FA2200DC71BB /* YBZYShopCartController.m in Sources */,
@@ -1063,7 +1225,10 @@
 				6370EE3C1DB7D9DC00DC71BB /* AppDelegate.m in Sources */,
 				6370EE9B1DB7F9D600DC71BB /* YBZYSuperMarketController.m in Sources */,
 				63B6D7651DBAD3D5000CA2A9 /* YBZYHomeHotGoodViewCell.m in Sources */,
+				6377E2341DBD88A600471490 /* YBZYShopCartView.m in Sources */,
 				63B6D7101DBA5E06000CA2A9 /* YBZYHomeIconView.m in Sources */,
+				63A5CF371DBF3E7400F7A69F /* YBZYCheckOutBillView.m in Sources */,
+				63A5CF3A1DBF3F1800F7A69F /* YBZYCheckOutConfirmView.m in Sources */,
 				6370EEAE1DB8031300DC71BB /* YBZYNewVersionController.m in Sources */,
 				63B6D6FE1DBA0743000CA2A9 /* YBZYGoodWebViewController.m in Sources */,
 				63B6D6E91DB8E5CB000CA2A9 /* YBZYHomeTableView.m in Sources */,
@@ -1075,11 +1240,13 @@
 				63B6D7411DBAB4ED000CA2A9 /* YBZYHomeIconViewCell.m in Sources */,
 				6370EE761DB7EFAE00DC71BB /* NSObject+Convenience.m in Sources */,
 				6370EEA11DB7FAAB00DC71BB /* YBZYMineController.m in Sources */,
+				63A5CF7B1DBF5A8C00F7A69F /* YBZYCheckOutGoodListCell.m in Sources */,
 				6370EEA81DB7FB6900DC71BB /* YBZYTabBar.m in Sources */,
 				6370EEA51DB7FAFE00DC71BB /* YBZYTabBarController.m in Sources */,
 				63B6D7561DBACA8C000CA2A9 /* YBZYHomeMinorActivityViewCell.m in Sources */,
 				6370EE771DB7EFAE00DC71BB /* NSString+ConvenienceHash.m in Sources */,
 				63B6D6EC1DB8F149000CA2A9 /* YBZYHomeCategoryCell.m in Sources */,
+				6377E25A1DBDD85D00471490 /* YBZYShopCartCheckCell.m in Sources */,
 				6370EE081DB7CDBE00DC71BB /* main.m in Sources */,
 				634448151DBBFAAA00723255 /* YBZYHomeCategoryModel.m in Sources */,
 				6370EE811DB7F46E00DC71BB /* YBZYGoodModel.m in Sources */,
@@ -1087,8 +1254,10 @@
 				63B6D7011DBA2744000CA2A9 /* YBZYHomeTableHeaderView.m in Sources */,
 				63B6D7501DBACA56000CA2A9 /* YBZYHomeMinorActivityView.m in Sources */,
 				6370EE871DB7F5B700DC71BB /* YBZYSQLiteManager.m in Sources */,
+				6377E2541DBDD38300471490 /* YBZYShopCartTipCell.m in Sources */,
 				63B6D75C1DBAD316000CA2A9 /* YBZYHomeHotTitleView.m in Sources */,
 				634448141DBBFAAA00723255 /* YBZYHomeCategoryDetailModel.m in Sources */,
+				6377E24D1DBDC82700471490 /* YBZYShopCartGoodCell.m in Sources */,
 				63B6D7741DBBC6BE000CA2A9 /* YBZYSuperMarketSortViewCell.m in Sources */,
 				63B6D7621DBAD388000CA2A9 /* YBZYHomeHotGoodViewFlowLayout.m in Sources */,
 				6370EE781DB7EFAE00DC71BB /* NSString+ConveniencePath.m in Sources */,
@@ -1096,11 +1265,14 @@
 				6370EE7B1DB7EFAE00DC71BB /* UIImage+Convenience.m in Sources */,
 				6370EE7E1DB7EFAE00DC71BB /* UIImage+ImageEffects.m in Sources */,
 				6370EE7A1DB7EFAE00DC71BB /* UIColor+Convenience.m in Sources */,
+				63A5CF341DBF3E1C00F7A69F /* YBZYCheckOutController.m in Sources */,
 				63B6D7681DBAD45B000CA2A9 /* YBZYHomeMoreButtonView.m in Sources */,
 				6370EE791DB7EFAE00DC71BB /* UIBarButtonItem+Convenience.m in Sources */,
 				634448221DBC444900723255 /* YBZYSuperMarketSortFooterView.m in Sources */,
 				6370EE751DB7EFAE00DC71BB /* NSAttributedString+Convenience.m in Sources */,
+				6377E2481DBD98B800471490 /* YBZYShopCartDeliverTimeCell.m in Sources */,
 				63B6D7531DBACA75000CA2A9 /* YBZYHomeMinorActivityViewFlowLayout.m in Sources */,
+				63A5CF871DBF66A800F7A69F /* YBZYCheckOutPayPriceCell.m in Sources */,
 				63B6D7471DBAC1B3000CA2A9 /* YBZYHomeMainActivityView.m in Sources */,
 				6370EEAB1DB7FBDD00DC71BB /* YBZYNavigationController.m in Sources */,
 			);

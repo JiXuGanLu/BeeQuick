@@ -11,7 +11,7 @@
 @implementation YBZYGoodModel
 
 - (NSString *)urlString {
-    return [NSString stringWithFormat:@"http://m.beequick.cn/show/productDetail?id=%zd&shopId=%ld", self.id, self.dealer_id];
+    return [NSString stringWithFormat:@"http://m.beequick.cn/show/productDetail?id=%zd&shopId=%zd", self.id, self.dealer_id];
 }
 
 - (NSString *)priceString {

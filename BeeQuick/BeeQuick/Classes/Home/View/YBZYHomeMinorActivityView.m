@@ -36,7 +36,7 @@ static NSString *minorActivityCellId = @"minorActivityCellId";
     
     YBZYHomeMinorActivityViewFlowLayout* flowLayout = [[YBZYHomeMinorActivityViewFlowLayout alloc] init];
     UICollectionView* minorActivityView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
-    minorActivityView.backgroundColor = YBZYCommonBackgroundColor;
+    minorActivityView.backgroundColor = [UIColor whiteColor];
     [minorActivityView registerClass:[YBZYHomeMinorActivityViewCell class] forCellWithReuseIdentifier:minorActivityCellId];
     minorActivityView.showsVerticalScrollIndicator = NO;
     minorActivityView.showsHorizontalScrollIndicator = NO;
