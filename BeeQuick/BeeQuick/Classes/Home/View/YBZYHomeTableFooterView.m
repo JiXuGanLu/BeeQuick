@@ -8,10 +8,8 @@
 
 #import "YBZYHomeTableFooterView.h"
 #import "YBZYHomeHotTitleView.h"
-#import "YBZYHomeHotGoodView.h"
-#import "YBZYHomeMoreButtonView.h"
 
-@interface YBZYHomeTableFooterView () <YBZYHomeMoreButtonViewDelegate>
+@interface YBZYHomeTableFooterView ()
 
 @property (nonatomic, weak) YBZYHomeHotGoodView *hotGoodView;
 
@@ -62,17 +60,15 @@
 - (void)loadMoreButtonView {
     YBZYHomeMoreButtonView *moreButtonView = [[YBZYHomeMoreButtonView alloc] init];
     [self addSubview:moreButtonView];
-    moreButtonView.delegate = self;
-    
     [moreButtonView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.hotGoodView.mas_bottom);
         make.left.right.offset(0);
         make.height.offset(44);
     }];
-}
-
-- (void)didClickMoreButtonView:(YBZYHomeMoreButtonView *)moreButtonView {
-    [self.superViewController.navigationController.tabBarController setSelectedIndex:1];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        moreButtonView.delegate = self.superViewController;
+    });
 }
 
 - (CGFloat)headerHeight {

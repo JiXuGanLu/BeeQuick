@@ -47,11 +47,11 @@
     [self setupMinorActivityView];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.cycleView.superViewController = self.superViewController;
-        self.iconView.superViewController = self.superViewController;
-        self.headLineView.superViewController = self.superViewController;
-        self.mainActivityView.superViewController = self.superViewController;
-        self.minorActivityView.superViewController = self.superViewController;
+        self.cycleView.delegate = self.superViewController;
+        self.iconView.delegate = self.superViewController;
+        self.headLineView.delegate = self.superViewController;
+        self.mainActivityView.delegate = self.superViewController;
+        self.minorActivityView.delegate = self.superViewController;
     });
 }
 

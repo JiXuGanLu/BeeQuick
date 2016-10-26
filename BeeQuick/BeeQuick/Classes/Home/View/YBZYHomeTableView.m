@@ -7,16 +7,12 @@
 //
 
 #import "YBZYHomeTableView.h"
-#import "YBZYHomeCategoryCell.h"
 #import "YBZYHomeCategoryModel.h"
-#import "YBZYHomeTableHeaderView.h"
-#import "YBZYHomeTableFooterView.h"
 
 static CGFloat rowHeight = 340;
 static NSString *categoryCellId = @"categoryCellId";
-static NSString *addGoodAnimKey = @"addGoodAnimKey";
 
-@interface YBZYHomeTableView () <UITableViewDelegate, UITableViewDataSource, YBZYHomeCategoryCellDelegate, YBZYHomeCategoryGoodViewDelegate, CAAnimationDelegate>
+@interface YBZYHomeTableView () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSArray *homeCategoryModels;
 
@@ -121,9 +117,9 @@ static NSString *addGoodAnimKey = @"addGoodAnimKey";
     YBZYHomeCategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:categoryCellId forIndexPath:indexPath];
     cell.categoryModel = self.homeCategoryModels[indexPath.section];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.delegate = self;
+    cell.delegate = self.superViewController;
     for ( int i = 0; i < cell.goodViews.count; i++) {
-        cell.goodViews[i].delegate = self;
+        cell.goodViews[i].delegate = self.superViewController;
     }
     return cell;
 }
@@ -141,77 +137,6 @@ static NSString *addGoodAnimKey = @"addGoodAnimKey";
     if (self.scrollBlock) {
         self.scrollBlock(offsetY);
     }
-}
-
-#pragma mark - cell和goodView代理
-
-- (void)didClickPictureInHomeCategoryCell:(YBZYHomeCategoryCell *)cell {
-    YBZYActivityWebViewController *actWebVC = [[YBZYActivityWebViewController alloc] init];
-    actWebVC.urlString = cell.categoryModel.activity.urlString;
-    actWebVC.title = cell.categoryModel.activity.name;
-    
-    [self.superViewController.navigationController pushViewController:actWebVC animated:true];
-}
-
-- (void)didClickMoreButtonInHomeCategoryCell:(YBZYHomeCategoryCell *)cell {
-    [self.superViewController.navigationController.tabBarController setSelectedIndex:1];
-    
-    static NSUInteger firstPushFLag = 1;
-    if (firstPushFLag) {
-        firstPushFLag = 0;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [[NSNotificationCenter defaultCenter] postNotificationName:YBZYPushSuperMarketNotification object:nil userInfo:@{YBZYCategoryKey :cell.categoryModel.category_detail.category_id}];
-        });
-    } else {
-        [[NSNotificationCenter defaultCenter] postNotificationName:YBZYPushSuperMarketNotification object:nil userInfo:@{YBZYCategoryKey :cell.categoryModel.category_detail.category_id}];
-    }
-}
-
-- (void)didClickGoodImageInHomeCategoryGoodView:(YBZYHomeCategoryGoodView *)homeCategoryGoodView {
-    YBZYGoodWebViewController *goodWebVC = [[YBZYGoodWebViewController alloc] init];
-    goodWebVC.goodModel = homeCategoryGoodView.goodModel;
-    
-    [self.superViewController.navigationController pushViewController:goodWebVC animated:true];
-}
-
-- (void)didClickAddButtonInHomeCategoryGoodView:(YBZYHomeCategoryGoodView *)homeCategoryGoodView {
-    [[YBZYSQLiteManager sharedManager] addGood:homeCategoryGoodView.goodModel withId:homeCategoryGoodView.goodModel.id userId:YBZYUserId goodsType:homeCategoryGoodView.goodModel.goods_type];
-    homeCategoryGoodView.goodCount = [[[YBZYSQLiteManager sharedManager] getGoodInShopCartWithGoodId:homeCategoryGoodView.goodModel.id userId:YBZYUserId].firstObject[@"count"] integerValue];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:YBZYAddOrReduceGoodNotification object:nil];
-    });
-    
-    CGPoint startPonit = [homeCategoryGoodView convertPoint:homeCategoryGoodView.imageView.center toView:self.window];
-    CGPoint endPoint = [self.window convertPoint:CGPointMake(YBZYScreenWidth / 10 * 7, YBZYScreenHeight - 40) toView:self.window];
-    CAKeyframeAnimation *anim = [[CAKeyframeAnimation alloc] init];
-    anim.keyPath = @"position";
-    anim.duration = 1;
-    UIBezierPath *path = [UIBezierPath bezierPath];
-    [path moveToPoint:startPonit];
-    [path addQuadCurveToPoint:endPoint controlPoint:CGPointMake(startPonit.x + 40, startPonit.y - 40)];
-    anim.path = path.CGPath;
-    anim.delegate = self;
-    
-    UIImageView *pictureView = [[UIImageView alloc] initWithImage:homeCategoryGoodView.imageView.image];
-    pictureView.frame = homeCategoryGoodView.imageView.frame;
-    CGAffineTransform transform = homeCategoryGoodView.imageView.transform;
-    pictureView.transform = transform;
-    [self.window addSubview:pictureView];
-    [anim setValue:pictureView forKey:addGoodAnimKey];
-    [pictureView.layer addAnimation:anim forKey:nil];
-    transform = CGAffineTransformMakeScale(.1, .1);
-    transform = CGAffineTransformRotate(transform, M_PI_4 + M_PI_4 / 2);
-    [UIView animateWithDuration:anim.duration animations:^{
-        pictureView.alpha = .5;
-        pictureView.transform = transform;
-    }];
-}
-
-#pragma mark - 动画代理
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-    UIView *view = [anim valueForKey:addGoodAnimKey];
-    [view removeFromSuperview];
 }
 
 - (void)removeFromSuperview {

@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "YBZYHomeCategoryActivityModel.h"
+#import "YBZYPushView.h"
 
-@interface YBZYHomeCycleView : UIView
-
-@property (nonatomic, weak) UIViewController *superViewController;
+@interface YBZYHomeCycleView : YBZYPushView
 
 @end

@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YBZYPushView.h"
 
-@interface YBZYHomeHeadLineView : UIView
-
-@property (nonatomic, weak) UIViewController *superViewController;
+@interface YBZYHomeHeadLineView : YBZYPushView
 
 @end

@@ -163,7 +163,9 @@ static CGFloat margin = 8;
     actWebVC.urlString = self.activityModels[indexPath.row % self.headLineModels.count].urlString;
     actWebVC.title = self.activityModels[indexPath.row % self.headLineModels.count].name;
     
-    [self.superViewController.navigationController pushViewController:actWebVC animated:true];
+    if ([self.delegate respondsToSelector:@selector(pushAssignedViewcontroller:)]) {
+        [self.delegate pushAssignedViewcontroller:actWebVC];
+    }
 }
 
 - (void)removeFromSuperview {

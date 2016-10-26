@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YBZYHomeHotGoodViewCell.h"
 
 @interface YBZYHomeHotGoodView : UIView
 
-@property (nonatomic, weak) UIViewController *superViewController;
+@property (nonatomic, weak) UIViewController<YBZYHomeHotGoodViewCellDelegate> *superViewController;
 
 @end

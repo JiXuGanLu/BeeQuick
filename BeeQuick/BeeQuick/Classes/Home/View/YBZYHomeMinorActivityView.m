@@ -67,7 +67,9 @@ static NSString *minorActivityCellId = @"minorActivityCellId";
     actWebVC.urlString = self.activityModels[indexPath.row].urlString;
     actWebVC.title = self.activityModels[indexPath.row].name;
     
-    [self.superViewController.navigationController pushViewController:actWebVC animated:true];
+    if ([self.delegate respondsToSelector:@selector(pushAssignedViewcontroller:)]) {
+        [self.delegate pushAssignedViewcontroller:actWebVC];
+    }
 }
 
 

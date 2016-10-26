@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YBZYPushView.h"
 
 @interface YBZYHomeTableHeaderView : UIView
 
-@property (nonatomic, weak) UIViewController *superViewController;
+@property (nonatomic, weak) UIViewController<YBZYPushViewDelegate> *superViewController;
 
 @end

@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YBZYHomeHotGoodView.h"
+#import "YBZYHomeMoreButtonView.h"
 
 @interface YBZYHomeTableFooterView : UIView
 
-@property (nonatomic, weak) UIViewController *superViewController;
+@property (nonatomic, weak) UIViewController<YBZYHomeHotGoodViewCellDelegate, YBZYHomeMoreButtonViewDelegate> *superViewController;
 
 @property (nonatomic, assign, readonly) CGFloat headerHeight;
 

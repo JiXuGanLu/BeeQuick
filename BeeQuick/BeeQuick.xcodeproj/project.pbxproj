@@ -121,6 +121,7 @@
 		63B6D7741DBBC6BE000CA2A9 /* YBZYSuperMarketSortViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7731DBBC6BD000CA2A9 /* YBZYSuperMarketSortViewCell.m */; };
 		63B6D77A1DBBCB71000CA2A9 /* YBZYSuperMarketSortHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7791DBBCB71000CA2A9 /* YBZYSuperMarketSortHeaderView.m */; };
 		63B6D77F1DBBD223000CA2A9 /* YBZYSuperMarketSortHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B6D77D1DBBD223000CA2A9 /* YBZYSuperMarketSortHeaderView.xib */; };
+		63EA9A751DC086A500B9F074 /* YBZYPushView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A741DC086A500B9F074 /* YBZYPushView.m */; };
 		E7E3020F8E93F24BB23F4526 /* libPods-BeeQuickUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D58C004F0B3F1A4EB1EC128 /* libPods-BeeQuickUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -351,6 +352,8 @@
 		63B6D7781DBBCB71000CA2A9 /* YBZYSuperMarketSortHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYSuperMarketSortHeaderView.h; sourceTree = "<group>"; };
 		63B6D7791DBBCB71000CA2A9 /* YBZYSuperMarketSortHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYSuperMarketSortHeaderView.m; sourceTree = "<group>"; };
 		63B6D77D1DBBD223000CA2A9 /* YBZYSuperMarketSortHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYSuperMarketSortHeaderView.xib; sourceTree = "<group>"; };
+		63EA9A731DC086A500B9F074 /* YBZYPushView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYPushView.h; sourceTree = "<group>"; };
+		63EA9A741DC086A500B9F074 /* YBZYPushView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYPushView.m; sourceTree = "<group>"; };
 		6A2E29E6B706D768374AFBFB /* Pods-BeeQuickUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeQuickUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeeQuickUITests/Pods-BeeQuickUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FA91F35E624AE6E9C8CBDB0 /* libPods-BeeQuickTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeQuickTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA577D0048CA114DF03141A /* libPods-BeeQuick.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeQuick.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -630,6 +633,8 @@
 				6370EEA71DB7FB6900DC71BB /* YBZYTabBar.m */,
 				6370EEAF1DB8AE7C00DC71BB /* YBZYNewVersionView.h */,
 				6370EEB01DB8AE7C00DC71BB /* YBZYNewVersionView.m */,
+				63EA9A731DC086A500B9F074 /* YBZYPushView.h */,
+				63EA9A741DC086A500B9F074 /* YBZYPushView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1250,6 +1255,7 @@
 				6370EE081DB7CDBE00DC71BB /* main.m in Sources */,
 				634448151DBBFAAA00723255 /* YBZYHomeCategoryModel.m in Sources */,
 				6370EE811DB7F46E00DC71BB /* YBZYGoodModel.m in Sources */,
+				63EA9A751DC086A500B9F074 /* YBZYPushView.m in Sources */,
 				63B6D7251DBA9D3F000CA2A9 /* YBZYHomeHeadLineViewFlowLayout.m in Sources */,
 				63B6D7011DBA2744000CA2A9 /* YBZYHomeTableHeaderView.m in Sources */,
 				63B6D7501DBACA56000CA2A9 /* YBZYHomeMinorActivityView.m in Sources */,

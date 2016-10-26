@@ -8,13 +8,10 @@
 
 #import "YBZYHomeHotGoodView.h"
 #import "YBZYHomeHotGoodViewFlowLayout.h"
-#import "YBZYHomeHotGoodViewCell.h"
 
 static NSString *hotGoodCellId = @"hotGoodCellId";
 
-static NSString *animPictureViewKey = @"animPictureViewKey";
-
-@interface YBZYHomeHotGoodView () <UICollectionViewDelegate, UICollectionViewDataSource, YBZYHomeHotGoodViewCellDelegate, CAAnimationDelegate>
+@interface YBZYHomeHotGoodView () <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, weak) UICollectionView *hotGoodView;
 
@@ -82,64 +79,10 @@ static NSString *animPictureViewKey = @"animPictureViewKey";
     YBZYGoodModel *model = self.goodModels[indexPath.row];
     cell.goodModel = model;
     cell.goodCount = [[[YBZYSQLiteManager sharedManager] getGoodInShopCartWithGoodId:model.id userId:YBZYUserId].lastObject[@"count"] integerValue];
-    cell.delegate = self;
-    return cell;
-}
-
-#pragma mark - cell代理
-
-- (void)didClickPictureInHomeHotGoodViewCell:(YBZYHomeHotGoodViewCell *)homeHotGoodViewCell {
-    YBZYGoodWebViewController *goodWebVC = [[YBZYGoodWebViewController alloc] init];
-    goodWebVC.goodModel = homeHotGoodViewCell.goodModel;
-    
-    [self.superViewController.navigationController pushViewController:goodWebVC animated:true];
-}
-
-- (void)didClickAddButtonInHomeHotGoodViewCell:(YBZYHomeHotGoodViewCell *)homeHotGoodViewCell {
-    [[YBZYSQLiteManager sharedManager] addGood:homeHotGoodViewCell.goodModel withId:homeHotGoodViewCell.goodModel.id userId:YBZYUserId goodsType:homeHotGoodViewCell.goodModel.goods_type];
-    
-    homeHotGoodViewCell.goodCount = [[[YBZYSQLiteManager sharedManager] getGoodInShopCartWithGoodId:homeHotGoodViewCell.goodModel.id userId:YBZYUserId].firstObject[@"count"] integerValue];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:YBZYAddOrReduceGoodNotification object:nil];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        cell.delegate = self.superViewController;
     });
-    
-    CGPoint startPoint = [homeHotGoodViewCell convertPoint:homeHotGoodViewCell.pictureView.center toView:self.window];
-    CGPoint endPoint = [self.window convertPoint:CGPointMake(YBZYScreenWidth / 10 * 7, YBZYScreenHeight - 40) toView:self.window];
-    CAKeyframeAnimation *anim = [[CAKeyframeAnimation alloc] init];
-    anim.keyPath = @"position";
-    anim.duration = 1;
-    UIBezierPath *path = [UIBezierPath bezierPath];
-    [path moveToPoint:startPoint];
-    [path addQuadCurveToPoint:endPoint controlPoint:CGPointMake(startPoint.x + 40, startPoint.y - 40)];
-    anim.path = path.CGPath;
-    anim.delegate = self;
-    
-    UIImageView *animPictureView = [[UIImageView alloc] initWithImage:homeHotGoodViewCell.pictureView.image];
-    animPictureView.frame = homeHotGoodViewCell.pictureView.frame;
-    CGAffineTransform transform = homeHotGoodViewCell.pictureView.transform;
-    animPictureView.transform = transform;
-    [self.window addSubview:animPictureView];
-    [anim setValue:animPictureView forKey:animPictureViewKey];
-    [animPictureView.layer addAnimation:anim forKey:nil];
-    transform = CGAffineTransformMakeScale(.1, .1);
-    transform = CGAffineTransformRotate(transform, M_PI_4 + M_PI_4 / 2);
-    [UIView animateWithDuration:anim.duration animations:^{
-        animPictureView.alpha = .5;
-        animPictureView.transform = transform;
-    }];
-}
-
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-    UIView *view = [anim valueForKey:animPictureViewKey];
-    [view removeFromSuperview];
-}
-
-- (void)didClickReduceButtonInHomeHotGoodViewCell:(YBZYHomeHotGoodViewCell *)homeHotGoodViewCell {
-    [[YBZYSQLiteManager sharedManager] reduceGoodWithId:homeHotGoodViewCell.goodModel.id userId:YBZYUserId];
-    homeHotGoodViewCell.goodCount = [[[YBZYSQLiteManager sharedManager] getGoodInShopCartWithGoodId:homeHotGoodViewCell.goodModel.id userId:YBZYUserId].firstObject[@"count"] integerValue];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:YBZYAddOrReduceGoodNotification object:nil];
+    return cell;
 }
 
 @end
