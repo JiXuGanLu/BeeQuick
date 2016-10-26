@@ -122,6 +122,12 @@
 		63B6D77A1DBBCB71000CA2A9 /* YBZYSuperMarketSortHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D7791DBBCB71000CA2A9 /* YBZYSuperMarketSortHeaderView.m */; };
 		63B6D77F1DBBD223000CA2A9 /* YBZYSuperMarketSortHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B6D77D1DBBD223000CA2A9 /* YBZYSuperMarketSortHeaderView.xib */; };
 		63EA9A751DC086A500B9F074 /* YBZYPushView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A741DC086A500B9F074 /* YBZYPushView.m */; };
+		63EA9A781DC0A31000B9F074 /* YBZYMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A771DC0A31000B9F074 /* YBZYMineHeaderView.m */; };
+		63EA9A7A1DC0A32300B9F074 /* YBZYMineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EA9A791DC0A32300B9F074 /* YBZYMineHeaderView.xib */; };
+		63EA9A7D1DC0B17000B9F074 /* YBZYMineViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A7C1DC0B17000B9F074 /* YBZYMineViewFlowLayout.m */; };
+		63EA9A801DC0B4A400B9F074 /* YBZYMineViewTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A7F1DC0B4A400B9F074 /* YBZYMineViewTopCell.m */; };
+		63EA9A831DC0B4C200B9F074 /* YBZYMineViewIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A821DC0B4C200B9F074 /* YBZYMineViewIconCell.m */; };
+		63EA9A861DC0B4D900B9F074 /* YBZYMineViewWalletCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A851DC0B4D900B9F074 /* YBZYMineViewWalletCell.m */; };
 		E7E3020F8E93F24BB23F4526 /* libPods-BeeQuickUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D58C004F0B3F1A4EB1EC128 /* libPods-BeeQuickUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -354,6 +360,17 @@
 		63B6D77D1DBBD223000CA2A9 /* YBZYSuperMarketSortHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYSuperMarketSortHeaderView.xib; sourceTree = "<group>"; };
 		63EA9A731DC086A500B9F074 /* YBZYPushView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYPushView.h; sourceTree = "<group>"; };
 		63EA9A741DC086A500B9F074 /* YBZYPushView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYPushView.m; sourceTree = "<group>"; };
+		63EA9A761DC0A31000B9F074 /* YBZYMineHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBZYMineHeaderView.h; path = BeeQuick/Classes/Main/View/YBZYMineHeaderView.h; sourceTree = SOURCE_ROOT; };
+		63EA9A771DC0A31000B9F074 /* YBZYMineHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBZYMineHeaderView.m; path = BeeQuick/Classes/Main/View/YBZYMineHeaderView.m; sourceTree = SOURCE_ROOT; };
+		63EA9A791DC0A32300B9F074 /* YBZYMineHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YBZYMineHeaderView.xib; path = BeeQuick/Classes/Main/View/YBZYMineHeaderView.xib; sourceTree = SOURCE_ROOT; };
+		63EA9A7B1DC0B17000B9F074 /* YBZYMineViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBZYMineViewFlowLayout.h; path = BeeQuick/Classes/Main/View/YBZYMineViewFlowLayout.h; sourceTree = SOURCE_ROOT; };
+		63EA9A7C1DC0B17000B9F074 /* YBZYMineViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBZYMineViewFlowLayout.m; path = BeeQuick/Classes/Main/View/YBZYMineViewFlowLayout.m; sourceTree = SOURCE_ROOT; };
+		63EA9A7E1DC0B4A400B9F074 /* YBZYMineViewTopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBZYMineViewTopCell.h; path = BeeQuick/Classes/Main/View/YBZYMineViewTopCell.h; sourceTree = SOURCE_ROOT; };
+		63EA9A7F1DC0B4A400B9F074 /* YBZYMineViewTopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBZYMineViewTopCell.m; path = BeeQuick/Classes/Main/View/YBZYMineViewTopCell.m; sourceTree = SOURCE_ROOT; };
+		63EA9A811DC0B4C200B9F074 /* YBZYMineViewIconCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBZYMineViewIconCell.h; path = BeeQuick/Classes/Main/View/YBZYMineViewIconCell.h; sourceTree = SOURCE_ROOT; };
+		63EA9A821DC0B4C200B9F074 /* YBZYMineViewIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBZYMineViewIconCell.m; path = BeeQuick/Classes/Main/View/YBZYMineViewIconCell.m; sourceTree = SOURCE_ROOT; };
+		63EA9A841DC0B4D900B9F074 /* YBZYMineViewWalletCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBZYMineViewWalletCell.h; path = BeeQuick/Classes/Main/View/YBZYMineViewWalletCell.h; sourceTree = SOURCE_ROOT; };
+		63EA9A851DC0B4D900B9F074 /* YBZYMineViewWalletCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBZYMineViewWalletCell.m; path = BeeQuick/Classes/Main/View/YBZYMineViewWalletCell.m; sourceTree = SOURCE_ROOT; };
 		6A2E29E6B706D768374AFBFB /* Pods-BeeQuickUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeQuickUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeeQuickUITests/Pods-BeeQuickUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FA91F35E624AE6E9C8CBDB0 /* libPods-BeeQuickTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeQuickTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA577D0048CA114DF03141A /* libPods-BeeQuick.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeQuick.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -669,6 +686,17 @@
 		6370EE531DB7DA0500DC71BB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				63EA9A761DC0A31000B9F074 /* YBZYMineHeaderView.h */,
+				63EA9A771DC0A31000B9F074 /* YBZYMineHeaderView.m */,
+				63EA9A791DC0A32300B9F074 /* YBZYMineHeaderView.xib */,
+				63EA9A7B1DC0B17000B9F074 /* YBZYMineViewFlowLayout.h */,
+				63EA9A7C1DC0B17000B9F074 /* YBZYMineViewFlowLayout.m */,
+				63EA9A7E1DC0B4A400B9F074 /* YBZYMineViewTopCell.h */,
+				63EA9A7F1DC0B4A400B9F074 /* YBZYMineViewTopCell.m */,
+				63EA9A811DC0B4C200B9F074 /* YBZYMineViewIconCell.h */,
+				63EA9A821DC0B4C200B9F074 /* YBZYMineViewIconCell.m */,
+				63EA9A841DC0B4D900B9F074 /* YBZYMineViewWalletCell.h */,
+				63EA9A851DC0B4D900B9F074 /* YBZYMineViewWalletCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1030,6 +1058,7 @@
 				63A5CF8A1DBF700200F7A69F /* YBZYCheckOutCostAmountCell.xib in Resources */,
 				634448231DBC444900723255 /* YBZYSuperMarketSortFooterView.xib in Resources */,
 				63A5CF921DBF703500F7A69F /* YBZYShopCartGoodsListHeaderCell.xib in Resources */,
+				63EA9A7A1DC0A32300B9F074 /* YBZYMineHeaderView.xib in Resources */,
 				6377E22E1DBD41E500471490 /* superMarketGoods.sql in Resources */,
 				63A5CF7E1DBF5D4100F7A69F /* YBZYCheckOutGoodListCell.xib in Resources */,
 				63A5CF771DBF59F500F7A69F /* YBZYCheckOutPromotionCell.xib in Resources */,
@@ -1234,9 +1263,11 @@
 				63B6D7101DBA5E06000CA2A9 /* YBZYHomeIconView.m in Sources */,
 				63A5CF371DBF3E7400F7A69F /* YBZYCheckOutBillView.m in Sources */,
 				63A5CF3A1DBF3F1800F7A69F /* YBZYCheckOutConfirmView.m in Sources */,
+				63EA9A781DC0A31000B9F074 /* YBZYMineHeaderView.m in Sources */,
 				6370EEAE1DB8031300DC71BB /* YBZYNewVersionController.m in Sources */,
 				63B6D6FE1DBA0743000CA2A9 /* YBZYGoodWebViewController.m in Sources */,
 				63B6D6E91DB8E5CB000CA2A9 /* YBZYHomeTableView.m in Sources */,
+				63EA9A7D1DC0B17000B9F074 /* YBZYMineViewFlowLayout.m in Sources */,
 				63B6D7041DBA35C6000CA2A9 /* YBZYHomeCycleView.m in Sources */,
 				63B6D74A1DBAC1D7000CA2A9 /* YBZYHomeMainActivityViewFlowLayout.m in Sources */,
 				63B6D76B1DBBA7B5000CA2A9 /* YBZYSuperMarketCategoryCell.m in Sources */,
@@ -1261,14 +1292,17 @@
 				63B6D7501DBACA56000CA2A9 /* YBZYHomeMinorActivityView.m in Sources */,
 				6370EE871DB7F5B700DC71BB /* YBZYSQLiteManager.m in Sources */,
 				6377E2541DBDD38300471490 /* YBZYShopCartTipCell.m in Sources */,
+				63EA9A831DC0B4C200B9F074 /* YBZYMineViewIconCell.m in Sources */,
 				63B6D75C1DBAD316000CA2A9 /* YBZYHomeHotTitleView.m in Sources */,
 				634448141DBBFAAA00723255 /* YBZYHomeCategoryDetailModel.m in Sources */,
 				6377E24D1DBDC82700471490 /* YBZYShopCartGoodCell.m in Sources */,
+				63EA9A861DC0B4D900B9F074 /* YBZYMineViewWalletCell.m in Sources */,
 				63B6D7741DBBC6BE000CA2A9 /* YBZYSuperMarketSortViewCell.m in Sources */,
 				63B6D7621DBAD388000CA2A9 /* YBZYHomeHotGoodViewFlowLayout.m in Sources */,
 				6370EE781DB7EFAE00DC71BB /* NSString+ConveniencePath.m in Sources */,
 				634448181DBC03FF00723255 /* YBZYSuperMarketCidModel.m in Sources */,
 				6370EE7B1DB7EFAE00DC71BB /* UIImage+Convenience.m in Sources */,
+				63EA9A801DC0B4A400B9F074 /* YBZYMineViewTopCell.m in Sources */,
 				6370EE7E1DB7EFAE00DC71BB /* UIImage+ImageEffects.m in Sources */,
 				6370EE7A1DB7EFAE00DC71BB /* UIColor+Convenience.m in Sources */,
 				63A5CF341DBF3E1C00F7A69F /* YBZYCheckOutController.m in Sources */,

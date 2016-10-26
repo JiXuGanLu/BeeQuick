@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YBZYMineHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="432" height="175"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="v2_my_avatar_bg" translatesAutoresizingMaskIntoConstraints="NO" id="LT9-04-vDr"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="v2_my_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="xvq-rn-oQI">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="65" id="CMO-E4-mW1"/>
+                        <constraint firstAttribute="height" constant="65" id="pXq-tK-2sx"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBP-sN-Hjq">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="dAe-Rb-t39"/>
+                        <constraint firstAttribute="height" constant="70" id="pNo-Di-CsB"/>
+                    </constraints>
+                    <state key="normal" image="v2_my_settings_icon"/>
+                    <connections>
+                        <action selector="aboutButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="a85-5Y-H7g"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1001010086100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uge-cu-DJA">
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_member" translatesAutoresizingMaskIntoConstraints="NO" id="bat-eg-c3Q"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注册会员" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bhg-eX-E5B">
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAL-db-JQq">
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nuN-6a-sQ6">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="QvN-eM-loH"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBE-ro-3yG">
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="商品收藏" image="v2_my_goodsCollection"/>
+                            <connections>
+                                <action selector="collectionGoodButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="9v6-hQ-rs5"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSv-SE-W9X">
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="店铺收藏" image="v2_my_storeCollection"/>
+                            <connections>
+                                <action selector="collectionStoreButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="1rt-k1-3tW"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="DBE-ro-3yG" firstAttribute="top" secondItem="sAL-db-JQq" secondAttribute="top" id="5UU-Zo-GR3"/>
+                        <constraint firstItem="nuN-6a-sQ6" firstAttribute="top" secondItem="sAL-db-JQq" secondAttribute="top" constant="10" id="Efl-Mf-8ho"/>
+                        <constraint firstItem="eSv-SE-W9X" firstAttribute="top" secondItem="sAL-db-JQq" secondAttribute="top" id="Eve-Gs-jbF"/>
+                        <constraint firstItem="DBE-ro-3yG" firstAttribute="leading" secondItem="sAL-db-JQq" secondAttribute="leading" id="Fpl-Ac-nq8"/>
+                        <constraint firstAttribute="bottom" secondItem="nuN-6a-sQ6" secondAttribute="bottom" constant="10" id="K11-Tk-5oi"/>
+                        <constraint firstAttribute="bottom" secondItem="eSv-SE-W9X" secondAttribute="bottom" id="QpG-5S-hg5"/>
+                        <constraint firstAttribute="trailing" secondItem="eSv-SE-W9X" secondAttribute="trailing" id="Zb2-BV-8b5"/>
+                        <constraint firstAttribute="bottom" secondItem="DBE-ro-3yG" secondAttribute="bottom" id="cNu-0D-VZM"/>
+                        <constraint firstItem="eSv-SE-W9X" firstAttribute="leading" secondItem="nuN-6a-sQ6" secondAttribute="trailing" id="k1v-Wr-PwF"/>
+                        <constraint firstAttribute="height" constant="44" id="lKA-fs-3tg"/>
+                        <constraint firstItem="nuN-6a-sQ6" firstAttribute="centerX" secondItem="sAL-db-JQq" secondAttribute="centerX" id="m7R-5N-oMe"/>
+                        <constraint firstItem="nuN-6a-sQ6" firstAttribute="leading" secondItem="DBE-ro-3yG" secondAttribute="trailing" id="qGX-Ha-nMm"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Uge-cu-DJA" firstAttribute="leading" secondItem="xvq-rn-oQI" secondAttribute="trailing" constant="16" id="2SX-BY-KyX"/>
+                <constraint firstItem="sAL-db-JQq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2ZU-Xd-5ts"/>
+                <constraint firstItem="bat-eg-c3Q" firstAttribute="leading" secondItem="xvq-rn-oQI" secondAttribute="trailing" constant="16" id="4CR-tf-3zs"/>
+                <constraint firstItem="xvq-rn-oQI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="A3w-Fm-dKM"/>
+                <constraint firstAttribute="trailing" secondItem="sAL-db-JQq" secondAttribute="trailing" id="CjV-j3-Iqr"/>
+                <constraint firstItem="DBP-sN-Hjq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Dr3-OB-zIt"/>
+                <constraint firstItem="Uge-cu-DJA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="EqE-nh-ysg"/>
+                <constraint firstItem="LT9-04-vDr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FfQ-0u-hjy"/>
+                <constraint firstItem="LT9-04-vDr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HFm-Up-Zhh"/>
+                <constraint firstAttribute="trailing" secondItem="LT9-04-vDr" secondAttribute="trailing" id="J8l-D2-Fxp"/>
+                <constraint firstAttribute="trailing" secondItem="DBP-sN-Hjq" secondAttribute="trailing" id="W5L-1b-PrU"/>
+                <constraint firstItem="Bhg-eX-E5B" firstAttribute="top" secondItem="Uge-cu-DJA" secondAttribute="bottom" constant="14" id="ZMz-OM-oLy"/>
+                <constraint firstAttribute="bottom" secondItem="sAL-db-JQq" secondAttribute="bottom" id="cLr-29-Hny"/>
+                <constraint firstAttribute="bottom" secondItem="LT9-04-vDr" secondAttribute="bottom" id="iOD-v2-mrd"/>
+                <constraint firstItem="xvq-rn-oQI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="r2v-xF-X5o"/>
+                <constraint firstItem="bat-eg-c3Q" firstAttribute="top" secondItem="Uge-cu-DJA" secondAttribute="bottom" constant="8" id="ucI-Tz-1vs"/>
+                <constraint firstItem="Bhg-eX-E5B" firstAttribute="leading" secondItem="xvq-rn-oQI" secondAttribute="trailing" constant="41" id="zzu-ne-2SX"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="aboutButton" destination="DBP-sN-Hjq" id="e3H-pI-gV8"/>
+                <outlet property="collectionBackgroundView" destination="sAL-db-JQq" id="kOI-qa-9xT"/>
+                <outlet property="collectionGoodButton" destination="DBE-ro-3yG" id="hVT-Pk-vS6"/>
+                <outlet property="collectionStoreButton" destination="eSv-SE-W9X" id="U9f-gm-W6U"/>
+                <outlet property="telLabel" destination="Uge-cu-DJA" id="47S-Ku-JYt"/>
+            </connections>
+            <point key="canvasLocation" x="53" y="-147.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_member" width="83" height="28"/>
+        <image name="v2_my_avatar" width="66" height="66"/>
+        <image name="v2_my_avatar_bg" width="375" height="175"/>
+        <image name="v2_my_goodsCollection" width="18" height="18"/>
+        <image name="v2_my_settings_icon" width="23" height="23"/>
+        <image name="v2_my_storeCollection" width="18" height="18"/>
+    </resources>
+</document>

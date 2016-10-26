@@ -33,7 +33,6 @@
 }
 
 - (void)setupUI {
-    self.navigationController.navigationBar.translucent = false;
     self.title = @"购物车";
     self.view.backgroundColor = [UIColor clearColor];
     
@@ -46,6 +45,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.navigationController.navigationBar.translucent = false;
     
     if (!self.goodsList.count) {
         self.shopCartEmptyView.hidden = false;
