@@ -7,8 +7,14 @@
 //
 
 #import "YBZYCheckOutController.h"
+#import "YBZYCheckOutBillView.h"
+#import "YBZYCheckOutConfirmView.h"
 
 @interface YBZYCheckOutController ()
+
+@property (nonatomic, assign) BOOL isFreightFree;
+
+@property (nonatomic, assign) CGFloat payPrice;
 
 @end
 
@@ -16,22 +22,52 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setupUI];
+}
+
+- (void)setupUI {
+    self.navigationController.navigationBar.translucent = false;
+    self.title = @"结算付款";
+    self.view.backgroundColor = [UIColor clearColor];
+    
+    YBZYCheckOutBillView *billView = [[YBZYCheckOutBillView alloc] initWithFrame:CGRectMake(0, 0, YBZYScreenWidth, self.view.height - 60 - 64) style:UITableViewStyleGrouped];
+    [self.view addSubview:billView];
+    billView.costAmount = self.costAmount;
+    billView.checkOutGoods = self.checkOutGoods;
+    billView.isFreightFree = self.isFreightFree;
+    
+    YBZYCheckOutConfirmView *confirmView = [[YBZYCheckOutConfirmView alloc] initWithFrame:CGRectMake(0, self.view.height - 60 - 64, YBZYScreenWidth, 60)];
+    [self.view addSubview:confirmView];
+    confirmView.totalPrice = self.payPrice;
+}
+
+- (BOOL)isFreightFree {
+    NSDate *currentDate = [NSDate date];
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    fmt.dateFormat = @"HH";
+    NSString *currentHour = [fmt stringFromDate:currentDate];
+    
+    if (currentHour.integerValue >= 22) {
+        if (self.costAmount >= 69) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        if (self.costAmount >= 30) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+- (CGFloat)payPrice {
+    return self.costAmount + 5 * !self.isFreightFree;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

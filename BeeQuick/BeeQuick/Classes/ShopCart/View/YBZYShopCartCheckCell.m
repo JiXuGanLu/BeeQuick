@@ -31,7 +31,7 @@
 
 - (IBAction)selectAllButtonClick:(UIButton *)sender {
     if (self.selectAllButtonBlock) {
-        self.selectAllButtonBlock(self.selectAllButton.isSelected);
+        self.selectAllButtonBlock(self.selectAllButton.isSelected, self.goodType);
     }
 }
 
@@ -50,6 +50,12 @@
         self.checkOutButton.backgroundColor = YBZYCommonYellowColor;
         [self.checkOutButton setTitleColor:YBZYCommonDarkTextColor forState:UIControlStateNormal];
         [self.checkOutButton setTitle:@"选好了" forState:UIControlStateNormal];
+    }
+}
+
+- (IBAction)checkOutButtonClick:(UIButton *)sender {
+    if (self.checkOutBlock) {
+        self.checkOutBlock(self.checkOutGoods, [self.totalPrice doubleValue]);
     }
 }
 

@@ -69,7 +69,9 @@
         }];
         [alertController addAction:cancelAction];
         [alertController addAction:okAction];
-        [self.superViewController presentViewController:alertController animated:YES completion:nil];
+        if (self.alertBlock) {
+            self.alertBlock(alertController);
+        }
     } else {
         if (self.editButtonBlock) {
             self.editButtonBlock(YBZYShopCartEditTypeReduce, self.goodModel);

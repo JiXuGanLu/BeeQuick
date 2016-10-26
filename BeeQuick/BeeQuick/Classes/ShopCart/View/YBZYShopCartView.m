@@ -44,6 +44,8 @@ static NSString *checkCellID = @"checkCellID";
 
 @property (nonatomic, strong) NSMutableArray<NSArray *> *goodsArray;
 
+@property (nonatomic, strong) NSMutableArray<NSArray *> *selectedGoodsArray;
+
 @property (nonatomic, strong) NSArray<NSDictionary *> *currentUserAddress;
 
 @property (nonatomic, strong) NSArray<NSDictionary *> *pickUp;
@@ -70,10 +72,6 @@ static NSString *checkCellID = @"checkCellID";
     if (self = [super initWithFrame:frame style:style]) {
         self.delegate = self;
         self.dataSource = self;
-        self.bookingGoods = [NSMutableArray array];
-        self.marketGoods = [NSMutableArray array];
-        self.goodsArray = [NSMutableArray array];
-        self.totalPriceArray = [NSMutableArray array];
         [self setupUI];
     }
     return self;
@@ -119,6 +117,9 @@ static NSString *checkCellID = @"checkCellID";
     self.bookingGoods = [NSMutableArray array];
     self.goodsArray = [NSMutableArray array];
     self.totalPriceArray = [NSMutableArray array];
+    self.selectedGoodsArray = [NSMutableArray array];
+    NSMutableArray *selectedBookingGoods = [NSMutableArray array];
+    NSMutableArray *selectedMarketGoods = [NSMutableArray array];
     NSInteger totalCount = 0;
     
     self.marketPrice = 0.0;
@@ -131,19 +132,27 @@ static NSString *checkCellID = @"checkCellID";
         if (goodsType) {
             [self.bookingGoods addObject:dict];
             self.bookingPrice += (goodModel.price * [dict[@"selected"] integerValue] * [dict[@"count"] integerValue]);
+            if ([dict[@"selected"] integerValue]) {
+                [selectedBookingGoods addObject:dict];
+            }
         } else {
             [self.marketGoods addObject:dict];
             self.marketPrice += (goodModel.price * [dict[@"selected"] integerValue] * [dict[@"count"] integerValue]);
+            if ([dict[@"selected"] integerValue]) {
+                [selectedMarketGoods addObject:dict];
+            }
         }
     }
     
     if (self.marketGoods.count) {
         [self.goodsArray addObject:self.marketGoods];
         [self.totalPriceArray addObject:@(self.marketPrice)];
+        [self.selectedGoodsArray addObject:selectedMarketGoods];
     }
     if (self.bookingGoods.count) {
         [self.goodsArray addObject:self.bookingGoods];
         [self.totalPriceArray addObject:@(self.bookingPrice)];
+        [self.selectedGoodsArray addObject:selectedBookingGoods];
     }
     
     if (self.goodsArray.count == 0) {
@@ -232,29 +241,10 @@ static NSString *checkCellID = @"checkCellID";
                 cell = [tableView dequeueReusableCellWithIdentifier:normalGoodCellID forIndexPath:indexPath];
             }
             ((YBZYShopCartGoodCell *)cell).good = self.goodsArray[indexPath.section - 1][indexPath.row - 2];
-            ((YBZYShopCartGoodCell *)cell).superViewController = self.superViewControl;
             ((YBZYShopCartGoodCell *)cell).detailButtonBlock = self.goodDetailButtonBlock;
-            __weak typeof(self) weakSelf = self;
-            ((YBZYShopCartGoodCell *)cell).editButtonBlock = ^(YBZYShopCartEditType editType, YBZYGoodModel *goodModel){
-                __strong typeof(weakSelf) strongSelf = weakSelf;
-                if (editType == YBZYShopCartEditTypeIncrease) {
-                    [[YBZYSQLiteManager sharedManager] addGood:goodModel withId:goodModel.id userId:YBZYUserId goodsType:goodModel.goods_type];
-                } else {
-                    [[YBZYSQLiteManager sharedManager] reduceGoodWithId:goodModel.id userId:YBZYUserId];
-                }
-                strongSelf.goodsList = [[YBZYSQLiteManager sharedManager] getAllGoodsInShopCartWithUserId:YBZYUserId];
-                [strongSelf reloadData];
-            };
-            ((YBZYShopCartGoodCell *)cell).selectButtonBlock = ^(YBZYShopCartSelectType type, YBZYGoodModel *goodModel){
-                __strong typeof(weakSelf) strongSelf = weakSelf;
-                if (type == YBZYShopCartSelectTypeSelect) {
-                    [[YBZYSQLiteManager sharedManager] changeGoodCondition:1 inShopCartWithId:goodModel.id userId:YBZYUserId];
-                } else {
-                    [[YBZYSQLiteManager sharedManager] changeGoodCondition:0 inShopCartWithId:goodModel.id userId:YBZYUserId];
-                }
-                strongSelf.goodsList = [[YBZYSQLiteManager sharedManager] getAllGoodsInShopCartWithUserId:YBZYUserId];
-                [strongSelf reloadData];
-            };
+            ((YBZYShopCartGoodCell *)cell).alertBlock = self.alertBlock;
+            ((YBZYShopCartGoodCell *)cell).editButtonBlock = self.editButtonBlock;
+            ((YBZYShopCartGoodCell *)cell).selectButtonBlock = self.selectButtonBlock;
         } else if (indexPath.row == [tableView numberOfRowsInSection:indexPath.section] - 1) {
             cell = [tableView dequeueReusableCellWithIdentifier:checkCellID forIndexPath:indexPath];
             ((YBZYShopCartCheckCell *)cell).isAllSelected = true;
@@ -264,17 +254,10 @@ static NSString *checkCellID = @"checkCellID";
                 }
             }
             ((YBZYShopCartCheckCell *)cell).totalPrice = self.totalPriceArray[indexPath.section - 1];
-            __weak typeof(self) weakSelf = self;
-            ((YBZYShopCartCheckCell *)cell).selectAllButtonBlock = ^(YBZYShopCartSelectAllType type){
-                __strong typeof(weakSelf) strongSelf = weakSelf;
-                if (type == YBZYShopCartSelectAllTypeCancel) {
-                    [[YBZYSQLiteManager sharedManager] changeGoodCondition:0 inShopCartWithGoodsType:[self.goodsArray[indexPath.section - 1].firstObject[@"type"] integerValue] userId:YBZYUserId];
-                } else {
-                    [[YBZYSQLiteManager sharedManager] changeGoodCondition:1 inShopCartWithGoodsType:[self.goodsArray[indexPath.section - 1].firstObject[@"type"] integerValue] userId:YBZYUserId];
-                }
-                strongSelf.goodsList = [[YBZYSQLiteManager sharedManager] getAllGoodsInShopCartWithUserId:YBZYUserId];
-                [strongSelf reloadData];
-            };
+            ((YBZYShopCartCheckCell *)cell).checkOutGoods = self.selectedGoodsArray[indexPath.section - 1];
+            ((YBZYShopCartCheckCell *)cell).goodType = [self.goodsArray[indexPath.section - 1].firstObject[@"type"] integerValue];
+            ((YBZYShopCartCheckCell *)cell).checkOutBlock = self.checkOutBlock;
+            ((YBZYShopCartCheckCell *)cell).selectAllButtonBlock = self.selectAllButtonBlock;
         } else {
             cell = [tableView dequeueReusableCellWithIdentifier:tipCellID forIndexPath:indexPath];
         }

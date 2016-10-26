@@ -10,4 +10,7 @@
 
 @interface YBZYCheckOutController : UIViewController
 
+@property (nonatomic, strong) NSArray<NSDictionary *> *checkOutGoods;
+@property (nonatomic, assign) CGFloat costAmount;
+
 @end

@@ -7,18 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-
-typedef NS_ENUM(NSUInteger, YBZYShopCartSelectAllType) {
-    YBZYShopCartSelectAllTypeSelect = 0,
-    YBZYShopCartSelectAllTypeCancel
-};
+#import "YBZYShopCartView.h"
 
 @interface YBZYShopCartCheckCell : UITableViewCell
 
 @property (nonatomic, assign) BOOL isAllSelected;
 
-@property (nonatomic, copy) void(^selectAllButtonBlock)(YBZYShopCartSelectAllType type);
+@property (nonatomic, copy) void(^selectAllButtonBlock)(YBZYShopCartSelectAllType type, NSInteger goodType);
 
 @property (nonatomic, strong) NSNumber *totalPrice;
+
+@property (nonatomic, strong) NSArray<NSDictionary *> *checkOutGoods;
+
+@property (nonatomic, copy) void(^checkOutBlock)(NSArray<NSDictionary *> *checkOutGoods, CGFloat totalPrice);
+
+@property (nonatomic, assign) NSInteger goodType;
 
 @end

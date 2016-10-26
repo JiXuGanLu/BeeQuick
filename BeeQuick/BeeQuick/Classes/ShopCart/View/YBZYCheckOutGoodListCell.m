@@ -22,6 +22,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setGoodInfo:(NSDictionary *)goodInfo {
@@ -29,7 +30,7 @@
     
     self.goodModel = goodInfo[@"goodModel"];
     
-    self.goodCountLabel.text = [goodInfo[@"count"] description];
+    self.goodCountLabel.text = [NSString stringWithFormat:@"X%@", [goodInfo[@"count"] description]];
     self.goodPriceLabel.text = [NSString stringWithFormat:@"¥%@",@(self.goodModel.price).description];
     self.goodNameLabel.text = self.goodModel.name;
 }

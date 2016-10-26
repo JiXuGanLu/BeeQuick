@@ -9,6 +9,7 @@
 #import "YBZYShopCartController.h"
 #import "YBZYShopCartEmptyView.h"
 #import "YBZYShopCartView.h"
+#import "YBZYCheckOutController.h"
 
 @interface YBZYShopCartController ()
 
@@ -82,16 +83,59 @@
     if (!_shopCartView) {
         YBZYShopCartView *shopCartView = [[YBZYShopCartView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
         shopCartView.goodsList = self.goodsList;
-        shopCartView.superViewControl = self;
+        
         __weak typeof(self) weakSelf = self;
         shopCartView.goodDetailButtonBlock = ^(YBZYGoodModel *goodModel){
+            __strong typeof(weakSelf) strongSelf = weakSelf;
             YBZYGoodWebViewController *webVC = [[YBZYGoodWebViewController alloc] init];
             webVC.goodModel = goodModel;
-            [weakSelf.navigationController pushViewController:webVC animated:true];
+            [strongSelf.navigationController pushViewController:webVC animated:true];
+        };
+        shopCartView.editButtonBlock = ^(YBZYShopCartEditType editType, YBZYGoodModel *goodModel){
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            if (editType == YBZYShopCartEditTypeIncrease) {
+                [[YBZYSQLiteManager sharedManager] addGood:goodModel withId:goodModel.id userId:YBZYUserId goodsType:goodModel.goods_type];
+            } else {
+                [[YBZYSQLiteManager sharedManager] reduceGoodWithId:goodModel.id userId:YBZYUserId];
+            }
+            strongSelf.shopCartView.goodsList = strongSelf.goodsList;
+            [strongSelf.shopCartView reloadData];
+        };
+        shopCartView.selectButtonBlock = ^(YBZYShopCartSelectType type, YBZYGoodModel *goodModel){
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            if (type == YBZYShopCartSelectTypeSelect) {
+                [[YBZYSQLiteManager sharedManager] changeGoodCondition:1 inShopCartWithId:goodModel.id userId:YBZYUserId];
+            } else {
+                [[YBZYSQLiteManager sharedManager] changeGoodCondition:0 inShopCartWithId:goodModel.id userId:YBZYUserId];
+            }
+            strongSelf.shopCartView.goodsList = self.goodsList;
+            [strongSelf.shopCartView reloadData];
+        };
+        shopCartView.alertBlock = ^(UIAlertController *alertController){
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            [strongSelf presentViewController:alertController animated:true completion:nil];
+        };
+        shopCartView.selectAllButtonBlock = ^(YBZYShopCartSelectAllType type, NSInteger goodType){
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            if (type == YBZYShopCartSelectAllTypeCancel) {
+                [[YBZYSQLiteManager sharedManager] changeGoodCondition:0 inShopCartWithGoodsType:goodType userId:YBZYUserId];
+            } else {
+                [[YBZYSQLiteManager sharedManager] changeGoodCondition:1 inShopCartWithGoodsType:goodType userId:YBZYUserId];
+            }
+            strongSelf.shopCartView.goodsList = self.goodsList;
+            [strongSelf.shopCartView reloadData];
         };
         shopCartView.noGoodsBlock = ^{
-            weakSelf.shopCartEmptyView.hidden = false;
-            weakSelf.shopCartView.hidden = true;
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            strongSelf.shopCartEmptyView.hidden = false;
+            strongSelf.shopCartView.hidden = true;
+        };
+        shopCartView.checkOutBlock = ^(NSArray<NSDictionary *> *selectedGoodList, CGFloat totalPrice){
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            YBZYCheckOutController *checkOutController = [[YBZYCheckOutController alloc] init];
+            checkOutController.checkOutGoods = selectedGoodList;
+            checkOutController.costAmount = totalPrice;
+            [strongSelf.navigationController pushViewController:checkOutController animated:true];
         };
         [self.view addSubview:shopCartView];
         shopCartView.contentInset = UIEdgeInsetsMake(0, 0, 64, 0);

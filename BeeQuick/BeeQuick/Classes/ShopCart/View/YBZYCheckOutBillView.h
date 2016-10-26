@@ -10,4 +10,8 @@
 
 @interface YBZYCheckOutBillView : UITableView
 
+@property (nonatomic, strong) NSArray<NSDictionary *> *checkOutGoods;
+@property (nonatomic, assign) CGFloat costAmount;
+@property (nonatomic, assign) BOOL isFreightFree;
+
 @end

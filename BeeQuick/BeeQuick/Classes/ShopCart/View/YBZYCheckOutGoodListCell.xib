@@ -17,7 +17,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="呵呵呵呵呵呵呵呵呵呵" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83x-ez-XCE">
                         <constraints>
-                            <constraint firstAttribute="width" constant="180" id="ewR-In-lg4"/>
+                            <constraint firstAttribute="width" constant="190" id="ewR-In-lg4"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>

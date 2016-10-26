@@ -19,6 +19,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setCostAmount:(CGFloat)costAmount {

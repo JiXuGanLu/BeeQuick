@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="43"/>
+                <frame key="frameInset" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzf-QF-XJe">
@@ -46,6 +46,9 @@
                         <state key="normal" title="选好了">
                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                         </state>
+                        <connections>
+                            <action selector="checkOutButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="7en-NH-Ci0"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -65,6 +68,7 @@
                 <outlet property="selectAllButton" destination="qzf-QF-XJe" id="StT-MV-zKj"/>
                 <outlet property="totalPriceLabel" destination="pyv-Mr-BdH" id="Q7F-5o-jSa"/>
             </connections>
+            <point key="canvasLocation" x="25" y="46"/>
         </tableViewCell>
     </objects>
     <resources>

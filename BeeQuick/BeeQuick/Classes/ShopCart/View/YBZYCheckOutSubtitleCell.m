@@ -18,6 +18,13 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+}
+
+- (void)setSubtitle:(NSString *)subtitle {
+    _subtitle = subtitle;
+    
+    self.subtitleLabel.text = subtitle;
 }
 
 @end

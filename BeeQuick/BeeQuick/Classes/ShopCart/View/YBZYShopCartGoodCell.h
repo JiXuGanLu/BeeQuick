@@ -7,16 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-typedef NS_ENUM(NSUInteger, YBZYShopCartEditType) {
-    YBZYShopCartEditTypeIncrease = 0,
-    YBZYShopCartEditTypeReduce
-};
-
-typedef NS_ENUM(NSUInteger, YBZYShopCartSelectType) {
-    YBZYShopCartSelectTypeSelect = 0,
-    YBZYShopCartSelectTypeCancel
-};
+#import "YBZYShopCartView.h"
 
 @interface YBZYShopCartGoodCell : UITableViewCell
 
@@ -26,8 +17,8 @@ typedef NS_ENUM(NSUInteger, YBZYShopCartSelectType) {
 
 @property (nonatomic, copy) void(^detailButtonBlock)(YBZYGoodModel *goodModel);
 
-@property (nonatomic, weak) UIViewController *superViewController;
-
 @property (nonatomic, copy) void(^selectButtonBlock)(YBZYShopCartSelectType type, YBZYGoodModel *goodModel);
+
+@property (nonatomic, copy) void(^alertBlock)(UIAlertController *alertController);
 
 @end
