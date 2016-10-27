@@ -91,6 +91,8 @@ static NSString *categoryCellId = @"categoryCellId";
 #pragma mark - 刷新方法
 
 - (void)loadHomeCategoryData {
+    [[NSNotificationCenter defaultCenter] postNotificationName:YBZYHomeRefreshNotification object:nil];
+    
     YBZYHTTPSessionManager *manager = [YBZYHTTPSessionManager sharedSessionManager];
     [manager requestMethod:YBZYHTTPMethodGet URLString:@"https://coding.net/u/YiBaZhuangYuan/p/BeeQuickData/git/raw/master/BeeQuickHomeSections.json" parameters:nil completion:^(id response, NSError *error) {
         if (error) {

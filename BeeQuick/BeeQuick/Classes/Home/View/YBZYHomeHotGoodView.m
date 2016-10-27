@@ -30,6 +30,8 @@ static NSString *hotGoodCellId = @"hotGoodCellId";
 }
 
 - (void)setupUI {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadHotGoodData) name:YBZYHomeRefreshNotification object:nil];
+    
     YBZYHomeHotGoodViewFlowLayout *flowLayout = [[YBZYHomeHotGoodViewFlowLayout alloc] init];
     UICollectionView *hotGoodView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
     hotGoodView.backgroundColor = YBZYCommonBackgroundColor;
@@ -83,6 +85,10 @@ static NSString *hotGoodCellId = @"hotGoodCellId";
         cell.delegate = self.superViewController;
     });
     return cell;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

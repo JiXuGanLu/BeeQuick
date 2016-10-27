@@ -32,6 +32,8 @@ static NSString *mainActivityCellId = @"mainActivityCellId";
 }
 
 - (void)setupUI {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadActivityData) name:YBZYHomeRefreshNotification object:nil];
+    
     self.backgroundColor = [UIColor whiteColor];
     
     YBZYHomeMainActivityViewFlowLayout* flowLayout = [[YBZYHomeMainActivityViewFlowLayout alloc] init];
@@ -70,7 +72,6 @@ static NSString *mainActivityCellId = @"mainActivityCellId";
     }
 }
 
-
 - (void)loadActivityData {
     NSString *urlString = @"https://coding.net/u/YiBaZhuangYuan/p/BeeQuickData/git/raw/master/BeeQuickHomeActivities.json";
     
@@ -88,6 +89,10 @@ static NSString *mainActivityCellId = @"mainActivityCellId";
         self.activityModels = activityModels.copy;
         [self.mainActivityView reloadData];
     }];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

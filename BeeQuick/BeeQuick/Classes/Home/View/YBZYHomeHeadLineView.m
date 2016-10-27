@@ -40,6 +40,8 @@ static CGFloat margin = 8;
 }
 
 - (void)setupUI {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadHeadLineData) name:YBZYHomeRefreshNotification object:nil];
+    
     self.backgroundColor = [UIColor whiteColor];
     
     CGFloat imageViewW = YBZYScreenWidth / 5;
@@ -171,6 +173,7 @@ static CGFloat margin = 8;
 - (void)removeFromSuperview {
     [super removeFromSuperview];
     [self.timer invalidate];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

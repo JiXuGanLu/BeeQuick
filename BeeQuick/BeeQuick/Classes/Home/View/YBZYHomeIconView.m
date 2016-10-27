@@ -39,8 +39,9 @@ static NSString *homeIconViewCellId = @"homeIconViewCellId";
 }
 
 - (void)setupUI {
-    YBZYHomeIconViewFlowLayout *flowLayout = [[YBZYHomeIconViewFlowLayout alloc] init];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadActivityData) name:YBZYHomeRefreshNotification object:nil];
     
+    YBZYHomeIconViewFlowLayout *flowLayout = [[YBZYHomeIconViewFlowLayout alloc] init];
     UICollectionView *iconView =
     [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
     iconView.backgroundColor = [UIColor whiteColor];
@@ -98,6 +99,10 @@ static NSString *homeIconViewCellId = @"homeIconViewCellId";
     if ([self.delegate respondsToSelector:@selector(pushAssignedViewcontroller:)]) {
         [self.delegate pushAssignedViewcontroller:actWebVC];
     }
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

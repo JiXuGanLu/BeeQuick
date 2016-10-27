@@ -41,6 +41,7 @@
 #define YBZYCategoryKey @"YBZYCategoryKey"
 #define YBZYAddOrReduceGoodNotification @"YBZYAddOrReduceGoodNotification"
 #define YBZYHomeTableFooterViewUpdateNotification @"YBZYHomeTableFooterViewUpdateNotification"
+#define YBZYHomeRefreshNotification @"YBZYHomeRefreshNotification"
 
 //自定义log
 #ifdef DEBUG

@@ -34,8 +34,9 @@ static NSString *homeCycleCellId = @"homeCycleCellId";
 }
 
 - (void)setupUI {
-    self.backgroundColor = [UIColor whiteColor];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadActivityData) name:YBZYHomeRefreshNotification object:nil];
     
+    self.backgroundColor = [UIColor whiteColor];
     YBZYHomeCycleViewFlowLayout *flowLayout = [[YBZYHomeCycleViewFlowLayout alloc] init];
     UICollectionView *cycleImageView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
     cycleImageView.backgroundColor = [UIColor whiteColor];
@@ -170,6 +171,7 @@ static NSString *homeCycleCellId = @"homeCycleCellId";
 - (void)removeFromSuperview {
     [super removeFromSuperview];
     [self.timer invalidate];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

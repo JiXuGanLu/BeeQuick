@@ -25,13 +25,15 @@ static NSString *minorActivityCellId = @"minorActivityCellId";
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self loadActivityData];
         [self setupUI];
+        [self loadActivityData];
     }
     return self;
 }
 
 - (void)setupUI {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadActivityData) name:YBZYHomeRefreshNotification object:nil];
+    
     self.backgroundColor = [UIColor whiteColor];
     
     YBZYHomeMinorActivityViewFlowLayout* flowLayout = [[YBZYHomeMinorActivityViewFlowLayout alloc] init];

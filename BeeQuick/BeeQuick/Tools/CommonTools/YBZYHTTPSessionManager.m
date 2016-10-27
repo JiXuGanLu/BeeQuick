@@ -21,6 +21,9 @@
             manager.responseSerializer = [AFJSONResponseSerializer serializer];
             NSSet *set = [NSSet setWithObjects:@"text/plain", @"text/html", nil];
             manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObjectsFromSet:set];
+            [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+            manager.requestSerializer.timeoutInterval = 10.f;
+            [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
         }
     });
     
