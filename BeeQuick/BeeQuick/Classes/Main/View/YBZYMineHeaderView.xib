@@ -25,6 +25,7 @@
                         <constraint firstAttribute="height" constant="70" id="pNo-Di-CsB"/>
                     </constraints>
                     <state key="normal" image="v2_my_settings_icon"/>
+                    <state key="highlighted" image="v2_my_settings_icon"/>
                     <connections>
                         <action selector="aboutButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="a85-5Y-H7g"/>
                     </connections>
@@ -50,14 +51,16 @@
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBE-ro-3yG">
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="商品收藏" image="v2_my_goodsCollection"/>
+                            <state key="normal" title="  商品收藏" image="v2_my_goodsCollection"/>
+                            <state key="highlighted" image="v2_my_goodsCollection"/>
                             <connections>
                                 <action selector="collectionGoodButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="9v6-hQ-rs5"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSv-SE-W9X">
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="店铺收藏" image="v2_my_storeCollection"/>
+                            <state key="normal" title="  店铺收藏" image="v2_my_storeCollection"/>
+                            <state key="highlighted" image="v2_my_storeCollection"/>
                             <connections>
                                 <action selector="collectionStoreButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="1rt-k1-3tW"/>
                             </connections>

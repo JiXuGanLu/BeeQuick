@@ -128,6 +128,13 @@
 		63EA9A801DC0B4A400B9F074 /* YBZYMineViewTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A7F1DC0B4A400B9F074 /* YBZYMineViewTopCell.m */; };
 		63EA9A831DC0B4C200B9F074 /* YBZYMineViewIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A821DC0B4C200B9F074 /* YBZYMineViewIconCell.m */; };
 		63EA9A861DC0B4D900B9F074 /* YBZYMineViewWalletCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A851DC0B4D900B9F074 /* YBZYMineViewWalletCell.m */; };
+		63EA9A891DC1CF1C00B9F074 /* YBZYMineAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A881DC1CF1C00B9F074 /* YBZYMineAboutController.m */; };
+		63EA9A8F1DC1DB5600B9F074 /* YBZYMineOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A8E1DC1DB5600B9F074 /* YBZYMineOrderController.m */; };
+		63EA9A921DC1E24500B9F074 /* YBZYMineOrderAllController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A911DC1E24500B9F074 /* YBZYMineOrderAllController.m */; };
+		63EA9A951DC1E25500B9F074 /* YBZYMineOrderNotPayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A941DC1E25500B9F074 /* YBZYMineOrderNotPayController.m */; };
+		63EA9A981DC1E26500B9F074 /* YBZYMineOrderNotConfirmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A971DC1E26500B9F074 /* YBZYMineOrderNotConfirmController.m */; };
+		63EA9A9B1DC1E27800B9F074 /* YBZYMineOrderNotCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A9A1DC1E27800B9F074 /* YBZYMineOrderNotCommentController.m */; };
+		63EA9A9E1DC1E28800B9F074 /* YBZYMineOrderAfterSaleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A9D1DC1E28800B9F074 /* YBZYMineOrderAfterSaleController.m */; };
 		E7E3020F8E93F24BB23F4526 /* libPods-BeeQuickUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D58C004F0B3F1A4EB1EC128 /* libPods-BeeQuickUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -371,6 +378,20 @@
 		63EA9A821DC0B4C200B9F074 /* YBZYMineViewIconCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBZYMineViewIconCell.m; path = BeeQuick/Classes/Main/View/YBZYMineViewIconCell.m; sourceTree = SOURCE_ROOT; };
 		63EA9A841DC0B4D900B9F074 /* YBZYMineViewWalletCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBZYMineViewWalletCell.h; path = BeeQuick/Classes/Main/View/YBZYMineViewWalletCell.h; sourceTree = SOURCE_ROOT; };
 		63EA9A851DC0B4D900B9F074 /* YBZYMineViewWalletCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBZYMineViewWalletCell.m; path = BeeQuick/Classes/Main/View/YBZYMineViewWalletCell.m; sourceTree = SOURCE_ROOT; };
+		63EA9A871DC1CF1C00B9F074 /* YBZYMineAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBZYMineAboutController.h; path = BeeQuick/Classes/Main/View/YBZYMineAboutController.h; sourceTree = SOURCE_ROOT; };
+		63EA9A881DC1CF1C00B9F074 /* YBZYMineAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBZYMineAboutController.m; path = BeeQuick/Classes/Main/View/YBZYMineAboutController.m; sourceTree = SOURCE_ROOT; };
+		63EA9A8D1DC1DB5600B9F074 /* YBZYMineOrderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBZYMineOrderController.h; path = BeeQuick/Classes/Main/View/YBZYMineOrderController.h; sourceTree = SOURCE_ROOT; };
+		63EA9A8E1DC1DB5600B9F074 /* YBZYMineOrderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBZYMineOrderController.m; path = BeeQuick/Classes/Main/View/YBZYMineOrderController.m; sourceTree = SOURCE_ROOT; };
+		63EA9A901DC1E24500B9F074 /* YBZYMineOrderAllController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBZYMineOrderAllController.h; path = BeeQuick/Classes/Main/View/YBZYMineOrderAllController.h; sourceTree = SOURCE_ROOT; };
+		63EA9A911DC1E24500B9F074 /* YBZYMineOrderAllController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBZYMineOrderAllController.m; path = BeeQuick/Classes/Main/View/YBZYMineOrderAllController.m; sourceTree = SOURCE_ROOT; };
+		63EA9A931DC1E25500B9F074 /* YBZYMineOrderNotPayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBZYMineOrderNotPayController.h; path = BeeQuick/Classes/Main/View/YBZYMineOrderNotPayController.h; sourceTree = SOURCE_ROOT; };
+		63EA9A941DC1E25500B9F074 /* YBZYMineOrderNotPayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBZYMineOrderNotPayController.m; path = BeeQuick/Classes/Main/View/YBZYMineOrderNotPayController.m; sourceTree = SOURCE_ROOT; };
+		63EA9A961DC1E26500B9F074 /* YBZYMineOrderNotConfirmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBZYMineOrderNotConfirmController.h; path = BeeQuick/Classes/Main/View/YBZYMineOrderNotConfirmController.h; sourceTree = SOURCE_ROOT; };
+		63EA9A971DC1E26500B9F074 /* YBZYMineOrderNotConfirmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBZYMineOrderNotConfirmController.m; path = BeeQuick/Classes/Main/View/YBZYMineOrderNotConfirmController.m; sourceTree = SOURCE_ROOT; };
+		63EA9A991DC1E27800B9F074 /* YBZYMineOrderNotCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBZYMineOrderNotCommentController.h; path = BeeQuick/Classes/Main/View/YBZYMineOrderNotCommentController.h; sourceTree = SOURCE_ROOT; };
+		63EA9A9A1DC1E27800B9F074 /* YBZYMineOrderNotCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBZYMineOrderNotCommentController.m; path = BeeQuick/Classes/Main/View/YBZYMineOrderNotCommentController.m; sourceTree = SOURCE_ROOT; };
+		63EA9A9C1DC1E28800B9F074 /* YBZYMineOrderAfterSaleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBZYMineOrderAfterSaleController.h; path = BeeQuick/Classes/Main/View/YBZYMineOrderAfterSaleController.h; sourceTree = SOURCE_ROOT; };
+		63EA9A9D1DC1E28800B9F074 /* YBZYMineOrderAfterSaleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBZYMineOrderAfterSaleController.m; path = BeeQuick/Classes/Main/View/YBZYMineOrderAfterSaleController.m; sourceTree = SOURCE_ROOT; };
 		6A2E29E6B706D768374AFBFB /* Pods-BeeQuickUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeQuickUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeeQuickUITests/Pods-BeeQuickUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FA91F35E624AE6E9C8CBDB0 /* libPods-BeeQuickTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeQuickTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA577D0048CA114DF03141A /* libPods-BeeQuick.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeQuick.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -890,6 +911,20 @@
 		6370EEA21DB7FACC00DC71BB /* SubControllers */ = {
 			isa = PBXGroup;
 			children = (
+				63EA9A871DC1CF1C00B9F074 /* YBZYMineAboutController.h */,
+				63EA9A881DC1CF1C00B9F074 /* YBZYMineAboutController.m */,
+				63EA9A8D1DC1DB5600B9F074 /* YBZYMineOrderController.h */,
+				63EA9A8E1DC1DB5600B9F074 /* YBZYMineOrderController.m */,
+				63EA9A901DC1E24500B9F074 /* YBZYMineOrderAllController.h */,
+				63EA9A911DC1E24500B9F074 /* YBZYMineOrderAllController.m */,
+				63EA9A931DC1E25500B9F074 /* YBZYMineOrderNotPayController.h */,
+				63EA9A941DC1E25500B9F074 /* YBZYMineOrderNotPayController.m */,
+				63EA9A961DC1E26500B9F074 /* YBZYMineOrderNotConfirmController.h */,
+				63EA9A971DC1E26500B9F074 /* YBZYMineOrderNotConfirmController.m */,
+				63EA9A991DC1E27800B9F074 /* YBZYMineOrderNotCommentController.h */,
+				63EA9A9A1DC1E27800B9F074 /* YBZYMineOrderNotCommentController.m */,
+				63EA9A9C1DC1E28800B9F074 /* YBZYMineOrderAfterSaleController.h */,
+				63EA9A9D1DC1E28800B9F074 /* YBZYMineOrderAfterSaleController.m */,
 			);
 			path = SubControllers;
 			sourceTree = "<group>";
@@ -1228,12 +1263,14 @@
 				6377E2441DBD951100471490 /* YBZYShopCartGoodsListHeaderCell.m in Sources */,
 				6370EEB11DB8AE7C00DC71BB /* YBZYNewVersionView.m in Sources */,
 				6377E2371DBD894400471490 /* YBZYShopCartAddressCell.m in Sources */,
+				63EA9A9B1DC1E27800B9F074 /* YBZYMineOrderNotCommentController.m in Sources */,
 				63A5CF821DBF63FF00F7A69F /* YBZYCheckOutCostAmountCell.m in Sources */,
 				63B6D7591DBAD253000CA2A9 /* YBZYHomeTableFooterView.m in Sources */,
 				63A5CF431DBF44FD00F7A69F /* YBZYCheckOutPayMethodCell.m in Sources */,
 				63B6D75F1DBAD341000CA2A9 /* YBZYHomeHotGoodView.m in Sources */,
 				63B6D6E61DB8DD64000CA2A9 /* UINavigationBar+YBZY.m in Sources */,
 				63B6D74D1DBAC1EE000CA2A9 /* YBZYHomeMainActivityViewCell.m in Sources */,
+				63EA9A891DC1CF1C00B9F074 /* YBZYMineAboutController.m in Sources */,
 				63B6D6FB1DBA0725000CA2A9 /* YBZYActivityWebViewController.m in Sources */,
 				63A5CF721DBF57DB00F7A69F /* YBZYCheckOutBalanceCell.m in Sources */,
 				63A5CF3E1DBF440600F7A69F /* YBZYCheckOutSubtitleCell.m in Sources */,
@@ -1243,14 +1280,17 @@
 				6344481B1DBC048A00723255 /* YBZYSuperMarketCategoryModel.m in Sources */,
 				63B6D76E1DBBA7C6000CA2A9 /* YBZYSuperMarketGoodCell.m in Sources */,
 				6370EE8D1DB7F6B100DC71BB /* YBZYPickUpModel.m in Sources */,
+				63EA9A981DC1E26500B9F074 /* YBZYMineOrderNotConfirmController.m in Sources */,
 				63B6D73D1DBAB46D000CA2A9 /* YBZYHomeHeadLineViewCell.m in Sources */,
 				6377E2311DBD86D600471490 /* YBZYShopCartEmptyView.m in Sources */,
 				63B6D7071DBA35F1000CA2A9 /* YBZYHomeCycleViewFlowLayout.m in Sources */,
 				6370EE981DB7F9BC00DC71BB /* YBZYHomeController.m in Sources */,
 				6370EE7D1DB7EFAE00DC71BB /* UIView+Convenience.m in Sources */,
+				63EA9A951DC1E25500B9F074 /* YBZYMineOrderNotPayController.m in Sources */,
 				6370EE8A1DB7F69A00DC71BB /* YBZYAddressModel.m in Sources */,
 				634448131DBBFAAA00723255 /* YBZYHomeCategoryActivityModel.m in Sources */,
 				63A5CF6D1DBF560700F7A69F /* YBZYCheckOutPromotionCell.m in Sources */,
+				63EA9A9E1DC1E28800B9F074 /* YBZYMineOrderAfterSaleController.m in Sources */,
 				6344481E1DBC069C00723255 /* YBZYSuperMarketProductModel.m in Sources */,
 				63B6D7131DBA5E31000CA2A9 /* YBZYHomeIconViewFlowLayout.m in Sources */,
 				6370EE9E1DB7FA2200DC71BB /* YBZYShopCartController.m in Sources */,
@@ -1282,6 +1322,7 @@
 				63B6D7561DBACA8C000CA2A9 /* YBZYHomeMinorActivityViewCell.m in Sources */,
 				6370EE771DB7EFAE00DC71BB /* NSString+ConvenienceHash.m in Sources */,
 				63B6D6EC1DB8F149000CA2A9 /* YBZYHomeCategoryCell.m in Sources */,
+				63EA9A921DC1E24500B9F074 /* YBZYMineOrderAllController.m in Sources */,
 				6377E25A1DBDD85D00471490 /* YBZYShopCartCheckCell.m in Sources */,
 				6370EE081DB7CDBE00DC71BB /* main.m in Sources */,
 				634448151DBBFAAA00723255 /* YBZYHomeCategoryModel.m in Sources */,
@@ -1310,6 +1351,7 @@
 				6370EE791DB7EFAE00DC71BB /* UIBarButtonItem+Convenience.m in Sources */,
 				634448221DBC444900723255 /* YBZYSuperMarketSortFooterView.m in Sources */,
 				6370EE751DB7EFAE00DC71BB /* NSAttributedString+Convenience.m in Sources */,
+				63EA9A8F1DC1DB5600B9F074 /* YBZYMineOrderController.m in Sources */,
 				6377E2481DBD98B800471490 /* YBZYShopCartDeliverTimeCell.m in Sources */,
 				63B6D7531DBACA75000CA2A9 /* YBZYHomeMinorActivityViewFlowLayout.m in Sources */,
 				63A5CF871DBF66A800F7A69F /* YBZYCheckOutPayPriceCell.m in Sources */,

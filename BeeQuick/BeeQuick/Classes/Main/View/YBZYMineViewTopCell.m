@@ -36,7 +36,7 @@
     [self.contentView addSubview:titleLabel];
     self.titleLabel = titleLabel;
     
-    UILabel *subTitleLabel = [UILabel ybzy_labelWithText:@"啊啊啊啊" andTextColor:YBZYCommonMidTextColor andFontSize:14];
+    UILabel *subTitleLabel = [UILabel ybzy_labelWithText:@"啊啊啊啊" andTextColor:YBZYCommonLightTextColor andFontSize:14];
     [self.contentView addSubview:subTitleLabel];
     self.subTitleLabel = subTitleLabel;
     

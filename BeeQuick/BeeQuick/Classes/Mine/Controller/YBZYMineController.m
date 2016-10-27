@@ -13,6 +13,8 @@
 #import "YBZYMineViewTopCell.h"
 #import "YBZYMineViewIconCell.h"
 #import "YBZYMineViewWalletCell.h"
+#import "YBZYMineAboutController.h"
+#import "YBZYMineOrderController.h"
 
 static NSString *topCellId = @"topCellId";
 static NSString *iconCellId = @"iconCellId";
@@ -41,21 +43,25 @@ static NSString *walletCellId = @"walletCellId";
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.navigationController.navigationBar ybzy_reset];
+    [self.navigationController setNavigationBarHidden:false];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar ybzy_setBackgroundColor:[UIColor clearColor]];
+    [self.navigationController setNavigationBarHidden:true];
 }
 
-- (void)setupUI {
-    [self.navigationController.navigationBar ybzy_setBackgroundColor:[UIColor clearColor]];
-    
+- (void)setupUI {    
     YBZYMineHeaderView *headerView = [YBZYMineHeaderView headerView];
     headerView.frame = CGRectMake(0, 0, YBZYScreenWidth, 175);
     [self.view addSubview:headerView];
     self.headerView = headerView;
+    __weak typeof(self) weakSelf = self;
+    headerView.aboutBlock = ^(){
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        YBZYMineAboutController *aboutController = [[YBZYMineAboutController alloc] init];
+        [strongSelf.navigationController pushViewController:aboutController animated:true];
+    };
     
     YBZYMineViewFlowLayout *flowLayout = [[YBZYMineViewFlowLayout alloc] init];
     UICollectionView *mineView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 175, YBZYScreenWidth, self.view.height - 175) collectionViewLayout:flowLayout];
@@ -165,6 +171,15 @@ static NSString *walletCellId = @"walletCellId";
         cell.iconTitle = nil;
     }
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        YBZYMineOrderController *orderController = [[YBZYMineOrderController alloc] init];
+        orderController.selectedCategory = indexPath.row;
+        
+        [self.navigationController pushViewController:orderController animated:true];
+    }
 }
 
 @end
