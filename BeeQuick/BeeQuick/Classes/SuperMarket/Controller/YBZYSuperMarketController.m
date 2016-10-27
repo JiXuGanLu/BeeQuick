@@ -14,6 +14,7 @@
 #import "YBZYSuperMarketSortHeaderView.h"
 #import "YBZYSuperMarketProductModel.h"
 #import "YBZYSuperMarketSortFooterView.h"
+#import "YBZYScanController.h"
 #import <objc/runtime.h>
 
 static NSString *goodCellId = @"goodCellId";
@@ -164,7 +165,8 @@ static NSString *animPictureViewKey = @"animPictureViewKey";
 }
 
 - (void)scanButtonClick {
-    
+    YBZYScanController *scanController = [[YBZYScanController alloc] init];
+    [self.navigationController pushViewController:scanController animated:true];
 }
 
 - (void)searchButtonClick {

@@ -97,6 +97,7 @@ static NSString *categoryCellId = @"categoryCellId";
     [manager requestMethod:YBZYHTTPMethodGet URLString:@"https://coding.net/u/YiBaZhuangYuan/p/BeeQuickData/git/raw/master/BeeQuickHomeSections.json" parameters:nil completion:^(id response, NSError *error) {
         if (error) {
             NSLog(@"%@",error);
+            [self.mj_header endRefreshing];
             return;
         }
         self.homeCategoryModels = [NSArray yy_modelArrayWithClass:[YBZYHomeCategoryModel class] json:response];

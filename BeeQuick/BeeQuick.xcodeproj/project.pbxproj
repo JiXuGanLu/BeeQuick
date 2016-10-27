@@ -135,6 +135,8 @@
 		63EA9A981DC1E26500B9F074 /* YBZYMineOrderNotConfirmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A971DC1E26500B9F074 /* YBZYMineOrderNotConfirmController.m */; };
 		63EA9A9B1DC1E27800B9F074 /* YBZYMineOrderNotCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A9A1DC1E27800B9F074 /* YBZYMineOrderNotCommentController.m */; };
 		63EA9A9E1DC1E28800B9F074 /* YBZYMineOrderAfterSaleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9A9D1DC1E28800B9F074 /* YBZYMineOrderAfterSaleController.m */; };
+		63EA9AA11DC20BC900B9F074 /* YBZYScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9AA01DC20BC900B9F074 /* YBZYScanController.m */; };
+		63EA9AA41DC2120900B9F074 /* YBZYScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9AA31DC2120900B9F074 /* YBZYScanView.m */; };
 		E7E3020F8E93F24BB23F4526 /* libPods-BeeQuickUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D58C004F0B3F1A4EB1EC128 /* libPods-BeeQuickUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -392,6 +394,10 @@
 		63EA9A9A1DC1E27800B9F074 /* YBZYMineOrderNotCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBZYMineOrderNotCommentController.m; path = BeeQuick/Classes/Main/View/YBZYMineOrderNotCommentController.m; sourceTree = SOURCE_ROOT; };
 		63EA9A9C1DC1E28800B9F074 /* YBZYMineOrderAfterSaleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YBZYMineOrderAfterSaleController.h; path = BeeQuick/Classes/Main/View/YBZYMineOrderAfterSaleController.h; sourceTree = SOURCE_ROOT; };
 		63EA9A9D1DC1E28800B9F074 /* YBZYMineOrderAfterSaleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YBZYMineOrderAfterSaleController.m; path = BeeQuick/Classes/Main/View/YBZYMineOrderAfterSaleController.m; sourceTree = SOURCE_ROOT; };
+		63EA9A9F1DC20BC900B9F074 /* YBZYScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYScanController.h; sourceTree = "<group>"; };
+		63EA9AA01DC20BC900B9F074 /* YBZYScanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYScanController.m; sourceTree = "<group>"; };
+		63EA9AA21DC2120900B9F074 /* YBZYScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYScanView.h; sourceTree = "<group>"; };
+		63EA9AA31DC2120900B9F074 /* YBZYScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYScanView.m; sourceTree = "<group>"; };
 		6A2E29E6B706D768374AFBFB /* Pods-BeeQuickUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeQuickUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeeQuickUITests/Pods-BeeQuickUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FA91F35E624AE6E9C8CBDB0 /* libPods-BeeQuickTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeQuickTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA577D0048CA114DF03141A /* libPods-BeeQuick.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeQuick.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -647,6 +653,8 @@
 				63B6D6FA1DBA0725000CA2A9 /* YBZYActivityWebViewController.m */,
 				63B6D6FC1DBA0743000CA2A9 /* YBZYGoodWebViewController.h */,
 				63B6D6FD1DBA0743000CA2A9 /* YBZYGoodWebViewController.m */,
+				63EA9A9F1DC20BC900B9F074 /* YBZYScanController.h */,
+				63EA9AA01DC20BC900B9F074 /* YBZYScanController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -673,6 +681,8 @@
 				6370EEB01DB8AE7C00DC71BB /* YBZYNewVersionView.m */,
 				63EA9A731DC086A500B9F074 /* YBZYPushView.h */,
 				63EA9A741DC086A500B9F074 /* YBZYPushView.m */,
+				63EA9AA21DC2120900B9F074 /* YBZYScanView.h */,
+				63EA9AA31DC2120900B9F074 /* YBZYScanView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1299,8 +1309,10 @@
 				6370EE3C1DB7D9DC00DC71BB /* AppDelegate.m in Sources */,
 				6370EE9B1DB7F9D600DC71BB /* YBZYSuperMarketController.m in Sources */,
 				63B6D7651DBAD3D5000CA2A9 /* YBZYHomeHotGoodViewCell.m in Sources */,
+				63EA9AA11DC20BC900B9F074 /* YBZYScanController.m in Sources */,
 				6377E2341DBD88A600471490 /* YBZYShopCartView.m in Sources */,
 				63B6D7101DBA5E06000CA2A9 /* YBZYHomeIconView.m in Sources */,
+				63EA9AA41DC2120900B9F074 /* YBZYScanView.m in Sources */,
 				63A5CF371DBF3E7400F7A69F /* YBZYCheckOutBillView.m in Sources */,
 				63A5CF3A1DBF3F1800F7A69F /* YBZYCheckOutConfirmView.m in Sources */,
 				63EA9A781DC0A31000B9F074 /* YBZYMineHeaderView.m in Sources */,

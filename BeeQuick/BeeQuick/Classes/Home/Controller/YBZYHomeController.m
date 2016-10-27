@@ -9,6 +9,7 @@
 #import "YBZYHomeController.h"
 #import "UINavigationBar+YBZY.h"
 #import "YBZYHomeTableView.h"
+#import "YBZYScanController.h"
 
 static NSString *addGoodAnimKey = @"addGoodAnimKey";
 
@@ -87,7 +88,8 @@ static NSString *addGoodAnimKey = @"addGoodAnimKey";
 }
 
 - (void)scanButtonClick {
-    
+    YBZYScanController *scanController = [[YBZYScanController alloc] init];
+    [self.navigationController pushViewController:scanController animated:true];
 }
 
 - (void)searchButtonClick {
