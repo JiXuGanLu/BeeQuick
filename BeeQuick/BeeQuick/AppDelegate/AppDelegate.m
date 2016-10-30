@@ -10,7 +10,7 @@
 #import "YBZYNewVersionController.h"
 #import "YBZYTabBarController.h"
 
-static NSString *BQVersionKey = @"BQVersionKey";
+static NSString *YBZYVersionKey = @"YBZYVersionKey";
 
 @interface AppDelegate ()
 
@@ -26,7 +26,7 @@ static NSString *BQVersionKey = @"BQVersionKey";
     self.window.backgroundColor = YBZYCommonBackgroundColor;
     
     NSString *currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
-    NSString *lastLanchVersion = [[NSUserDefaults standardUserDefaults] objectForKey:BQVersionKey];
+    NSString *lastLanchVersion = [[NSUserDefaults standardUserDefaults] objectForKey:YBZYVersionKey];
     
     if ([currentVersion isEqualToString:lastLanchVersion]) {
         YBZYTabBarController *tabBarVC = [[YBZYTabBarController alloc] init];
@@ -35,7 +35,7 @@ static NSString *BQVersionKey = @"BQVersionKey";
         YBZYNewVersionController *newVersionVC = [[YBZYNewVersionController alloc] init];
         self.window.rootViewController = newVersionVC;
         
-        [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:BQVersionKey];
+        [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:YBZYVersionKey];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     
@@ -79,5 +79,8 @@ static NSString *BQVersionKey = @"BQVersionKey";
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 @end

@@ -36,14 +36,14 @@
     UIButton *goShoppingButton = [[UIButton alloc] init];
     [goShoppingButton setTitle:@"去剁手" forState:UIControlStateNormal];
     goShoppingButton.titleLabel.font = YBZYCommonBigFont;
-    [goShoppingButton setTitleColor:YBZYCommonMidTextColor forState:UIControlStateNormal];
+    [goShoppingButton setTitleColor:YBZYCommonLightTextColor forState:UIControlStateNormal];
     goShoppingButton.frame = CGRectMake(0, 0, 150, 30);
-    [goShoppingButton.layer setBorderColor:YBZYCommonMidTextColor.CGColor];
-    [goShoppingButton.layer setBorderWidth:2.0];
+    [goShoppingButton.layer setBorderColor:YBZYCommonLightTextColor.CGColor];
+    [goShoppingButton.layer setBorderWidth:1.0];
     [goShoppingButton.layer setCornerRadius:8];
     [goShoppingButton.layer setMasksToBounds:true];
     [self addSubview:goShoppingButton];
-    goShoppingButton.centerY = noticeLabel.centerY + 30;
+    goShoppingButton.centerY = noticeLabel.centerY + 50;
     goShoppingButton.centerX = self.centerX;
     [goShoppingButton addTarget:self action:@selector(jumpToHome) forControlEvents:UIControlEventTouchUpInside];
 }

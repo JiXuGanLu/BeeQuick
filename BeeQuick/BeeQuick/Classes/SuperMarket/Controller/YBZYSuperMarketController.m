@@ -179,7 +179,7 @@ static NSString *animPictureViewKey = @"animPictureViewKey";
 }
 
 - (void)searchButtonClick {
-    [SVProgressHUD showWithStatus:@"官方搜索接口没抓到....."];
+    [SVProgressHUD showWithStatus:@"官方搜索接口没抓到,没做这个页面"];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [SVProgressHUD dismiss];
