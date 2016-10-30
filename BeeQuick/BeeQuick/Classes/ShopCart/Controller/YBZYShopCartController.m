@@ -10,6 +10,7 @@
 #import "YBZYShopCartEmptyView.h"
 #import "YBZYShopCartView.h"
 #import "YBZYCheckOutController.h"
+#import "YBZYAddressSegmentedController.h"
 
 @interface YBZYShopCartController ()
 
@@ -82,6 +83,8 @@
 - (YBZYShopCartView *)shopCartView {
     if (!_shopCartView) {
         YBZYShopCartView *shopCartView = [[YBZYShopCartView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+        shopCartView.showsVerticalScrollIndicator = false;
+        shopCartView.showsHorizontalScrollIndicator = false;
         shopCartView.goodsList = self.goodsList;
         
         __weak typeof(self) weakSelf = self;
@@ -132,10 +135,24 @@
         };
         shopCartView.checkOutBlock = ^(NSArray<NSDictionary *> *selectedGoodList, CGFloat totalPrice){
             __strong typeof(weakSelf) strongSelf = weakSelf;
-            YBZYCheckOutController *checkOutController = [[YBZYCheckOutController alloc] init];
-            checkOutController.checkOutGoods = selectedGoodList;
-            checkOutController.costAmount = totalPrice;
-            [strongSelf.navigationController pushViewController:checkOutController animated:true];
+            if (shopCartView.pickUp.count + shopCartView.currentUserAddress.count) {
+                YBZYCheckOutController *checkOutController = [[YBZYCheckOutController alloc] init];
+                checkOutController.checkOutGoods = selectedGoodList;
+                checkOutController.costAmount = totalPrice;
+                [strongSelf.navigationController pushViewController:checkOutController animated:true];
+            } else {
+                [SVProgressHUD showErrorWithStatus:@"请设置地址"];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [SVProgressHUD dismiss];
+                });
+            }
+        };
+        shopCartView.addressBlock = ^(NSInteger index){
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            YBZYAddressSegmentedController *asController = [[YBZYAddressSegmentedController alloc] init];
+            asController.isAddressLocateHidden = true;
+            asController.selectedIndex = index;
+            [strongSelf.navigationController pushViewController:asController animated:true];
         };
         [self.view addSubview:shopCartView];
         shopCartView.contentInset = UIEdgeInsetsMake(0, 0, 64, 0);

@@ -35,6 +35,7 @@
     self.iconImageView = iconImageView;
     
     UILabel *iconTitleLabel = [UILabel ybzy_labelWithText:@"噢噢噢噢" andTextColor:YBZYCommonDarkTextColor andFontSize:12];
+    iconTitleLabel.numberOfLines = 0;
     [self.contentView addSubview:iconTitleLabel];
     self.iconTitleLabel = iconTitleLabel;
     
@@ -47,7 +48,7 @@
     
     [iconTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.contentView);
-        make.centerY.equalTo(self.contentView).offset(16);
+        make.top.equalTo(iconImageView.mas_bottom).offset(12);
     }];
 }
 

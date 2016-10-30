@@ -51,6 +51,9 @@
 		6370EEAB1DB7FBDD00DC71BB /* YBZYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370EEAA1DB7FBDD00DC71BB /* YBZYNavigationController.m */; };
 		6370EEAE1DB8031300DC71BB /* YBZYNewVersionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370EEAD1DB8031300DC71BB /* YBZYNewVersionController.m */; };
 		6370EEB11DB8AE7C00DC71BB /* YBZYNewVersionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370EEB01DB8AE7C00DC71BB /* YBZYNewVersionView.m */; };
+		6373E3771DC524E20081381B /* YBZYAddressPickUpCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373E3761DC524E20081381B /* YBZYAddressPickUpCell.m */; };
+		6373E37A1DC569850081381B /* YBZYMineCustomerServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373E3791DC569850081381B /* YBZYMineCustomerServiceController.m */; };
+		6373E37D1DC56CF20081381B /* YBZYMineShopCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6373E37C1DC56CF20081381B /* YBZYMineShopCollectionController.m */; };
 		6377E22E1DBD41E500471490 /* superMarketGoods.sql in Resources */ = {isa = PBXBuildFile; fileRef = 6377E22D1DBD41E500471490 /* superMarketGoods.sql */; };
 		6377E2311DBD86D600471490 /* YBZYShopCartEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377E2301DBD86D600471490 /* YBZYShopCartEmptyView.m */; };
 		6377E2341DBD88A600471490 /* YBZYShopCartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377E2331DBD88A600471490 /* YBZYShopCartView.m */; };
@@ -137,6 +140,18 @@
 		63EA9ACA1DC277B400B9F074 /* YBZYMineViewIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9AC21DC277B400B9F074 /* YBZYMineViewIconCell.m */; };
 		63EA9ACB1DC277B400B9F074 /* YBZYMineViewTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9AC41DC277B400B9F074 /* YBZYMineViewTopCell.m */; };
 		63EA9ACC1DC277B400B9F074 /* YBZYMineViewWalletCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9AC61DC277B400B9F074 /* YBZYMineViewWalletCell.m */; };
+		63EA9ACF1DC2802D00B9F074 /* YBZYAddressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9ACE1DC2802D00B9F074 /* YBZYAddressController.m */; };
+		63EA9AD51DC30F6500B9F074 /* YBZYAddressSegmentedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9AD41DC30F6500B9F074 /* YBZYAddressSegmentedController.m */; };
+		63EA9AD81DC311B000B9F074 /* YBZYAddressLocateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9AD71DC311B000B9F074 /* YBZYAddressLocateCell.m */; };
+		63EA9ADB1DC311E400B9F074 /* YBZYAddressSelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9ADA1DC311E400B9F074 /* YBZYAddressSelectCell.m */; };
+		63EA9ADE1DC3267300B9F074 /* YBZYAddressAddView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9ADD1DC3267300B9F074 /* YBZYAddressAddView.m */; };
+		63EA9AE41DC3310100B9F074 /* YBZYAddressEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9AE31DC3310100B9F074 /* YBZYAddressEditController.m */; };
+		63EA9AE71DC33A2500B9F074 /* YBZYAddressEditFillCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9AE61DC33A2500B9F074 /* YBZYAddressEditFillCell.m */; };
+		63EA9AEA1DC33A5000B9F074 /* YBZYAddressEditGenderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9AE91DC33A5000B9F074 /* YBZYAddressEditGenderCell.m */; };
+		63EA9AED1DC33A6F00B9F074 /* YBZYAddressEditDeleteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9AEC1DC33A6F00B9F074 /* YBZYAddressEditDeleteCell.m */; };
+		63EA9AF01DC36F4200B9F074 /* YBZYPickUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9AEF1DC36F4200B9F074 /* YBZYPickUpController.m */; };
+		63EA9AF21DC4861F00B9F074 /* cityGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63EA9AF11DC4861F00B9F074 /* cityGroups.plist */; };
+		63EA9AF51DC48C8F00B9F074 /* YBZYCityGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EA9AF41DC48C8F00B9F074 /* YBZYCityGroupModel.m */; };
 		E7E3020F8E93F24BB23F4526 /* libPods-BeeQuickUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D58C004F0B3F1A4EB1EC128 /* libPods-BeeQuickUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -245,6 +260,12 @@
 		6370EEAD1DB8031300DC71BB /* YBZYNewVersionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYNewVersionController.m; sourceTree = "<group>"; };
 		6370EEAF1DB8AE7C00DC71BB /* YBZYNewVersionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYNewVersionView.h; sourceTree = "<group>"; };
 		6370EEB01DB8AE7C00DC71BB /* YBZYNewVersionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYNewVersionView.m; sourceTree = "<group>"; };
+		6373E3751DC524E20081381B /* YBZYAddressPickUpCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYAddressPickUpCell.h; sourceTree = "<group>"; };
+		6373E3761DC524E20081381B /* YBZYAddressPickUpCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYAddressPickUpCell.m; sourceTree = "<group>"; };
+		6373E3781DC569850081381B /* YBZYMineCustomerServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYMineCustomerServiceController.h; sourceTree = "<group>"; };
+		6373E3791DC569850081381B /* YBZYMineCustomerServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYMineCustomerServiceController.m; sourceTree = "<group>"; };
+		6373E37B1DC56CF20081381B /* YBZYMineShopCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYMineShopCollectionController.h; sourceTree = "<group>"; };
+		6373E37C1DC56CF20081381B /* YBZYMineShopCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYMineShopCollectionController.m; sourceTree = "<group>"; };
 		6377E22D1DBD41E500471490 /* superMarketGoods.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = superMarketGoods.sql; sourceTree = "<group>"; };
 		6377E22F1DBD86D600471490 /* YBZYShopCartEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYShopCartEmptyView.h; sourceTree = "<group>"; };
 		6377E2301DBD86D600471490 /* YBZYShopCartEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYShopCartEmptyView.m; sourceTree = "<group>"; };
@@ -398,6 +419,29 @@
 		63EA9AC41DC277B400B9F074 /* YBZYMineViewTopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYMineViewTopCell.m; sourceTree = "<group>"; };
 		63EA9AC51DC277B400B9F074 /* YBZYMineViewWalletCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYMineViewWalletCell.h; sourceTree = "<group>"; };
 		63EA9AC61DC277B400B9F074 /* YBZYMineViewWalletCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYMineViewWalletCell.m; sourceTree = "<group>"; };
+		63EA9ACD1DC2802D00B9F074 /* YBZYAddressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYAddressController.h; sourceTree = "<group>"; };
+		63EA9ACE1DC2802D00B9F074 /* YBZYAddressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYAddressController.m; sourceTree = "<group>"; };
+		63EA9AD31DC30F6500B9F074 /* YBZYAddressSegmentedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYAddressSegmentedController.h; sourceTree = "<group>"; };
+		63EA9AD41DC30F6500B9F074 /* YBZYAddressSegmentedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYAddressSegmentedController.m; sourceTree = "<group>"; };
+		63EA9AD61DC311B000B9F074 /* YBZYAddressLocateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYAddressLocateCell.h; sourceTree = "<group>"; };
+		63EA9AD71DC311B000B9F074 /* YBZYAddressLocateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYAddressLocateCell.m; sourceTree = "<group>"; };
+		63EA9AD91DC311E400B9F074 /* YBZYAddressSelectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYAddressSelectCell.h; sourceTree = "<group>"; };
+		63EA9ADA1DC311E400B9F074 /* YBZYAddressSelectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYAddressSelectCell.m; sourceTree = "<group>"; };
+		63EA9ADC1DC3267300B9F074 /* YBZYAddressAddView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYAddressAddView.h; sourceTree = "<group>"; };
+		63EA9ADD1DC3267300B9F074 /* YBZYAddressAddView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYAddressAddView.m; sourceTree = "<group>"; };
+		63EA9AE21DC3310100B9F074 /* YBZYAddressEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYAddressEditController.h; sourceTree = "<group>"; };
+		63EA9AE31DC3310100B9F074 /* YBZYAddressEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYAddressEditController.m; sourceTree = "<group>"; };
+		63EA9AE51DC33A2500B9F074 /* YBZYAddressEditFillCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYAddressEditFillCell.h; sourceTree = "<group>"; };
+		63EA9AE61DC33A2500B9F074 /* YBZYAddressEditFillCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYAddressEditFillCell.m; sourceTree = "<group>"; };
+		63EA9AE81DC33A5000B9F074 /* YBZYAddressEditGenderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYAddressEditGenderCell.h; sourceTree = "<group>"; };
+		63EA9AE91DC33A5000B9F074 /* YBZYAddressEditGenderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYAddressEditGenderCell.m; sourceTree = "<group>"; };
+		63EA9AEB1DC33A6F00B9F074 /* YBZYAddressEditDeleteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYAddressEditDeleteCell.h; sourceTree = "<group>"; };
+		63EA9AEC1DC33A6F00B9F074 /* YBZYAddressEditDeleteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYAddressEditDeleteCell.m; sourceTree = "<group>"; };
+		63EA9AEE1DC36F4200B9F074 /* YBZYPickUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYPickUpController.h; sourceTree = "<group>"; };
+		63EA9AEF1DC36F4200B9F074 /* YBZYPickUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYPickUpController.m; sourceTree = "<group>"; };
+		63EA9AF11DC4861F00B9F074 /* cityGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityGroups.plist; sourceTree = "<group>"; };
+		63EA9AF31DC48C8F00B9F074 /* YBZYCityGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYCityGroupModel.h; sourceTree = "<group>"; };
+		63EA9AF41DC48C8F00B9F074 /* YBZYCityGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYCityGroupModel.m; sourceTree = "<group>"; };
 		6A2E29E6B706D768374AFBFB /* Pods-BeeQuickUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeQuickUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeeQuickUITests/Pods-BeeQuickUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FA91F35E624AE6E9C8CBDB0 /* libPods-BeeQuickTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeQuickTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA577D0048CA114DF03141A /* libPods-BeeQuick.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeQuick.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -508,6 +552,7 @@
 		6370EE3D1DB7D9F600DC71BB /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				63EA9AF11DC4861F00B9F074 /* cityGroups.plist */,
 				6377E22D1DBD41E500471490 /* superMarketGoods.sql */,
 				6370EE8E1DB7F7D900DC71BB /* collectionGoods.sql */,
 				6370EE8F1DB7F7D900DC71BB /* pickUp.sql */,
@@ -655,6 +700,14 @@
 				63B6D6FD1DBA0743000CA2A9 /* YBZYGoodWebViewController.m */,
 				63EA9A9F1DC20BC900B9F074 /* YBZYScanController.h */,
 				63EA9AA01DC20BC900B9F074 /* YBZYScanController.m */,
+				63EA9AD31DC30F6500B9F074 /* YBZYAddressSegmentedController.h */,
+				63EA9AD41DC30F6500B9F074 /* YBZYAddressSegmentedController.m */,
+				63EA9ACD1DC2802D00B9F074 /* YBZYAddressController.h */,
+				63EA9ACE1DC2802D00B9F074 /* YBZYAddressController.m */,
+				63EA9AE21DC3310100B9F074 /* YBZYAddressEditController.h */,
+				63EA9AE31DC3310100B9F074 /* YBZYAddressEditController.m */,
+				63EA9AEE1DC36F4200B9F074 /* YBZYPickUpController.h */,
+				63EA9AEF1DC36F4200B9F074 /* YBZYPickUpController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -668,6 +721,8 @@
 				6370EE891DB7F69A00DC71BB /* YBZYAddressModel.m */,
 				6370EE8B1DB7F6B100DC71BB /* YBZYPickUpModel.h */,
 				6370EE8C1DB7F6B100DC71BB /* YBZYPickUpModel.m */,
+				63EA9AF31DC48C8F00B9F074 /* YBZYCityGroupModel.h */,
+				63EA9AF41DC48C8F00B9F074 /* YBZYCityGroupModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -683,6 +738,20 @@
 				63EA9A741DC086A500B9F074 /* YBZYPushView.m */,
 				63EA9AA21DC2120900B9F074 /* YBZYScanView.h */,
 				63EA9AA31DC2120900B9F074 /* YBZYScanView.m */,
+				63EA9AD61DC311B000B9F074 /* YBZYAddressLocateCell.h */,
+				63EA9AD71DC311B000B9F074 /* YBZYAddressLocateCell.m */,
+				63EA9AD91DC311E400B9F074 /* YBZYAddressSelectCell.h */,
+				63EA9ADA1DC311E400B9F074 /* YBZYAddressSelectCell.m */,
+				6373E3751DC524E20081381B /* YBZYAddressPickUpCell.h */,
+				6373E3761DC524E20081381B /* YBZYAddressPickUpCell.m */,
+				63EA9ADC1DC3267300B9F074 /* YBZYAddressAddView.h */,
+				63EA9ADD1DC3267300B9F074 /* YBZYAddressAddView.m */,
+				63EA9AE51DC33A2500B9F074 /* YBZYAddressEditFillCell.h */,
+				63EA9AE61DC33A2500B9F074 /* YBZYAddressEditFillCell.m */,
+				63EA9AE81DC33A5000B9F074 /* YBZYAddressEditGenderCell.h */,
+				63EA9AE91DC33A5000B9F074 /* YBZYAddressEditGenderCell.m */,
+				63EA9AEB1DC33A6F00B9F074 /* YBZYAddressEditDeleteCell.h */,
+				63EA9AEC1DC33A6F00B9F074 /* YBZYAddressEditDeleteCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -917,6 +986,10 @@
 				63EA9AB11DC277A900B9F074 /* YBZYMineOrderNotConfirmController.m */,
 				63EA9AB21DC277A900B9F074 /* YBZYMineOrderNotPayController.h */,
 				63EA9AB31DC277A900B9F074 /* YBZYMineOrderNotPayController.m */,
+				6373E3781DC569850081381B /* YBZYMineCustomerServiceController.h */,
+				6373E3791DC569850081381B /* YBZYMineCustomerServiceController.m */,
+				6373E37B1DC56CF20081381B /* YBZYMineShopCollectionController.h */,
+				6373E37C1DC56CF20081381B /* YBZYMineShopCollectionController.m */,
 			);
 			path = SubController;
 			sourceTree = "<group>";
@@ -1104,6 +1177,7 @@
 				634448231DBC444900723255 /* YBZYSuperMarketSortFooterView.xib in Resources */,
 				63A5CF921DBF703500F7A69F /* YBZYShopCartGoodsListHeaderCell.xib in Resources */,
 				63EA9AC81DC277B400B9F074 /* YBZYMineHeaderView.xib in Resources */,
+				63EA9AF21DC4861F00B9F074 /* cityGroups.plist in Resources */,
 				6377E22E1DBD41E500471490 /* superMarketGoods.sql in Resources */,
 				63A5CF7E1DBF5D4100F7A69F /* YBZYCheckOutGoodListCell.xib in Resources */,
 				63A5CF771DBF59F500F7A69F /* YBZYCheckOutPromotionCell.xib in Resources */,
@@ -1275,27 +1349,37 @@
 				6377E2371DBD894400471490 /* YBZYShopCartAddressCell.m in Sources */,
 				63A5CF821DBF63FF00F7A69F /* YBZYCheckOutCostAmountCell.m in Sources */,
 				63EA9AC91DC277B400B9F074 /* YBZYMineViewFlowLayout.m in Sources */,
+				6373E37D1DC56CF20081381B /* YBZYMineShopCollectionController.m in Sources */,
 				63B6D7591DBAD253000CA2A9 /* YBZYHomeTableFooterView.m in Sources */,
 				63A5CF431DBF44FD00F7A69F /* YBZYCheckOutPayMethodCell.m in Sources */,
 				63B6D75F1DBAD341000CA2A9 /* YBZYHomeHotGoodView.m in Sources */,
+				63EA9AD81DC311B000B9F074 /* YBZYAddressLocateCell.m in Sources */,
 				63B6D6E61DB8DD64000CA2A9 /* UINavigationBar+YBZY.m in Sources */,
 				63B6D74D1DBAC1EE000CA2A9 /* YBZYHomeMainActivityViewCell.m in Sources */,
 				63B6D6FB1DBA0725000CA2A9 /* YBZYActivityWebViewController.m in Sources */,
 				63A5CF721DBF57DB00F7A69F /* YBZYCheckOutBalanceCell.m in Sources */,
+				63EA9ADB1DC311E400B9F074 /* YBZYAddressSelectCell.m in Sources */,
 				63A5CF3E1DBF440600F7A69F /* YBZYCheckOutSubtitleCell.m in Sources */,
 				63B6D73F1DBAB4A8000CA2A9 /* YBZYHomeCycleViewCell.m in Sources */,
+				63EA9AEA1DC33A5000B9F074 /* YBZYAddressEditGenderCell.m in Sources */,
 				63B6D7441DBAB548000CA2A9 /* YBZYHomeHeadLineView.m in Sources */,
+				63EA9ADE1DC3267300B9F074 /* YBZYAddressAddView.m in Sources */,
 				6370EE7C1DB7EFAE00DC71BB /* UILabel+Convenience.m in Sources */,
 				6344481B1DBC048A00723255 /* YBZYSuperMarketCategoryModel.m in Sources */,
+				6373E37A1DC569850081381B /* YBZYMineCustomerServiceController.m in Sources */,
 				63EA9AB81DC277A900B9F074 /* YBZYMineOrderNotCommentController.m in Sources */,
 				63B6D76E1DBBA7C6000CA2A9 /* YBZYSuperMarketGoodCell.m in Sources */,
 				6370EE8D1DB7F6B100DC71BB /* YBZYPickUpModel.m in Sources */,
 				63EA9AB71DC277A900B9F074 /* YBZYMineOrderController.m in Sources */,
 				63B6D73D1DBAB46D000CA2A9 /* YBZYHomeHeadLineViewCell.m in Sources */,
+				63EA9AED1DC33A6F00B9F074 /* YBZYAddressEditDeleteCell.m in Sources */,
+				63EA9AE41DC3310100B9F074 /* YBZYAddressEditController.m in Sources */,
 				6377E2311DBD86D600471490 /* YBZYShopCartEmptyView.m in Sources */,
 				63B6D7071DBA35F1000CA2A9 /* YBZYHomeCycleViewFlowLayout.m in Sources */,
 				6370EE981DB7F9BC00DC71BB /* YBZYHomeController.m in Sources */,
+				63EA9AD51DC30F6500B9F074 /* YBZYAddressSegmentedController.m in Sources */,
 				63EA9ACA1DC277B400B9F074 /* YBZYMineViewIconCell.m in Sources */,
+				6373E3771DC524E20081381B /* YBZYAddressPickUpCell.m in Sources */,
 				63EA9ABA1DC277A900B9F074 /* YBZYMineOrderNotPayController.m in Sources */,
 				6370EE7D1DB7EFAE00DC71BB /* UIView+Convenience.m in Sources */,
 				6370EE8A1DB7F69A00DC71BB /* YBZYAddressModel.m in Sources */,
@@ -1309,6 +1393,7 @@
 				63B6D77A1DBBCB71000CA2A9 /* YBZYSuperMarketSortHeaderView.m in Sources */,
 				6370EE841DB7F50800DC71BB /* YBZYHTTPSessionManager.m in Sources */,
 				6370EE3C1DB7D9DC00DC71BB /* AppDelegate.m in Sources */,
+				63EA9AE71DC33A2500B9F074 /* YBZYAddressEditFillCell.m in Sources */,
 				63EA9AB61DC277A900B9F074 /* YBZYMineOrderAllController.m in Sources */,
 				6370EE9B1DB7F9D600DC71BB /* YBZYSuperMarketController.m in Sources */,
 				63B6D7651DBAD3D5000CA2A9 /* YBZYHomeHotGoodViewCell.m in Sources */,
@@ -1318,12 +1403,14 @@
 				63B6D7101DBA5E06000CA2A9 /* YBZYHomeIconView.m in Sources */,
 				63EA9AA41DC2120900B9F074 /* YBZYScanView.m in Sources */,
 				63A5CF371DBF3E7400F7A69F /* YBZYCheckOutBillView.m in Sources */,
+				63EA9AF51DC48C8F00B9F074 /* YBZYCityGroupModel.m in Sources */,
 				63A5CF3A1DBF3F1800F7A69F /* YBZYCheckOutConfirmView.m in Sources */,
 				6370EEAE1DB8031300DC71BB /* YBZYNewVersionController.m in Sources */,
 				63B6D6FE1DBA0743000CA2A9 /* YBZYGoodWebViewController.m in Sources */,
 				63B6D6E91DB8E5CB000CA2A9 /* YBZYHomeTableView.m in Sources */,
 				63B6D7041DBA35C6000CA2A9 /* YBZYHomeCycleView.m in Sources */,
 				63B6D74A1DBAC1D7000CA2A9 /* YBZYHomeMainActivityViewFlowLayout.m in Sources */,
+				63EA9AF01DC36F4200B9F074 /* YBZYPickUpController.m in Sources */,
 				63B6D76B1DBBA7B5000CA2A9 /* YBZYSuperMarketCategoryCell.m in Sources */,
 				63B6D7711DBBC6A0000CA2A9 /* YBZYSuperMarketSortViewFlowLayout.m in Sources */,
 				63B6D72E1DBAA3E8000CA2A9 /* YBZYHomeHeadLineModel.m in Sources */,
@@ -1338,6 +1425,7 @@
 				6370EE771DB7EFAE00DC71BB /* NSString+ConvenienceHash.m in Sources */,
 				63B6D6EC1DB8F149000CA2A9 /* YBZYHomeCategoryCell.m in Sources */,
 				6377E25A1DBDD85D00471490 /* YBZYShopCartCheckCell.m in Sources */,
+				63EA9ACF1DC2802D00B9F074 /* YBZYAddressController.m in Sources */,
 				6370EE081DB7CDBE00DC71BB /* main.m in Sources */,
 				634448151DBBFAAA00723255 /* YBZYHomeCategoryModel.m in Sources */,
 				6370EE811DB7F46E00DC71BB /* YBZYGoodModel.m in Sources */,

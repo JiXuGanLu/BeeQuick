@@ -30,4 +30,20 @@
     [self.pickUpTagLabel.layer setMasksToBounds:true];
 }
 
+- (void)setAddressModel:(YBZYAddressModel *)addressModel {
+    _addressModel = addressModel;
+    
+    [self.userNameLabel setText:addressModel.name];
+    [self.userTelLabel setText:addressModel.telNumber];
+    [self.userAddressLabel setText:addressModel.addressString];
+}
+
+- (void)setPickUpModel:(YBZYPickUpModel *)pickUpModel {
+    _pickUpModel = pickUpModel;
+    
+    [self.pickUpNameLabel setText:pickUpModel.dealer_alias];
+    [self.workTimeLabel setText:pickUpModel.workingTimeString];
+    [self.pickUpAddressLabel setText:pickUpModel.address];
+}
+
 @end

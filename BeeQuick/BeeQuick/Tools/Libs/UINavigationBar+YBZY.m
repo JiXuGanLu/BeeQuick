@@ -33,7 +33,7 @@ static char coverViewKey;
 }
 
 - (void)ybzy_reset {
-    [self setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [self setBackgroundImage:nil forBarMetrics:UIBarMetricsCompact];
     [self.coverView removeFromSuperview];
     self.coverView = nil;
 }

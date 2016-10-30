@@ -106,9 +106,11 @@ static NSString *homeCycleCellId = @"homeCycleCellId";
 }
 
 - (void)updateTimer {
-    NSIndexPath *indexPath = self.cycleImageView.indexPathsForVisibleItems[0];
-    NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:indexPath.row + 1 inSection:0];
-    [self.cycleImageView scrollToItemAtIndexPath:nextIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+    if (self.cycleImageView.indexPathsForVisibleItems.count) {
+        NSIndexPath *indexPath = self.cycleImageView.indexPathsForVisibleItems[0];
+        NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:indexPath.row + 1 inSection:0];
+        [self.cycleImageView scrollToItemAtIndexPath:nextIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+    }
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {

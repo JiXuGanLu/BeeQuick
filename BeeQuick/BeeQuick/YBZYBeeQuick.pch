@@ -42,6 +42,7 @@
 #define YBZYAddOrReduceGoodNotification @"YBZYAddOrReduceGoodNotification"
 #define YBZYHomeTableFooterViewUpdateNotification @"YBZYHomeTableFooterViewUpdateNotification"
 #define YBZYHomeRefreshNotification @"YBZYHomeRefreshNotification"
+#define YBZYLocateResultKey @"YBZYLocateResultKey"
 
 //自定义log
 #ifdef DEBUG

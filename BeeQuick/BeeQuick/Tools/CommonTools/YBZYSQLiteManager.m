@@ -276,6 +276,13 @@ static NSString *dbFileName = @"ybzyBeeQuickDatabase.db";
     [self executeUpdate:setSql withArgumentArray:@[@(creatTime), @(userId)]];
 }
 
+- (void)updateUserAddress:(YBZYAddressModel *)addressModel withAddressCreatTime:(NSInteger)creatTime userId:(NSInteger)userId {
+    NSData *addressData = [NSKeyedArchiver archivedDataWithRootObject:addressModel];
+    
+    NSString *updateSql = @"UPDATE T_UserAddress SET userAddressModel = ? WHERE creatTime = ? and userId = ?;";
+    [self executeUpdate:updateSql withArgumentArray:@[addressData, @(creatTime), @(userId)]];
+}
+
 - (NSArray<NSDictionary *> *)getCurrentUserAddressWithUserId:(NSInteger)userId {
     NSString *getSql = [NSString stringWithFormat:@"SELECT * FROM T_UserAddress WHERE selected = 1 and userId = %zd;", userId];
     return [self getUserAddressWithSQL:getSql];

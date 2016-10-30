@@ -10,4 +10,8 @@
 
 @implementation YBZYPickUpModel
 
+- (NSString *)workingTimeString {
+    return [NSString stringWithFormat:@"%@--%@", self.WorkBegin, self.WorkEnd];
+}
+
 @end

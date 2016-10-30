@@ -163,6 +163,21 @@ typedef NS_ENUM(NSUInteger, YBZYSQLOrderType) {
  */
 - (NSArray<NSDictionary *> *)getAllUserAddressWithUserId:(NSInteger)userId;
 
+/**
+ 更新用户已有地址
+
+ @param creatTime 地址模型的creatTime属性
+ @param userId    用户ID，直接写YBZYUserId
+ */
+- (void)updateUserAddress:(YBZYAddressModel *)addressModel withAddressCreatTime:(NSInteger)creatTime userId:(NSInteger)userId;
+
+/**
+ 取消用户设定的当前地址
+
+ @param userId 用户ID，直接写YBZYUserId
+ */
+- (void)cancelCurrentSelectedUserAddressWithUserId:(NSInteger)userId;
+
 #pragma mark - 自提点数据库接口
 
 /**
@@ -181,6 +196,13 @@ typedef NS_ENUM(NSUInteger, YBZYSQLOrderType) {
  @return 用户自提点数据库查询结果, 结果为包含一个字典的数组, 字典信息(包含地址模型/序号/userId/是否选择为当前地址)
  */
 - (NSArray<NSDictionary *> *)getPickUpWithUserId:(NSInteger)userId;
+
+/**
+ 删除用户选择的自提点
+
+ @param userId 直接写YBZYUserId
+ */
+- (void)deletePickUpWithUserId:(NSInteger)userId;
 
 #pragma mark - 商品收藏数据库接口
 

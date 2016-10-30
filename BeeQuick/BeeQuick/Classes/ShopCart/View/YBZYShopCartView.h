@@ -41,4 +41,10 @@ typedef NS_ENUM(NSUInteger, YBZYShopCartSelectAllType) {
 
 @property (nonatomic, copy) void(^selectAllButtonBlock)(YBZYShopCartSelectAllType type, NSInteger goodType);
 
+@property (nonatomic, copy) void(^addressBlock)(NSInteger index);
+
+@property (nonatomic, strong) NSArray<NSDictionary *> *currentUserAddress;
+
+@property (nonatomic, strong) NSArray<NSDictionary *> *pickUp;
+
 @end

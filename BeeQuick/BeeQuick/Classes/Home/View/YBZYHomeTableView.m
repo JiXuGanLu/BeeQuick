@@ -93,8 +93,7 @@ static NSString *categoryCellId = @"categoryCellId";
 - (void)loadHomeCategoryData {
     [[NSNotificationCenter defaultCenter] postNotificationName:YBZYHomeRefreshNotification object:nil];
     
-    YBZYHTTPSessionManager *manager = [YBZYHTTPSessionManager sharedSessionManager];
-    [manager requestMethod:YBZYHTTPMethodGet URLString:@"https://coding.net/u/YiBaZhuangYuan/p/BeeQuickData/git/raw/master/BeeQuickHomeSections.json" parameters:nil completion:^(id response, NSError *error) {
+    [[YBZYHTTPSessionManager sharedSessionManager] requestMethod:YBZYHTTPMethodGet URLString:@"https://coding.net/u/YiBaZhuangYuan/p/BeeQuickData/git/raw/master/BeeQuickHomeSections.json" parameters:nil completion:^(id response, NSError *error) {
         if (error) {
             NSLog(@"%@",error);
             [self.mj_header endRefreshing];

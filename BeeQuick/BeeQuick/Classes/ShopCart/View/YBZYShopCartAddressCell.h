@@ -10,4 +10,7 @@
 
 @interface YBZYShopCartAddressCell : UITableViewCell
 
+@property (nonatomic, strong) YBZYAddressModel *addressModel;
+@property (nonatomic, strong) YBZYPickUpModel *pickUpModel;
+
 @end

@@ -121,9 +121,11 @@ static CGFloat margin = 8;
 }
 
 - (void)updateTimer {
-    NSIndexPath *indexPath = self.headLineView.indexPathsForVisibleItems[0];
-    NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:indexPath.row + 1 inSection:0];
-    [self.headLineView scrollToItemAtIndexPath:nextIndexPath atScrollPosition:0 animated:true];
+    if (self.headLineView.indexPathsForVisibleItems.count) {
+        NSIndexPath *indexPath = self.headLineView.indexPathsForVisibleItems[0];
+        NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:indexPath.row + 1 inSection:0];
+        [self.headLineView scrollToItemAtIndexPath:nextIndexPath atScrollPosition:0 animated:true];
+    }
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {

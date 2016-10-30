@@ -2,8 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>YBZY想获取你的地址,嘿嘿嘿</string>
 	<key>NSCameraUsageDescription</key>
-	<string>YBZY想使♂用你的摄♂像♂头,嘿嘿嘿</string>
+	<string>YBZY想使用你的摄♂像♂头,嘿嘿嘿</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>

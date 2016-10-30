@@ -21,8 +21,7 @@ static CGFloat borderRatio = 0.15;
 
 @implementation YBZYScanView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         [self setupUI];

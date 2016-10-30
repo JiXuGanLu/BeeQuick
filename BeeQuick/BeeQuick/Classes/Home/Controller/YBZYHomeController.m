@@ -10,18 +10,20 @@
 #import "UINavigationBar+YBZY.h"
 #import "YBZYHomeTableView.h"
 #import "YBZYScanController.h"
+#import "YBZYAddressSegmentedController.h"
 
 static NSString *addGoodAnimKey = @"addGoodAnimKey";
 
-@interface YBZYHomeController () <YBZYHomeCategoryCellDelegate, YBZYHomeCategoryGoodViewDelegate, YBZYPushViewDelegate, YBZYHomeHotGoodViewCellDelegate, YBZYHomeMoreButtonViewDelegate, CAAnimationDelegate>
+@interface YBZYHomeController () <YBZYHomeCategoryCellDelegate, YBZYHomeCategoryGoodViewDelegate, YBZYPushViewDelegate, YBZYHomeHotGoodViewCellDelegate, YBZYHomeMoreButtonViewDelegate, CAAnimationDelegate, CLLocationManagerDelegate>
 
 @property (nonatomic, weak) YBZYHomeTableView *homeTableView;
-
-@property (nonatomic, weak) UIButton *addressButton;
-
 @property (nonatomic, strong) UIImage *itemBackgroundImage;
-
 @property (nonatomic, assign) CGFloat scrollOffsetY;
+@property (nonatomic, weak) UIButton *addressButton;
+@property (nonatomic, strong) YBZYAddressModel *currentAddressModel;
+@property (nonatomic, strong) YBZYPickUpModel *currentPickUpModel;
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, copy) NSString *locateString;
 
 @end
 
@@ -31,6 +33,10 @@ static NSString *addGoodAnimKey = @"addGoodAnimKey";
     [super viewDidLoad];
     self.view.backgroundColor = YBZYCommonBackgroundColor;
     [self setupTableView];
+    [self locate];
+    [SVProgressHUD showWithStatus:@"定位中"];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startLocate) name:YBZYLocateNotification object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -40,19 +46,35 @@ static NSString *addGoodAnimKey = @"addGoodAnimKey";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self setupNavigationBar];
+    [self setNavigationBarTitleView];
     [self changeNavigationBarStyleWhenScroll:self.scrollOffsetY];
+    if (self.currentAddressModel) {
+        [self didSetCurrentAddress];
+    }
+    if (self.currentPickUpModel) {
+        [self didSetCurrentPickUp];
+    }
+    [self didLocate];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self setNavigationBarTitleView];
+    [self changeNavigationBarStyleWhenScroll:self.scrollOffsetY];
+    if (self.currentAddressModel) {
+        [self didSetCurrentAddress];
+    }
+    if (self.currentPickUpModel) {
+        [self didSetCurrentPickUp];
+    }
+    [self didLocate];
 }
 
 #pragma mark - 导航栏设置
 
-- (void)setupNavigationBar {
-    [self.navigationController.navigationBar ybzy_setBackgroundColor:[UIColor clearColor]];
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem ybzy_barButtonItemWithTarget:self action:@selector(scanButtonClick) icon:@"icon_white_scancode" highlighticon:nil backgroundImage:self.itemBackgroundImage];
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem ybzy_barButtonItemWithTarget:self action:@selector(searchButtonClick) icon:@"icon_search_white" highlighticon:nil backgroundImage:self.itemBackgroundImage];
-    
+- (void)setNavigationBarTitleView {
     UIButton *addressButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 200, 30)];
-    [addressButton setTitle:@"配送至: 新龙城居委会" forState:UIControlStateNormal];
+    [addressButton setTitle:@"    " forState:UIControlStateNormal];
     [addressButton.titleLabel setFont:YBZYCommonBigFont];
     [addressButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [addressButton setBackgroundImage:[[UIImage ybzy_imageWithColor:[UIColor colorWithWhite:0 alpha:0.3] size:CGSizeMake(200, 30)] ybzy_cornerImageWithSize:CGSizeMake(200, 30) fillColor:[UIColor clearColor]] forState:UIControlStateNormal];
@@ -64,6 +86,7 @@ static NSString *addGoodAnimKey = @"addGoodAnimKey";
 - (void)changeNavigationBarStyleWhenScroll:(CGFloat)offsetY {
     CGFloat alpha = offsetY / 100.0;
     [self.navigationController.navigationBar ybzy_setBackgroundColor:[YBZYCommonYellowColor colorWithAlphaComponent:alpha >= 0 ? alpha : 0]];
+    
     if (alpha >= 1) {
         self.addressButton.alpha = 1;
         self.navigationItem.leftBarButtonItem = [UIBarButtonItem ybzy_barButtonItemWithTarget:self action:@selector(scanButtonClick) icon:@"icon_black_scancode" highlighticon:nil backgroundImage:[UIImage ybzy_imageWithColor:[UIColor clearColor] size:CGSizeMake(30, 30)]];
@@ -93,11 +116,37 @@ static NSString *addGoodAnimKey = @"addGoodAnimKey";
 }
 
 - (void)searchButtonClick {
+    [SVProgressHUD showWithStatus:@"官方搜索接口没抓到....."];
     
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [SVProgressHUD dismiss];
+    });
 }
 
 - (void)addressButtonClick {
-    
+    YBZYAddressSegmentedController *addressController = [[YBZYAddressSegmentedController alloc] init];
+    [self.navigationController pushViewController:addressController animated:true];
+}
+
+- (void)didSetCurrentAddress {
+    [self.addressButton setTitle:[NSString stringWithFormat:@"配送到：%@", self.currentAddressModel.district] forState:UIControlStateNormal];
+}
+
+- (void)didSetCurrentPickUp {
+    [self.addressButton setTitle:[NSString stringWithFormat:@"自提点：%@", self.currentPickUpModel.dealer_alias] forState:UIControlStateNormal];
+}
+
+- (void)didLocate {
+    if (!self.currentAddressModel && !self.currentPickUpModel) {
+        self.locateString = [[NSUserDefaults standardUserDefaults] objectForKey:YBZYLocateResultKey];
+        if ([self.locateString isEqualToString:@"无法定位具体位置"] || [self.locateString isEqualToString:@"未打开定位服务"]) {
+            [self.addressButton setTitle:self.locateString forState:UIControlStateNormal];
+        } else if (self.locateString == nil) {
+            [self.addressButton setTitle:@"定位中" forState:UIControlStateNormal];
+        } else {
+            [self.addressButton setTitle:[NSString stringWithFormat:@"配送到：%@", self.locateString] forState:UIControlStateNormal];
+        }
+    }
 }
 
 #pragma mark - tableview
@@ -225,8 +274,89 @@ static NSString *addGoodAnimKey = @"addGoodAnimKey";
     [view removeFromSuperview];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+#pragma mark - 定位
+
+- (void)locate {
+    if ([CLLocationManager locationServicesEnabled]) {
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.delegate = self;
+        if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+            [self.locationManager requestWhenInUseAuthorization];
+        }
+        [self.locationManager startUpdatingLocation];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    self.locateString = @"未打开定位服务";
+    
+    [[NSUserDefaults standardUserDefaults] setObject:self.locateString forKey:YBZYLocateResultKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self didLocate];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [SVProgressHUD dismiss];
+    });
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"允许\"定位\"提示" message:@"请在设置中打开定位" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"打开定位" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action) {
+        //打开设置
+        NSURL *settingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        [[UIApplication sharedApplication] openURL:settingsURL options:@{} completionHandler:nil];
+    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *_Nonnull action){
+    }];
+    [alertVC addAction:cancel];
+    [alertVC addAction:ok];
+    [self presentViewController:alertVC animated:YES completion:nil];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    [self.locationManager stopUpdatingLocation];
+    CLLocation *currentLocation = [locations lastObject];
+    CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
+    //反编码
+    [geoCoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray<CLPlacemark *> *_Nullable placemarks, NSError *_Nullable error) {
+        if (placemarks.count > 0) {
+            CLPlacemark *placeMark = placemarks[0];
+            self.locateString = placeMark.thoroughfare;
+            if (!self.locateString) {
+                self.locateString = @"无法定位具体位置";
+            }
+            NSLog(@"%@", self.locateString);//城市名
+            NSLog(@"%@", placeMark.name);  //全长度地址
+        } else if (error == nil && placemarks.count == 0) {
+            NSLog(@"No location and error return");
+            self.locateString = @"无法定位具体位置";
+        } else if (error) {
+            NSLog(@"location error: %@ ", error);
+            self.locateString = @"无法定位具体位置";
+        }
+        [[NSUserDefaults standardUserDefaults] setObject:self.locateString forKey:YBZYLocateResultKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self didLocate];
+    }];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [SVProgressHUD dismiss];
+    });
+}
+
+- (void)startLocate {
+    [SVProgressHUD showWithStatus:@"定位中"];
+    [self.locationManager startUpdatingLocation];
+}
+
+#pragma mark - 地址数据
+
+- (YBZYAddressModel *)currentAddressModel {
+    return [[[YBZYSQLiteManager sharedManager] getCurrentUserAddressWithUserId:YBZYUserId] firstObject][@"userAddressModel"];
+}
+
+- (YBZYPickUpModel *)currentPickUpModel {
+    return [[[YBZYSQLiteManager sharedManager] getPickUpWithUserId:YBZYUserId] firstObject][@"pickUpModel"];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

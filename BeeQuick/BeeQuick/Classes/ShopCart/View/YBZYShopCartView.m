@@ -27,33 +27,17 @@ static NSString *checkCellID = @"checkCellID";
 @interface YBZYShopCartView () <UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (nonatomic, weak) UITextField *pickerTextField;
-
 @property (nonatomic, strong) UIPickerView *pickerView;
-
 @property (nonatomic, strong) NSArray *deliverDayArray;
-
 @property (nonatomic, strong) NSArray<NSArray *> *totalTimeArray;
-
 @property (nonatomic, strong) NSArray *deliverTimeArray;
-
 @property (nonatomic, copy) NSString *selectedDeliverTime;
-
 @property (nonatomic, strong) NSMutableArray<NSDictionary *> *bookingGoods;
-
 @property (nonatomic, strong) NSMutableArray<NSDictionary *> *marketGoods;
-
 @property (nonatomic, strong) NSMutableArray<NSArray *> *goodsArray;
-
 @property (nonatomic, strong) NSMutableArray<NSArray *> *selectedGoodsArray;
-
-@property (nonatomic, strong) NSArray<NSDictionary *> *currentUserAddress;
-
-@property (nonatomic, strong) NSArray<NSDictionary *> *pickUp;
-
 @property (nonatomic, assign) CGFloat marketPrice;
-
 @property (nonatomic, assign) CGFloat bookingPrice;
-
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *totalPriceArray;
 
 @end
@@ -197,13 +181,23 @@ static NSString *checkCellID = @"checkCellID";
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 8;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.01;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell;
     if (indexPath.section == 0) {
         if (self.pickUp.count) {
             cell = [tableView dequeueReusableCellWithIdentifier:pickUpCellID forIndexPath:indexPath];
+            ((YBZYShopCartAddressCell *)cell).pickUpModel = [self.pickUp firstObject][@"pickUpModel"];
         } else if (self.currentUserAddress.count) {
             cell = [tableView dequeueReusableCellWithIdentifier:addressCellID forIndexPath:indexPath];
+            ((YBZYShopCartAddressCell *)cell).addressModel = [self.currentUserAddress firstObject][@"userAddressModel"];
         } else {
             cell = [tableView dequeueReusableCellWithIdentifier:noAddressCellID forIndexPath:indexPath];
         }
@@ -267,9 +261,19 @@ static NSString *checkCellID = @"checkCellID";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section != 0 && indexPath.row == 1) {
+    if (indexPath.section && indexPath.row == 1) {
         [self setPickerViewDataWithGoodsType:(indexPath.section - 1)];
         [self.pickerTextField becomeFirstResponder];
+        return;
+    }
+    if (!indexPath.section) {
+        NSInteger index = 0;
+        if (self.pickUp.count) {
+            index = 1;
+        }
+        if (self.addressBlock) {
+            self.addressBlock(index);
+        }
     }
 }
 

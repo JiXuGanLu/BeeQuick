@@ -8,13 +8,15 @@
 
 #import "YBZYMineController.h"
 #import "YBZYMineHeaderView.h"
-#import "UINavigationBar+YBZY.h"
 #import "YBZYMineViewFlowLayout.h"
 #import "YBZYMineViewTopCell.h"
 #import "YBZYMineViewIconCell.h"
 #import "YBZYMineViewWalletCell.h"
 #import "YBZYMineAboutController.h"
 #import "YBZYMineOrderController.h"
+#import "YBZYAddressController.h"
+#import "YBZYMineCustomerServiceController.h"
+#import "YBZYMineShopCollectionController.h"
 
 static NSString *topCellId = @"topCellId";
 static NSString *iconCellId = @"iconCellId";
@@ -23,13 +25,9 @@ static NSString *walletCellId = @"walletCellId";
 @interface YBZYMineController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, weak) YBZYMineHeaderView *headerView;
-
 @property (nonatomic, weak) UICollectionView *mineView;
-
 @property (nonatomic, strong) NSArray<NSDictionary *> *orderItems;
-
 @property (nonatomic, strong) NSArray<NSDictionary *> *walletItems;
-
 @property (nonatomic, strong) NSArray<NSDictionary *> *bottomItems;
 
 @end
@@ -62,6 +60,11 @@ static NSString *walletCellId = @"walletCellId";
         YBZYMineAboutController *aboutController = [[YBZYMineAboutController alloc] init];
         [strongSelf.navigationController pushViewController:aboutController animated:true];
     };
+    headerView.collectionStoreBlock = ^(){
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        YBZYMineShopCollectionController *scController = [[YBZYMineShopCollectionController alloc] init];
+        [strongSelf.navigationController pushViewController:scController animated:true];
+    };
     
     YBZYMineViewFlowLayout *flowLayout = [[YBZYMineViewFlowLayout alloc] init];
     UICollectionView *mineView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 175, YBZYScreenWidth, self.view.height - 175) collectionViewLayout:flowLayout];
@@ -91,11 +94,11 @@ static NSString *walletCellId = @"walletCellId";
 }
 
 - (NSArray<NSDictionary *> *)bottomItems {
-    return @[@{@"iconImageName" : @"Integral-mall", @"iconTitle" : @"积分商城"},
+    return @[@{@"iconImageName" : @"Integral-mall", @"iconTitle" : @"积分商城\n  Invalid"},
              @{@"iconImageName" : @"v2_my_address_icon", @"iconTitle" : @"收货地址"},
-             @{@"iconImageName" : @"icon_message", @"iconTitle" : @"我的消息"},
+             @{@"iconImageName" : @"icon_message", @"iconTitle" : @"我的消息\n  Invalid"},
              @{@"iconImageName" : @"v2_my_feedback_icon", @"iconTitle" : @"客服/反馈"},
-             @{@"iconImageName" : @"v2_my_cooperate", @"iconTitle" : @"加盟合作"}];
+             @{@"iconImageName" : @"v2_my_cooperate", @"iconTitle" : @"加盟合作\n  Invalid"}];
 }
 
 #pragma mark - collectionView数据源和代理
@@ -177,8 +180,20 @@ static NSString *walletCellId = @"walletCellId";
     if (indexPath.section == 0) {
         YBZYMineOrderController *orderController = [[YBZYMineOrderController alloc] init];
         orderController.selectedCategory = indexPath.row;
-        
         [self.navigationController pushViewController:orderController animated:true];
+        return;
+    }
+    if (indexPath.section == 2) {
+        if (indexPath.row == 1) {
+            YBZYAddressController *addressController = [[YBZYAddressController alloc] init];
+            addressController.isLoactionHidden = true;
+            [self.navigationController pushViewController:addressController animated:true];
+            return;
+        }
+        if (indexPath.row == 3) {
+            YBZYMineCustomerServiceController *csController = [[YBZYMineCustomerServiceController alloc] init];
+            [self.navigationController pushViewController:csController animated:true];
+        }
     }
 }
 
