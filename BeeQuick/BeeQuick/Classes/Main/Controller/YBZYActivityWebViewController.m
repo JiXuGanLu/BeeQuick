@@ -14,14 +14,17 @@
 
 @implementation YBZYActivityWebViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.translucent = false;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
 }
 
-- (void)setupUI {
-    self.navigationController.navigationBar.translucent = false;
-    
+- (void)setupUI {    
     UIWebView *webView = [[UIWebView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     webView.scalesPageToFit = true;
     [self.view addSubview:webView];

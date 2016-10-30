@@ -364,4 +364,9 @@ static NSString *dbFileName = @"ybzyBeeQuickDatabase.db";
     return [self getGoodsWithSQL:getSql];
 }
 
+- (BOOL)checkGoodBeenCollectedWithId:(NSInteger)goodId userId:(NSInteger)userId {
+    NSString *getSql = [NSString stringWithFormat:@"SELECT * FROM T_CollectionGoods WHERE id = %zd and userId = %zd;", goodId, userId];
+    return [self getGoodsWithSQL:getSql].count > 0 ? true : false;
+}
+
 @end

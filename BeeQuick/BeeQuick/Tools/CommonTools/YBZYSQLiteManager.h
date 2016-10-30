@@ -232,4 +232,14 @@ typedef NS_ENUM(NSUInteger, YBZYSQLOrderType) {
  */
 - (NSArray<NSDictionary *> *)getCollectionGoodsWithUserId:(NSInteger)userId;
 
+/**
+ 检查商品是否被收藏
+
+ @param goodId 商品id
+ @param userId 直接写YBZYUserId
+
+ @return true / false
+ */
+- (BOOL)checkGoodBeenCollectedWithId:(NSInteger)goodId userId:(NSInteger)userId;
+
 @end

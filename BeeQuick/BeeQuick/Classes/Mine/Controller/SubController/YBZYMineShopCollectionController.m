@@ -19,6 +19,11 @@
     [self setupUI];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.translucent = false;
+}
+
 - (void)setupUI {
     self.view.backgroundColor = YBZYCommonBackgroundColor;
     self.title = @"店铺收藏";

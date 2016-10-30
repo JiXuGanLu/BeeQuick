@@ -17,6 +17,7 @@
 #import "YBZYAddressController.h"
 #import "YBZYMineCustomerServiceController.h"
 #import "YBZYMineShopCollectionController.h"
+#import "YBZYMineGoodCollectionController.h"
 
 static NSString *topCellId = @"topCellId";
 static NSString *iconCellId = @"iconCellId";
@@ -64,6 +65,11 @@ static NSString *walletCellId = @"walletCellId";
         __strong typeof(weakSelf) strongSelf = weakSelf;
         YBZYMineShopCollectionController *scController = [[YBZYMineShopCollectionController alloc] init];
         [strongSelf.navigationController pushViewController:scController animated:true];
+    };
+    headerView.collectionGoodBlock = ^(){
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        YBZYMineGoodCollectionController *gcController = [[YBZYMineGoodCollectionController alloc] init];
+        [strongSelf.navigationController pushViewController:gcController animated:true];
     };
     
     YBZYMineViewFlowLayout *flowLayout = [[YBZYMineViewFlowLayout alloc] init];

@@ -89,6 +89,8 @@
 		63A5CF8E1DBF701C00F7A69F /* YBZYCheckOutSubtitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A5CF8D1DBF701C00F7A69F /* YBZYCheckOutSubtitleCell.xib */; };
 		63A5CF901DBF702900F7A69F /* YBZYShopCartCheckCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A5CF8F1DBF702900F7A69F /* YBZYShopCartCheckCell.xib */; };
 		63A5CF921DBF703500F7A69F /* YBZYShopCartGoodsListHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63A5CF911DBF703500F7A69F /* YBZYShopCartGoodsListHeaderCell.xib */; };
+		63AE4C371DC5F03B00E1CD11 /* YBZYGoodWebViewToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AE4C361DC5F03B00E1CD11 /* YBZYGoodWebViewToolBar.m */; };
+		63AE4C3A1DC6609A00E1CD11 /* YBZYMineGoodCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63AE4C391DC6609A00E1CD11 /* YBZYMineGoodCollectionController.m */; };
 		63B6D6E61DB8DD64000CA2A9 /* UINavigationBar+YBZY.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6E51DB8DD64000CA2A9 /* UINavigationBar+YBZY.m */; };
 		63B6D6E91DB8E5CB000CA2A9 /* YBZYHomeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6E81DB8E5CB000CA2A9 /* YBZYHomeTableView.m */; };
 		63B6D6EC1DB8F149000CA2A9 /* YBZYHomeCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B6D6EB1DB8F149000CA2A9 /* YBZYHomeCategoryCell.m */; };
@@ -319,6 +321,10 @@
 		63A5CF8D1DBF701C00F7A69F /* YBZYCheckOutSubtitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYCheckOutSubtitleCell.xib; sourceTree = "<group>"; };
 		63A5CF8F1DBF702900F7A69F /* YBZYShopCartCheckCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYShopCartCheckCell.xib; sourceTree = "<group>"; };
 		63A5CF911DBF703500F7A69F /* YBZYShopCartGoodsListHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBZYShopCartGoodsListHeaderCell.xib; sourceTree = "<group>"; };
+		63AE4C351DC5F03B00E1CD11 /* YBZYGoodWebViewToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYGoodWebViewToolBar.h; sourceTree = "<group>"; };
+		63AE4C361DC5F03B00E1CD11 /* YBZYGoodWebViewToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYGoodWebViewToolBar.m; sourceTree = "<group>"; };
+		63AE4C381DC6609A00E1CD11 /* YBZYMineGoodCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYMineGoodCollectionController.h; sourceTree = "<group>"; };
+		63AE4C391DC6609A00E1CD11 /* YBZYMineGoodCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZYMineGoodCollectionController.m; sourceTree = "<group>"; };
 		63B6D6E41DB8DD64000CA2A9 /* UINavigationBar+YBZY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+YBZY.h"; sourceTree = "<group>"; };
 		63B6D6E51DB8DD64000CA2A9 /* UINavigationBar+YBZY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+YBZY.m"; sourceTree = "<group>"; };
 		63B6D6E71DB8E5CB000CA2A9 /* YBZYHomeTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZYHomeTableView.h; sourceTree = "<group>"; };
@@ -752,6 +758,8 @@
 				63EA9AE91DC33A5000B9F074 /* YBZYAddressEditGenderCell.m */,
 				63EA9AEB1DC33A6F00B9F074 /* YBZYAddressEditDeleteCell.h */,
 				63EA9AEC1DC33A6F00B9F074 /* YBZYAddressEditDeleteCell.m */,
+				63AE4C351DC5F03B00E1CD11 /* YBZYGoodWebViewToolBar.h */,
+				63AE4C361DC5F03B00E1CD11 /* YBZYGoodWebViewToolBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -990,6 +998,8 @@
 				6373E3791DC569850081381B /* YBZYMineCustomerServiceController.m */,
 				6373E37B1DC56CF20081381B /* YBZYMineShopCollectionController.h */,
 				6373E37C1DC56CF20081381B /* YBZYMineShopCollectionController.m */,
+				63AE4C381DC6609A00E1CD11 /* YBZYMineGoodCollectionController.h */,
+				63AE4C391DC6609A00E1CD11 /* YBZYMineGoodCollectionController.m */,
 			);
 			path = SubController;
 			sourceTree = "<group>";
@@ -1398,11 +1408,13 @@
 				6370EE9B1DB7F9D600DC71BB /* YBZYSuperMarketController.m in Sources */,
 				63B6D7651DBAD3D5000CA2A9 /* YBZYHomeHotGoodViewCell.m in Sources */,
 				63EA9AA11DC20BC900B9F074 /* YBZYScanController.m in Sources */,
+				63AE4C371DC5F03B00E1CD11 /* YBZYGoodWebViewToolBar.m in Sources */,
 				6377E2341DBD88A600471490 /* YBZYShopCartView.m in Sources */,
 				63EA9AC71DC277B400B9F074 /* YBZYMineHeaderView.m in Sources */,
 				63B6D7101DBA5E06000CA2A9 /* YBZYHomeIconView.m in Sources */,
 				63EA9AA41DC2120900B9F074 /* YBZYScanView.m in Sources */,
 				63A5CF371DBF3E7400F7A69F /* YBZYCheckOutBillView.m in Sources */,
+				63AE4C3A1DC6609A00E1CD11 /* YBZYMineGoodCollectionController.m in Sources */,
 				63EA9AF51DC48C8F00B9F074 /* YBZYCityGroupModel.m in Sources */,
 				63A5CF3A1DBF3F1800F7A69F /* YBZYCheckOutConfirmView.m in Sources */,
 				6370EEAE1DB8031300DC71BB /* YBZYNewVersionController.m in Sources */,

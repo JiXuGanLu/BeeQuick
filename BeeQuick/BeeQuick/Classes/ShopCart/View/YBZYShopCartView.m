@@ -175,7 +175,7 @@ static NSString *checkCellID = @"checkCellID";
     if (section == 0) {
         return 1;
     } else if (section == 1) {
-        return self.marketGoods.count ? self.marketGoods.count + 4 : self.bookingGoods.count + 3;
+        return self.marketGoods.count ? self.marketGoods.count + 3 : self.bookingGoods.count + 3;
     } else {
         return self.bookingGoods.count + 3;
     }
@@ -274,6 +274,25 @@ static NSString *checkCellID = @"checkCellID";
         if (self.addressBlock) {
             self.addressBlock(index);
         }
+    }
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row > 1 && indexPath.row <= 1 + self.goodsArray[indexPath.section - 1].count) {
+        return true;
+    }
+    return false;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"删除";
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    YBZYShopCartGoodCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    YBZYGoodModel *goodModel = cell.good[@"goodModel"];
+    if (self.deleteBlock) {
+        self.deleteBlock(goodModel);
     }
 }
 

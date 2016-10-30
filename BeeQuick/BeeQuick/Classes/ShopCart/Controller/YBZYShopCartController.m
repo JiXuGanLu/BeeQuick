@@ -59,14 +59,6 @@
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [SVProgressHUD showWithStatus:@"正在验证商品信息"];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [SVProgressHUD dismiss];
-    });
-}
-
 #pragma mark - 懒加载
 
 - (YBZYShopCartEmptyView *)shopCartEmptyView {
@@ -135,11 +127,15 @@
         };
         shopCartView.checkOutBlock = ^(NSArray<NSDictionary *> *selectedGoodList, CGFloat totalPrice){
             __strong typeof(weakSelf) strongSelf = weakSelf;
-            if (shopCartView.pickUp.count + shopCartView.currentUserAddress.count) {
-                YBZYCheckOutController *checkOutController = [[YBZYCheckOutController alloc] init];
-                checkOutController.checkOutGoods = selectedGoodList;
-                checkOutController.costAmount = totalPrice;
-                [strongSelf.navigationController pushViewController:checkOutController animated:true];
+            if (strongSelf.shopCartView.pickUp.count + strongSelf.shopCartView.currentUserAddress.count) {
+                [SVProgressHUD showWithStatus:@"正在验证商品信息"];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [SVProgressHUD dismiss];
+                    YBZYCheckOutController *checkOutController = [[YBZYCheckOutController alloc] init];
+                    checkOutController.checkOutGoods = selectedGoodList;
+                    checkOutController.costAmount = totalPrice;
+                    [strongSelf.navigationController pushViewController:checkOutController animated:true];
+                });
             } else {
                 [SVProgressHUD showErrorWithStatus:@"请设置地址"];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -153,6 +149,12 @@
             asController.isAddressLocateHidden = true;
             asController.selectedIndex = index;
             [strongSelf.navigationController pushViewController:asController animated:true];
+        };
+        shopCartView.deleteBlock = ^(YBZYGoodModel *goodModel){
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            [[YBZYSQLiteManager sharedManager] deleteGoodWithId:goodModel.id userId:YBZYUserId];
+            strongSelf.shopCartView.goodsList = self.goodsList;
+            [strongSelf.shopCartView reloadData];
         };
         [self.view addSubview:shopCartView];
         shopCartView.contentInset = UIEdgeInsetsMake(0, 0, 64, 0);

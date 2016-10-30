@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -84,6 +84,9 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOt-F4-eWE">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="VVj-LC-rnP"/>
+                        </constraints>
                         <connections>
                             <action selector="detailButtonClick:" destination="uNL-xh-SoU" eventType="touchUpInside" id="1h0-U5-jm6"/>
                         </connections>
@@ -100,7 +103,6 @@
                     <constraint firstItem="EJ4-n5-wiq" firstAttribute="centerY" secondItem="xUe-iM-4Hd" secondAttribute="centerY" id="Ud7-V8-pn1"/>
                     <constraint firstAttribute="bottom" secondItem="CeU-3V-2xD" secondAttribute="bottom" constant="5" id="Udk-zr-sGW"/>
                     <constraint firstAttribute="bottom" secondItem="Xzy-9P-AVI" secondAttribute="bottom" constant="10" id="VTJ-R9-d9k"/>
-                    <constraint firstItem="SCT-fC-nQo" firstAttribute="leading" secondItem="TOt-F4-eWE" secondAttribute="trailing" id="Yc2-uc-Bxb"/>
                     <constraint firstItem="hQp-Ko-dWs" firstAttribute="centerY" secondItem="uEn-Gl-Q9K" secondAttribute="centerY" id="Yk6-wp-nbM"/>
                     <constraint firstItem="CeU-3V-2xD" firstAttribute="leading" secondItem="hQp-Ko-dWs" secondAttribute="trailing" id="akl-kT-2cI"/>
                     <constraint firstItem="CeU-3V-2xD" firstAttribute="top" secondItem="uEn-Gl-Q9K" secondAttribute="top" constant="5" id="dga-Qr-IWv"/>
