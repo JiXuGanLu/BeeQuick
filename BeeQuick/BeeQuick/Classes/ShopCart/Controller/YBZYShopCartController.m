@@ -125,7 +125,7 @@
             strongSelf.shopCartEmptyView.hidden = false;
             strongSelf.shopCartView.hidden = true;
         };
-        shopCartView.checkOutBlock = ^(NSArray<NSDictionary *> *selectedGoodList, CGFloat totalPrice){
+        shopCartView.checkOutBlock = ^(NSArray<NSDictionary *> *selectedGoodList, CGFloat totalPrice, NSInteger goodType){
             __strong typeof(weakSelf) strongSelf = weakSelf;
             if (strongSelf.shopCartView.pickUp.count + strongSelf.shopCartView.currentUserAddress.count) {
                 [SVProgressHUD showWithStatus:@"正在验证商品信息"];
@@ -134,6 +134,8 @@
                     YBZYCheckOutController *checkOutController = [[YBZYCheckOutController alloc] init];
                     checkOutController.checkOutGoods = selectedGoodList;
                     checkOutController.costAmount = totalPrice;
+                    checkOutController.goodType = goodType;
+                    checkOutController.isPickUp = strongSelf.shopCartView.pickUp.count;
                     [strongSelf.navigationController pushViewController:checkOutController animated:true];
                 });
             } else {

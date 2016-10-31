@@ -19,7 +19,7 @@
 
 @property (nonatomic, strong) NSArray<NSDictionary *> *checkOutGoods;
 
-@property (nonatomic, copy) void(^checkOutBlock)(NSArray<NSDictionary *> *checkOutGoods, CGFloat totalPrice);
+@property (nonatomic, copy) void(^checkOutBlock)(NSArray<NSDictionary *> *checkOutGoods, CGFloat totalPrice, NSInteger goodType);
 
 @property (nonatomic, assign) NSInteger goodType;
 

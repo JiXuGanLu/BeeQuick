@@ -107,6 +107,7 @@
             <connections>
                 <outlet property="costAmountLabel" destination="SjS-1I-JVv" id="PjT-WQ-5cw"/>
                 <outlet property="freightDiscountLabel" destination="VUo-Ff-4wU" id="JOR-rP-RRi"/>
+                <outlet property="freightLabel" destination="95L-Fd-cPk" id="OSj-t5-W0F"/>
             </connections>
             <point key="canvasLocation" x="25" y="102.5"/>
         </tableViewCell>

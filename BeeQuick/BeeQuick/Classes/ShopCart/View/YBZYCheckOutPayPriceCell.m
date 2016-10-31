@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *costAmountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *freightDiscountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *freightLabel;
 
 @end
 
@@ -32,10 +33,16 @@
     _isFreightFree = isFreightFree;
     
     if (isFreightFree) {
-        self.freightDiscountLabel.text = @"¥5";
+        self.freightDiscountLabel.text = [NSString stringWithFormat:@"¥%zd", self.freight];
     } else {
         self.freightDiscountLabel.text = @"¥0";
     }
+}
+
+- (void)setFreight:(NSInteger)freight {
+    _freight = freight;
+    
+    self.freightLabel.text = [NSString stringWithFormat:@"¥%zd", freight];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

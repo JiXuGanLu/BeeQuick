@@ -55,7 +55,7 @@
 
 - (IBAction)checkOutButtonClick:(UIButton *)sender {
     if (self.checkOutBlock) {
-        self.checkOutBlock(self.checkOutGoods, [self.totalPrice doubleValue]);
+        self.checkOutBlock(self.checkOutGoods, [self.totalPrice doubleValue], self.goodType);
     }
 }
 

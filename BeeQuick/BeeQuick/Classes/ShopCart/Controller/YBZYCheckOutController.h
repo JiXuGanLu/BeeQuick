@@ -12,5 +12,7 @@
 
 @property (nonatomic, strong) NSArray<NSDictionary *> *checkOutGoods;
 @property (nonatomic, assign) CGFloat costAmount;
+@property (nonatomic, assign) NSInteger goodType;
+@property (nonatomic, assign) BOOL isPickUp;
 
 @end

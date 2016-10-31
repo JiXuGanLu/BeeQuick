@@ -217,7 +217,7 @@ static NSString *checkCellID = @"checkCellID";
                     ((YBZYShopCartDeliverTimeCell *)cell).selectedDeliverTime = self.marketGoods.count ? self.selectedDeliverTime : @"明天 10:00-20:00";
                 }
                 if (!self.marketGoods.count && self.bookingGoods.count) {
-                    ((YBZYShopCartDeliverTimeCell *)cell).freightTip  = @"¥0起送，满69减免运费，不满¥69收取运费¥10";
+                    ((YBZYShopCartDeliverTimeCell *)cell).freightTip  = @"¥0起送，满¥69减免运费，不满¥69收取运费¥10";
                 }
             } else {
                 if (self.pickUp.count) {
@@ -225,7 +225,7 @@ static NSString *checkCellID = @"checkCellID";
                 } else {
                     ((YBZYShopCartDeliverTimeCell *)cell).selectedDeliverTime = @"明天 10:00-20:00";
                 }
-                ((YBZYShopCartDeliverTimeCell *)cell).freightTip  = @"¥0起送，满69减免运费，不满¥69收取运费¥10";
+                ((YBZYShopCartDeliverTimeCell *)cell).freightTip  = @"¥0起送，满¥69减免运费，不满¥69收取运费¥10";
             }
         } else if (indexPath.row > 1 && indexPath.row <= 1 + self.goodsArray[indexPath.section - 1].count) {
             YBZYGoodModel *good = self.goodsArray[indexPath.section - 1][indexPath.row - 2][@"goodModel"];

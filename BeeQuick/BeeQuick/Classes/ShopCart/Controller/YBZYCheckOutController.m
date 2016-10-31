@@ -13,7 +13,7 @@
 @interface YBZYCheckOutController ()
 
 @property (nonatomic, assign) BOOL isFreightFree;
-
+@property (nonatomic, assign) NSInteger freight;
 @property (nonatomic, assign) CGFloat payPrice;
 
 @end
@@ -34,6 +34,7 @@
     [self.view addSubview:billView];
     billView.costAmount = self.costAmount;
     billView.checkOutGoods = self.checkOutGoods;
+    billView.freight = self.freight;
     billView.isFreightFree = self.isFreightFree;
     
     YBZYCheckOutConfirmView *confirmView = [[YBZYCheckOutConfirmView alloc] initWithFrame:CGRectMake(0, self.view.height - 60 - 64, YBZYScreenWidth, 60)];
@@ -47,7 +48,7 @@
     fmt.dateFormat = @"HH";
     NSString *currentHour = [fmt stringFromDate:currentDate];
     
-    if (currentHour.integerValue >= 22) {
+    if (currentHour.integerValue >= 22 || self.goodType) {
         if (self.costAmount >= 69) {
             return true;
         } else {
@@ -62,8 +63,19 @@
     }
 }
 
+- (NSInteger)freight {
+    if (self.isPickUp) {
+        return 0;
+    } else {
+        if (self.goodType) {
+            return 10;
+        }
+        return 5;
+    }
+}
+
 - (CGFloat)payPrice {
-    return self.costAmount + 5 * !self.isFreightFree;
+    return self.costAmount + self.freight * !self.isFreightFree;
 }
 
 - (void)didReceiveMemoryWarning {

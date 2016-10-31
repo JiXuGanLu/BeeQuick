@@ -12,5 +12,6 @@
 
 @property (nonatomic, assign) CGFloat costAmount;
 @property (nonatomic, assign) BOOL isFreightFree;
+@property (nonatomic, assign) NSInteger freight;
 
 @end

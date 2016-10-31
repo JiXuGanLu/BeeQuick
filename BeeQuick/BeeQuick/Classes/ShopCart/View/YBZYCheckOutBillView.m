@@ -152,6 +152,7 @@ static NSString *payPriceCellId = @"payPriceCellId";
         } else {
             YBZYCheckOutPayPriceCell *cell = [tableView dequeueReusableCellWithIdentifier:payPriceCellId forIndexPath:indexPath];
             cell.costAmount = self.costAmount;
+            cell.freight = self.freight;
             cell.isFreightFree = self.isFreightFree;
             return cell;
         }
