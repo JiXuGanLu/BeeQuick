@@ -9,6 +9,8 @@
 #import "YBZYHomeHotGoodView.h"
 #import "YBZYHomeHotGoodViewFlowLayout.h"
 
+NSString * const YBZYHomeHotGoodViewRefreshNotification = @"YBZYHomeHotGoodViewRefreshNotification";
+
 static NSString *hotGoodCellId = @"hotGoodCellId";
 
 @interface YBZYHomeHotGoodView () <UICollectionViewDelegate, UICollectionViewDataSource>
@@ -30,6 +32,7 @@ static NSString *hotGoodCellId = @"hotGoodCellId";
 }
 
 - (void)setupUI {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshGoodView:) name:YBZYHomeHotGoodViewRefreshNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadHotGoodData) name:YBZYHomeRefreshNotification object:nil];
     
     YBZYHomeHotGoodViewFlowLayout *flowLayout = [[YBZYHomeHotGoodViewFlowLayout alloc] init];
@@ -68,6 +71,10 @@ static NSString *hotGoodCellId = @"hotGoodCellId";
         [[NSNotificationCenter defaultCenter] postNotificationName:YBZYHomeTableFooterViewUpdateNotification object:nil userInfo:@{@"height" : @(hotGoodViewHeight)}];
         [self.hotGoodView reloadData];
     }];
+}
+
+- (void)refreshGoodView:(NSNotification *)sender {
+    [self.hotGoodView reloadData];
 }
 
 #pragma mark - collectionview代理和数据源

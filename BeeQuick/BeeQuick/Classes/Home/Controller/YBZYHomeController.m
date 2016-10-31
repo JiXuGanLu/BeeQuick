@@ -55,6 +55,7 @@ static NSString *addGoodAnimKey = @"addGoodAnimKey";
         [self didSetCurrentPickUp];
     }
     [self didLocate];
+    [[NSNotificationCenter defaultCenter] postNotificationName:YBZYHomeHotGoodViewRefreshNotification object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

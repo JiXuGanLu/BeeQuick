@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "YBZYHomeHotGoodViewCell.h"
 
+extern NSString * const YBZYHomeHotGoodViewRefreshNotification;
+
 @interface YBZYHomeHotGoodView : UIView
 
 @property (nonatomic, weak) UIViewController<YBZYHomeHotGoodViewCellDelegate> *superViewController;
