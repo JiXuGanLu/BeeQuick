@@ -151,6 +151,9 @@ static NSString *checkCellID = @"checkCellID";
 #pragma mark - pickerview按键点击
 
 - (void)doneButtonClick:(UIButton *)sender {
+    if ([self.pickerView selectedRowInComponent:0] == 0 && [self.pickerView selectedRowInComponent:1] == 0) {
+        self.selectedDeliverTime = @"一小时送达（可预定）";
+    }
     //        [self beginUpdates];
     [self reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:1]] withRowAnimation:UITableViewRowAnimationNone];
     //        [self endUpdates];
