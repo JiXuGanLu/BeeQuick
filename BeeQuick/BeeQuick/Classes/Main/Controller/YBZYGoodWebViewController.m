@@ -60,11 +60,13 @@
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [[YBZYSQLiteManager sharedManager] addGood:strongSelf.goodModel withId:strongSelf.goodModel.id userId:YBZYUserId goodsType:strongSelf.goodModel.goods_type];
         strongSelf.toolBar.goodCount = strongSelf.goodCount;
+        [[NSNotificationCenter defaultCenter] postNotificationName:YBZYAddOrReduceGoodNotification object:nil];
     };
     toolBar.reduceBlock = ^(){
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [[YBZYSQLiteManager sharedManager] reduceGoodWithId:strongSelf.goodModel.id userId:YBZYUserId];
         strongSelf.toolBar.goodCount = strongSelf.goodCount;
+        [[NSNotificationCenter defaultCenter] postNotificationName:YBZYAddOrReduceGoodNotification object:nil];
     };
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.goodModel.urlString]];
