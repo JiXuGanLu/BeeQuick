@@ -126,6 +126,9 @@ static NSString *addGoodAnimKey = @"addGoodAnimKey";
 
 - (void)addressButtonClick {
     YBZYAddressSegmentedController *addressController = [[YBZYAddressSegmentedController alloc] init];
+    if (self.currentPickUpModel) {
+        addressController.selectedIndex = 1;
+    }
     [self.navigationController pushViewController:addressController animated:true];
 }
 

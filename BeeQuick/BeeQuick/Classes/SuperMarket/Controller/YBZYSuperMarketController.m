@@ -77,6 +77,18 @@ static NSString *animPictureViewKey = @"animPictureViewKey";
     [self.goodView reloadData];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self setupNavigationBar];
+    if (self.currentAddressModel) {
+        [self didSetCurrentAddress];
+    }
+    if (self.currentPickUpModel) {
+        [self didSetCurrentPickUp];
+    }
+    [self didLocate];
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.navigationController.navigationBar ybzy_reset];
@@ -188,6 +200,9 @@ static NSString *animPictureViewKey = @"animPictureViewKey";
 
 - (void)addressButtonClick {
     YBZYAddressSegmentedController *addressController = [[YBZYAddressSegmentedController alloc] init];
+    if (self.currentPickUpModel) {
+        addressController.selectedIndex = 1;
+    }
     [self.navigationController pushViewController:addressController animated:true];
 }
 

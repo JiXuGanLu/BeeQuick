@@ -71,7 +71,13 @@
         make.edges.equalTo(self.view);
     }];
     
-    pickUpController.view.hidden = true;
+    if (self.selectedIndex) {
+        self.addressView.hidden = true;
+        self.pickUpView.hidden = false;
+    } else {
+        self.addressView.hidden = false;
+        self.pickUpView.hidden = true;
+    }
 }
 
 - (void)switchAddressType:(UISegmentedControl *)sender {
