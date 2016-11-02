@@ -4,6 +4,7 @@
 所用框架:AFN/FMDB/MJRefresh/SVPHud/YYKit
 
 # 由于coding网站请求数据总抽风, 很容易出现请求超时, 如果运行时发现程序内容少于示例gif或者有空白(主要是home页), 请刷新或多尝试几次返回重新进入.
+gif存放地址：https://coding.net/u/YiBaZhuangYuan/p/BeeQuickGif/git
 
 # launch
 ![image](https://coding.net/u/YiBaZhuangYuan/p/BeeQuickGif/git/raw/master/launch-min.gif)
