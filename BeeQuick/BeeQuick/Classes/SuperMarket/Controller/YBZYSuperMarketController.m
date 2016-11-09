@@ -549,6 +549,8 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
             [[YBZYSQLiteManager sharedManager] cacheSuperMarketGood:goodModel];
         }
     }
+    free(propertyList);
+    
     self.isCacheComplete = true;
 }
 
